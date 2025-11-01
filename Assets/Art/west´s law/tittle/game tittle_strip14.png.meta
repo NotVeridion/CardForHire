@@ -1,0 +1,4121 @@
+fileFormatVersion: 2
+guid: 1db6831528e195442a13d9a8a4c7f1bd
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1834884985329794929
+    second: game tittle_strip14_0
+  - first:
+      213: 9065709817819727423
+    second: game tittle_strip14_1
+  - first:
+      213: -1277286419539176218
+    second: game tittle_strip14_2
+  - first:
+      213: -2241015322237411033
+    second: game tittle_strip14_3
+  - first:
+      213: -3947439548262950156
+    second: game tittle_strip14_4
+  - first:
+      213: 2759834619127476672
+    second: game tittle_strip14_5
+  - first:
+      213: 5894914851724244408
+    second: game tittle_strip14_6
+  - first:
+      213: -536724812914480627
+    second: game tittle_strip14_7
+  - first:
+      213: 13185077869909245
+    second: game tittle_strip14_8
+  - first:
+      213: -4691603226047162747
+    second: game tittle_strip14_9
+  - first:
+      213: -2189205383874546041
+    second: game tittle_strip14_10
+  - first:
+      213: 1009082400839510047
+    second: game tittle_strip14_11
+  - first:
+      213: -4643070586107965869
+    second: game tittle_strip14_12
+  - first:
+      213: 397377741130230489
+    second: game tittle_strip14_13
+  - first:
+      213: -3411886076154751663
+    second: game tittle_strip14_14
+  - first:
+      213: 729267941529791300
+    second: game tittle_strip14_15
+  - first:
+      213: -6073442345842340959
+    second: game tittle_strip14_16
+  - first:
+      213: -1098311079296198369
+    second: game tittle_strip14_17
+  - first:
+      213: 74803193806439508
+    second: game tittle_strip14_18
+  - first:
+      213: 2332481582533357952
+    second: game tittle_strip14_19
+  - first:
+      213: -9000878183889290735
+    second: game tittle_strip14_20
+  - first:
+      213: -2028195924479566359
+    second: game tittle_strip14_21
+  - first:
+      213: 462524030450360404
+    second: game tittle_strip14_22
+  - first:
+      213: -8870663238276424822
+    second: game tittle_strip14_23
+  - first:
+      213: -3790520157523953780
+    second: game tittle_strip14_24
+  - first:
+      213: -8256600997804438389
+    second: game tittle_strip14_25
+  - first:
+      213: -5711443420281572016
+    second: game tittle_strip14_26
+  - first:
+      213: -5622161515059013058
+    second: game tittle_strip14_27
+  - first:
+      213: 7386617005591323114
+    second: game tittle_strip14_28
+  - first:
+      213: -2174995979680116707
+    second: game tittle_strip14_29
+  - first:
+      213: -6482394337361608548
+    second: game tittle_strip14_30
+  - first:
+      213: -7946895141328628106
+    second: game tittle_strip14_31
+  - first:
+      213: 1860525179152098503
+    second: game tittle_strip14_32
+  - first:
+      213: 588228585489145079
+    second: game tittle_strip14_33
+  - first:
+      213: -1265999647444619523
+    second: game tittle_strip14_34
+  - first:
+      213: -570023521348425319
+    second: game tittle_strip14_35
+  - first:
+      213: -4675716730965479011
+    second: game tittle_strip14_36
+  - first:
+      213: -4719129463717732379
+    second: game tittle_strip14_37
+  - first:
+      213: 4698888462992287412
+    second: game tittle_strip14_38
+  - first:
+      213: -2060830024804543498
+    second: game tittle_strip14_39
+  - first:
+      213: -6405310372556801944
+    second: game tittle_strip14_40
+  - first:
+      213: 4567391460542745587
+    second: game tittle_strip14_41
+  - first:
+      213: -7675751270173959516
+    second: game tittle_strip14_42
+  - first:
+      213: 6932094509821549265
+    second: game tittle_strip14_43
+  - first:
+      213: 8698977609570465978
+    second: game tittle_strip14_44
+  - first:
+      213: -7422641807364990299
+    second: game tittle_strip14_45
+  - first:
+      213: 6768670559065840786
+    second: game tittle_strip14_46
+  - first:
+      213: -2640957425459111900
+    second: game tittle_strip14_47
+  - first:
+      213: 8237567635892428008
+    second: game tittle_strip14_48
+  - first:
+      213: 3271332099695993188
+    second: game tittle_strip14_49
+  - first:
+      213: -1707359668413046930
+    second: game tittle_strip14_50
+  - first:
+      213: -1010229873666008844
+    second: game tittle_strip14_51
+  - first:
+      213: 2822508765872339781
+    second: game tittle_strip14_52
+  - first:
+      213: 5270339938436198669
+    second: game tittle_strip14_53
+  - first:
+      213: -1178661706061454882
+    second: game tittle_strip14_54
+  - first:
+      213: 3669335162268268406
+    second: game tittle_strip14_55
+  - first:
+      213: -7537746533688139249
+    second: game tittle_strip14_56
+  - first:
+      213: -5877011359431336710
+    second: game tittle_strip14_57
+  - first:
+      213: -4061926327578946820
+    second: game tittle_strip14_58
+  - first:
+      213: -725537872298428758
+    second: game tittle_strip14_59
+  - first:
+      213: -2782871280778433030
+    second: game tittle_strip14_60
+  - first:
+      213: -4516018909345056454
+    second: game tittle_strip14_61
+  - first:
+      213: -2712110062614836479
+    second: game tittle_strip14_62
+  - first:
+      213: -5141898148127009422
+    second: game tittle_strip14_63
+  - first:
+      213: -3274922464732713419
+    second: game tittle_strip14_64
+  - first:
+      213: -6947000226510509581
+    second: game tittle_strip14_65
+  - first:
+      213: -2673822931720799661
+    second: game tittle_strip14_66
+  - first:
+      213: 492044888078010030
+    second: game tittle_strip14_67
+  - first:
+      213: -6190993346425012423
+    second: game tittle_strip14_68
+  - first:
+      213: -2323451588468034076
+    second: game tittle_strip14_69
+  - first:
+      213: 6465314865556781551
+    second: game tittle_strip14_70
+  - first:
+      213: 1034029183983208475
+    second: game tittle_strip14_71
+  - first:
+      213: 416243947995222308
+    second: game tittle_strip14_72
+  - first:
+      213: -4476242840853585885
+    second: game tittle_strip14_73
+  - first:
+      213: 7264177940675696677
+    second: game tittle_strip14_74
+  - first:
+      213: 5216115844180324247
+    second: game tittle_strip14_75
+  - first:
+      213: 5262321889408095016
+    second: game tittle_strip14_76
+  - first:
+      213: -4222881261760317943
+    second: game tittle_strip14_77
+  - first:
+      213: -5352811813397626493
+    second: game tittle_strip14_78
+  - first:
+      213: -8509436860207580439
+    second: game tittle_strip14_79
+  - first:
+      213: 341967307081474217
+    second: game tittle_strip14_80
+  - first:
+      213: -1183627067419933247
+    second: game tittle_strip14_81
+  - first:
+      213: 7145621573244406638
+    second: game tittle_strip14_82
+  - first:
+      213: 5505621986184124307
+    second: game tittle_strip14_83
+  - first:
+      213: -4618479623150808213
+    second: game tittle_strip14_84
+  - first:
+      213: -5400733693296934753
+    second: game tittle_strip14_85
+  - first:
+      213: -2103840375132180170
+    second: game tittle_strip14_86
+  - first:
+      213: -7189468816401361272
+    second: game tittle_strip14_87
+  - first:
+      213: -4692346842246534976
+    second: game tittle_strip14_88
+  - first:
+      213: -4565022299922409792
+    second: game tittle_strip14_89
+  - first:
+      213: 1871441093443834112
+    second: game tittle_strip14_90
+  - first:
+      213: -7701104935835740552
+    second: game tittle_strip14_91
+  - first:
+      213: 4769240256291751372
+    second: game tittle_strip14_92
+  - first:
+      213: 4422435684810756818
+    second: game tittle_strip14_93
+  - first:
+      213: -4643171590927320640
+    second: game tittle_strip14_94
+  - first:
+      213: 5539333595364163658
+    second: game tittle_strip14_95
+  - first:
+      213: 2395745747962463306
+    second: game tittle_strip14_96
+  - first:
+      213: 5439743630151413902
+    second: game tittle_strip14_97
+  - first:
+      213: -2973692054304313097
+    second: game tittle_strip14_98
+  - first:
+      213: -6862826290507121572
+    second: game tittle_strip14_99
+  - first:
+      213: -5704060396665929587
+    second: game tittle_strip14_100
+  - first:
+      213: 7959644940188496497
+    second: game tittle_strip14_101
+  - first:
+      213: 7761583145228613577
+    second: game tittle_strip14_102
+  - first:
+      213: -4415597029660388324
+    second: game tittle_strip14_103
+  - first:
+      213: -7611783219383615388
+    second: game tittle_strip14_104
+  - first:
+      213: -8805840626330248047
+    second: game tittle_strip14_105
+  - first:
+      213: 5026925052640665478
+    second: game tittle_strip14_106
+  - first:
+      213: 2066765010065752732
+    second: game tittle_strip14_107
+  - first:
+      213: -9173870049267606273
+    second: game tittle_strip14_108
+  - first:
+      213: -2692122624678823589
+    second: game tittle_strip14_109
+  - first:
+      213: 3869620679448279754
+    second: game tittle_strip14_110
+  - first:
+      213: -8279757738437727153
+    second: game tittle_strip14_111
+  - first:
+      213: 7250629526178805398
+    second: game tittle_strip14_112
+  - first:
+      213: 7631837572602656131
+    second: game tittle_strip14_113
+  - first:
+      213: 633327679285441890
+    second: game tittle_strip14_114
+  - first:
+      213: 2170117320994712807
+    second: game tittle_strip14_115
+  - first:
+      213: 2547041084110695729
+    second: game tittle_strip14_116
+  - first:
+      213: 8330469384403867603
+    second: game tittle_strip14_117
+  - first:
+      213: -8916936373005830704
+    second: game tittle_strip14_118
+  - first:
+      213: -729230543227266885
+    second: game tittle_strip14_119
+  - first:
+      213: -4800788370475210240
+    second: game tittle_strip14_120
+  - first:
+      213: 6058133954917020827
+    second: game tittle_strip14_121
+  - first:
+      213: 1504252136018615212
+    second: game tittle_strip14_122
+  - first:
+      213: 6220573989316268137
+    second: game tittle_strip14_123
+  - first:
+      213: -396585647765593040
+    second: game tittle_strip14_124
+  - first:
+      213: -8357339698914476531
+    second: game tittle_strip14_125
+  - first:
+      213: -4061373575238514923
+    second: game tittle_strip14_126
+  - first:
+      213: 5182116767027729932
+    second: game tittle_strip14_127
+  - first:
+      213: 447053085913572969
+    second: game tittle_strip14_128
+  - first:
+      213: 4216129143804936347
+    second: game tittle_strip14_129
+  - first:
+      213: -2718096948122603439
+    second: game tittle_strip14_130
+  - first:
+      213: 1242316575537861294
+    second: game tittle_strip14_131
+  - first:
+      213: 5969683795111558111
+    second: game tittle_strip14_132
+  - first:
+      213: 8887951767850110838
+    second: game tittle_strip14_133
+  - first:
+      213: -4288312493518104548
+    second: game tittle_strip14_134
+  - first:
+      213: -6711275775127827783
+    second: game tittle_strip14_135
+  - first:
+      213: -6268355841241183496
+    second: game tittle_strip14_136
+  - first:
+      213: 5450738067442813963
+    second: game tittle_strip14_137
+  - first:
+      213: 9068630811801216500
+    second: game tittle_strip14_138
+  - first:
+      213: 4405561669253104091
+    second: game tittle_strip14_139
+  - first:
+      213: 8751680501350415841
+    second: game tittle_strip14_140
+  - first:
+      213: 1540098398027277179
+    second: game tittle_strip14_141
+  - first:
+      213: -7231578800091938076
+    second: game tittle_strip14_142
+  - first:
+      213: -1750584781209333472
+    second: game tittle_strip14_143
+  - first:
+      213: 5184431629356868402
+    second: game tittle_strip14_144
+  - first:
+      213: -4067239449543953314
+    second: game tittle_strip14_145
+  - first:
+      213: -3284860809693031799
+    second: game tittle_strip14_146
+  - first:
+      213: -5181577855355902311
+    second: game tittle_strip14_147
+  - first:
+      213: 275280076618545945
+    second: game tittle_strip14_148
+  - first:
+      213: 5643623857513285180
+    second: game tittle_strip14_149
+  - first:
+      213: -6800239216210921150
+    second: game tittle_strip14_150
+  - first:
+      213: -2073171787682176896
+    second: game tittle_strip14_151
+  - first:
+      213: 284786691804106291
+    second: game tittle_strip14_152
+  - first:
+      213: -1528995391986144438
+    second: game tittle_strip14_153
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: game tittle_strip14_0
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 119
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8048b5d3dd2986e0800000000000000
+      internalID: -1834884985329794929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_1
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 81
+        width: 26
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f368aef0c0fdfcd70800000000000000
+      internalID: 9065709817819727423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_2
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 38
+        width: 93
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e4dfeec4ca264ee0800000000000000
+      internalID: -1277286419539176218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_3
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 77
+        width: 25
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 721e4d5107056e0e0800000000000000
+      internalID: -2241015322237411033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_4
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 124
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fa557135a0e739c0800000000000000
+      internalID: -3947439548262950156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_5
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 77
+        width: 30
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c13befb6f6ec4620800000000000000
+      internalID: 2759834619127476672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_6
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 119
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b5b23633d1fec150800000000000000
+      internalID: 5894914851724244408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_7
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 81
+        width: 26
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0a281850ab2d88f0800000000000000
+      internalID: -536724812914480627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_8
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 38
+        width: 93
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df495ca22c7de2000800000000000000
+      internalID: 13185077869909245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_9
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 77
+        width: 25
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 586d16c19b314eeb0800000000000000
+      internalID: -4691603226047162747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_10
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 124
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 786f8c16d416e91e0800000000000000
+      internalID: -2189205383874546041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_11
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 77
+        width: 30
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f182323e81bf00e00800000000000000
+      internalID: 1009082400839510047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_12
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 119
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35e48f7e6ef709fb0800000000000000
+      internalID: -4643070586107965869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_13
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 81
+        width: 26
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9dae6bd33f4c38500800000000000000
+      internalID: 397377741130230489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_14
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 38
+        width: 93
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 155d1b0d0bb86a0d0800000000000000
+      internalID: -3411886076154751663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_15
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 77
+        width: 25
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44ba6f83451ee1a00800000000000000
+      internalID: 729267941529791300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_16
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 124
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ab804c6d5cc6bba0800000000000000
+      internalID: -6073442345842340959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_17
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 77
+        width: 30
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f199ca974e302c0f0800000000000000
+      internalID: -1098311079296198369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_18
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 119
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 454c5e2cb11c90100800000000000000
+      internalID: 74803193806439508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_19
+      rect:
+        serializedVersion: 2
+        x: 549
+        y: 81
+        width: 26
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 081ba0c24a3ae5020800000000000000
+      internalID: 2332481582533357952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_20
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 38
+        width: 93
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11a37befaf4761380800000000000000
+      internalID: -9000878183889290735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_21
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 77
+        width: 25
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ed10827d866ad3e0800000000000000
+      internalID: -2028195924479566359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_22
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 124
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4506317b7273b6600800000000000000
+      internalID: 462524030450360404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_23
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 77
+        width: 30
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8bda6898c215e480800000000000000
+      internalID: -8870663238276424822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_24
+      rect:
+        serializedVersion: 2
+        x: 717
+        y: 119
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c87b3d0fffd556bc0800000000000000
+      internalID: -3790520157523953780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_25
+      rect:
+        serializedVersion: 2
+        x: 722
+        y: 81
+        width: 26
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8c0bb94329aa6d80800000000000000
+      internalID: -8256600997804438389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_26
+      rect:
+        serializedVersion: 2
+        x: 733
+        y: 38
+        width: 93
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 055ff534870ecb0b0800000000000000
+      internalID: -5711443420281572016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_27
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 77
+        width: 25
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3a1909b3e11af1b0800000000000000
+      internalID: -5622161515059013058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_28
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 124
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae16126d709828660800000000000000
+      internalID: 7386617005591323114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_29
+      rect:
+        serializedVersion: 2
+        x: 827
+        y: 77
+        width: 30
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d10934b1eacd0d1e0800000000000000
+      internalID: -2174995979680116707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_30
+      rect:
+        serializedVersion: 2
+        x: 890
+        y: 119
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c90ce8302b8e906a0800000000000000
+      internalID: -6482394337361608548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_31
+      rect:
+        serializedVersion: 2
+        x: 895
+        y: 81
+        width: 26
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67654d139f4f6b190800000000000000
+      internalID: -7946895141328628106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_32
+      rect:
+        serializedVersion: 2
+        x: 906
+        y: 40
+        width: 93
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c4e70ffac9e1d910800000000000000
+      internalID: 1860525179152098503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_33
+      rect:
+        serializedVersion: 2
+        x: 985
+        y: 77
+        width: 25
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fc9fcc28cec92800800000000000000
+      internalID: 588228585489145079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_34
+      rect:
+        serializedVersion: 2
+        x: 998
+        y: 124
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfe2b4837044e6ee0800000000000000
+      internalID: -1265999647444619523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_35
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 77
+        width: 30
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 999e860a0aed618f0800000000000000
+      internalID: -570023521348425319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_36
+      rect:
+        serializedVersion: 2
+        x: 1063
+        y: 119
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d91b37cf7648c1fb0800000000000000
+      internalID: -4675716730965479011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_37
+      rect:
+        serializedVersion: 2
+        x: 1068
+        y: 81
+        width: 26
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ef560a71c8428eb0800000000000000
+      internalID: -4719129463717732379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_38
+      rect:
+        serializedVersion: 2
+        x: 1079
+        y: 38
+        width: 93
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b626db492ec53140800000000000000
+      internalID: 4698888462992287412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_39
+      rect:
+        serializedVersion: 2
+        x: 1158
+        y: 77
+        width: 25
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f3d01dd2067663e0800000000000000
+      internalID: -2060830024804543498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_40
+      rect:
+        serializedVersion: 2
+        x: 1171
+        y: 124
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86870a72724cb17a0800000000000000
+      internalID: -6405310372556801944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_41
+      rect:
+        serializedVersion: 2
+        x: 1173
+        y: 77
+        width: 30
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fb8dc39552a26f30800000000000000
+      internalID: 4567391460542745587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_42
+      rect:
+        serializedVersion: 2
+        x: 1236
+        y: 119
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4aa170d33e04a7590800000000000000
+      internalID: -7675751270173959516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_43
+      rect:
+        serializedVersion: 2
+        x: 1241
+        y: 81
+        width: 26
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1da59579a3fb33060800000000000000
+      internalID: 6932094509821549265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_44
+      rect:
+        serializedVersion: 2
+        x: 1252
+        y: 38
+        width: 93
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab83687fb0af8b870800000000000000
+      internalID: 8698977609570465978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_45
+      rect:
+        serializedVersion: 2
+        x: 1331
+        y: 77
+        width: 25
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5aadb016a9a7df890800000000000000
+      internalID: -7422641807364990299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_46
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 124
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29c93c2f2062fed50800000000000000
+      internalID: 6768670559065840786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_47
+      rect:
+        serializedVersion: 2
+        x: 1346
+        y: 77
+        width: 30
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4285494c63f695bd0800000000000000
+      internalID: -2640957425459111900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_48
+      rect:
+        serializedVersion: 2
+        x: 1409
+        y: 119
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ec5f9ece18b15270800000000000000
+      internalID: 8237567635892428008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_49
+      rect:
+        serializedVersion: 2
+        x: 1414
+        y: 81
+        width: 26
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46166b0663b166d20800000000000000
+      internalID: 3271332099695993188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_50
+      rect:
+        serializedVersion: 2
+        x: 1425
+        y: 38
+        width: 93
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6f59647d6d3e48e0800000000000000
+      internalID: -1707359668413046930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_51
+      rect:
+        serializedVersion: 2
+        x: 1504
+        y: 77
+        width: 25
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f856a64841faf1f0800000000000000
+      internalID: -1010229873666008844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_52
+      rect:
+        serializedVersion: 2
+        x: 1517
+        y: 124
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54b3f3da4c09b2720800000000000000
+      internalID: 2822508765872339781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_53
+      rect:
+        serializedVersion: 2
+        x: 1519
+        y: 77
+        width: 30
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d013b042042042940800000000000000
+      internalID: 5270339938436198669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_54
+      rect:
+        serializedVersion: 2
+        x: 1582
+        y: 119
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed1e9d35c6d84afe0800000000000000
+      internalID: -1178661706061454882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_55
+      rect:
+        serializedVersion: 2
+        x: 1587
+        y: 81
+        width: 26
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 677b9dc93e81ce230800000000000000
+      internalID: 3669335162268268406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_56
+      rect:
+        serializedVersion: 2
+        x: 1598
+        y: 38
+        width: 93
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f02269cd67b846790800000000000000
+      internalID: -7537746533688139249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_57
+      rect:
+        serializedVersion: 2
+        x: 1677
+        y: 77
+        width: 25
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afcd82c6e49a07ea0800000000000000
+      internalID: -5877011359431336710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_58
+      rect:
+        serializedVersion: 2
+        x: 1690
+        y: 124
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf299dca68321a7c0800000000000000
+      internalID: -4061926327578946820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_59
+      rect:
+        serializedVersion: 2
+        x: 1692
+        y: 77
+        width: 30
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa63f82362f5ee5f0800000000000000
+      internalID: -725537872298428758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_60
+      rect:
+        serializedVersion: 2
+        x: 1755
+        y: 119
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afda09d70514169d0800000000000000
+      internalID: -2782871280778433030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_61
+      rect:
+        serializedVersion: 2
+        x: 1760
+        y: 81
+        width: 26
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a397a859ab0e351c0800000000000000
+      internalID: -4516018909345056454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_62
+      rect:
+        serializedVersion: 2
+        x: 1771
+        y: 38
+        width: 93
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10b84167446ac5ad0800000000000000
+      internalID: -2712110062614836479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_63
+      rect:
+        serializedVersion: 2
+        x: 1850
+        y: 77
+        width: 25
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27596a190ee44a8b0800000000000000
+      internalID: -5141898148127009422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_64
+      rect:
+        serializedVersion: 2
+        x: 1863
+        y: 124
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53ee8ae9e532d82d0800000000000000
+      internalID: -3274922464732713419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_65
+      rect:
+        serializedVersion: 2
+        x: 1865
+        y: 77
+        width: 30
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f9684cc91c479f90800000000000000
+      internalID: -6947000226510509581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_66
+      rect:
+        serializedVersion: 2
+        x: 1928
+        y: 119
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35afc7ac53ca4ead0800000000000000
+      internalID: -2673822931720799661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_67
+      rect:
+        serializedVersion: 2
+        x: 1933
+        y: 81
+        width: 26
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea6cf6ff73814d600800000000000000
+      internalID: 492044888078010030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_68
+      rect:
+        serializedVersion: 2
+        x: 1944
+        y: 38
+        width: 93
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93fb78b4a5c251aa0800000000000000
+      internalID: -6190993346425012423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_69
+      rect:
+        serializedVersion: 2
+        x: 2023
+        y: 77
+        width: 25
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e5bb88271171cfd0800000000000000
+      internalID: -2323451588468034076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_70
+      rect:
+        serializedVersion: 2
+        x: 2036
+        y: 124
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe970929d9969b950800000000000000
+      internalID: 6465314865556781551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_71
+      rect:
+        serializedVersion: 2
+        x: 2038
+        y: 77
+        width: 30
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b18c4b6701c995e00800000000000000
+      internalID: 1034029183983208475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_72
+      rect:
+        serializedVersion: 2
+        x: 2101
+        y: 119
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42159245aabc6c500800000000000000
+      internalID: 416243947995222308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_73
+      rect:
+        serializedVersion: 2
+        x: 2106
+        y: 81
+        width: 26
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32069863ad031e1c0800000000000000
+      internalID: -4476242840853585885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_74
+      rect:
+        serializedVersion: 2
+        x: 2117
+        y: 38
+        width: 93
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 528143b895b8fc460800000000000000
+      internalID: 7264177940675696677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_75
+      rect:
+        serializedVersion: 2
+        x: 2196
+        y: 77
+        width: 25
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79fa7af59bd536840800000000000000
+      internalID: 5216115844180324247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_76
+      rect:
+        serializedVersion: 2
+        x: 2209
+        y: 124
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8239eef90e5870940800000000000000
+      internalID: 5262321889408095016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_77
+      rect:
+        serializedVersion: 2
+        x: 2211
+        y: 77
+        width: 30
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9067f10cddf4565c0800000000000000
+      internalID: -4222881261760317943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_78
+      rect:
+        serializedVersion: 2
+        x: 2274
+        y: 119
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3818be0240ef6b5b0800000000000000
+      internalID: -5352811813397626493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_79
+      rect:
+        serializedVersion: 2
+        x: 2279
+        y: 81
+        width: 26
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ea36b4b24868e980800000000000000
+      internalID: -8509436860207580439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_80
+      rect:
+        serializedVersion: 2
+        x: 2290
+        y: 38
+        width: 93
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a063673479eeb400800000000000000
+      internalID: 341967307081474217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_81
+      rect:
+        serializedVersion: 2
+        x: 2369
+        y: 77
+        width: 25
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c5c5eb0479e29fe0800000000000000
+      internalID: -1183627067419933247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_82
+      rect:
+        serializedVersion: 2
+        x: 2382
+        y: 124
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6bc99436f85a2360800000000000000
+      internalID: 7145621573244406638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_83
+      rect:
+        serializedVersion: 2
+        x: 2384
+        y: 77
+        width: 30
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 397d512c606e76c40800000000000000
+      internalID: 5505621986184124307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_84
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 93
+        width: 7
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6357b3a04dd7efb0800000000000000
+      internalID: -4618479623150808213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_85
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 81
+        width: 16
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f908d8cf15dbc05b0800000000000000
+      internalID: -5400733693296934753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_86
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 93
+        width: 7
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6313f105358adc2e0800000000000000
+      internalID: -2103840375132180170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_87
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 81
+        width: 16
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88616a2f330e93c90800000000000000
+      internalID: -7189468816401361272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_88
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 93
+        width: 7
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c828f8786f61eeb0800000000000000
+      internalID: -4692346842246534976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_89
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 81
+        width: 16
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c6536d9768c5a0c0800000000000000
+      internalID: -4565022299922409792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_90
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 93
+        width: 7
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 001d9c852c1b8f910800000000000000
+      internalID: 1871441093443834112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_91
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 81
+        width: 16
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 876d081fcdd202590800000000000000
+      internalID: -7701104935835740552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_92
+      rect:
+        serializedVersion: 2
+        x: 702
+        y: 93
+        width: 7
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc543cc9ebebf2240800000000000000
+      internalID: 4769240256291751372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_93
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 81
+        width: 16
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d2182303d5af5d30800000000000000
+      internalID: 4422435684810756818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_94
+      rect:
+        serializedVersion: 2
+        x: 875
+        y: 93
+        width: 7
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c97793e904209fb0800000000000000
+      internalID: -4643171590927320640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_95
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 81
+        width: 16
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a40811c6e8aafdc40800000000000000
+      internalID: 5539333595364163658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_96
+      rect:
+        serializedVersion: 2
+        x: 1048
+        y: 93
+        width: 7
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a44847780166f3120800000000000000
+      internalID: 2395745747962463306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_97
+      rect:
+        serializedVersion: 2
+        x: 1049
+        y: 81
+        width: 16
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e807e58b20add7b40800000000000000
+      internalID: 5439743630151413902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_98
+      rect:
+        serializedVersion: 2
+        x: 1221
+        y: 93
+        width: 7
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f03ac7f4d25bb6d0800000000000000
+      internalID: -2973692054304313097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_99
+      rect:
+        serializedVersion: 2
+        x: 1222
+        y: 81
+        width: 16
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5c7c1f79d752c0a0800000000000000
+      internalID: -6862826290507121572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_100
+      rect:
+        serializedVersion: 2
+        x: 1394
+        y: 93
+        width: 7
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d808a576a4b17d0b0800000000000000
+      internalID: -5704060396665929587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_101
+      rect:
+        serializedVersion: 2
+        x: 1395
+        y: 81
+        width: 16
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 172bb2ea6e6567e60800000000000000
+      internalID: 7959644940188496497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_102
+      rect:
+        serializedVersion: 2
+        x: 1567
+        y: 93
+        width: 7
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c7b20a7fbea6bb60800000000000000
+      internalID: 7761583145228613577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_103
+      rect:
+        serializedVersion: 2
+        x: 1568
+        y: 81
+        width: 16
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1492d775e5a8b2c0800000000000000
+      internalID: -4415597029660388324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_104
+      rect:
+        serializedVersion: 2
+        x: 1740
+        y: 93
+        width: 7
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4604c5dad738d5690800000000000000
+      internalID: -7611783219383615388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_105
+      rect:
+        serializedVersion: 2
+        x: 1741
+        y: 81
+        width: 16
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19cd1ee0b9e5bc580800000000000000
+      internalID: -8805840626330248047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_106
+      rect:
+        serializedVersion: 2
+        x: 1913
+        y: 93
+        width: 7
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68f982b93b933c540800000000000000
+      internalID: 5026925052640665478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_107
+      rect:
+        serializedVersion: 2
+        x: 1914
+        y: 81
+        width: 16
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c920d2393df9eac10800000000000000
+      internalID: 2066765010065752732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_108
+      rect:
+        serializedVersion: 2
+        x: 2086
+        y: 93
+        width: 7
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffc1fc1abcddfa080800000000000000
+      internalID: -9173870049267606273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_109
+      rect:
+        serializedVersion: 2
+        x: 2087
+        y: 81
+        width: 16
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b59f9308cb8a3aad0800000000000000
+      internalID: -2692122624678823589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_110
+      rect:
+        serializedVersion: 2
+        x: 2259
+        y: 93
+        width: 7
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aca350e7187a3b530800000000000000
+      internalID: 3869620679448279754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_111
+      rect:
+        serializedVersion: 2
+        x: 2260
+        y: 81
+        width: 16
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4ca0267434681d80800000000000000
+      internalID: -8279757738437727153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_112
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 29
+        width: 174
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 696b8d973296f9460800000000000000
+      internalID: 7250629526178805398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_113
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 0
+        width: 115
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 385f57a46dbb9e960800000000000000
+      internalID: 7631837572602656131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_114
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 29
+        width: 175
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2653b363b280ac800800000000000000
+      internalID: 633327679285441890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_115
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 0
+        width: 115
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ecefc6a43ecd1e10800000000000000
+      internalID: 2170117320994712807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_116
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 29
+        width: 175
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13d6eb60f58e85320800000000000000
+      internalID: 2547041084110695729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_117
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 0
+        width: 115
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d7d8a5b4c5cb9370800000000000000
+      internalID: 8330469384403867603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_118
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 29
+        width: 175
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d53a3adc9da04480800000000000000
+      internalID: -8916936373005830704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_119
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 0
+        width: 115
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb8d29f3fa041e5f0800000000000000
+      internalID: -729230543227266885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_120
+      rect:
+        serializedVersion: 2
+        x: 691
+        y: 29
+        width: 175
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00aaff7a96c206db0800000000000000
+      internalID: -4800788370475210240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_121
+      rect:
+        serializedVersion: 2
+        x: 721
+        y: 0
+        width: 115
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b94bf801cb0d21450800000000000000
+      internalID: 6058133954917020827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_122
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 29
+        width: 175
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cab130c095d20e410800000000000000
+      internalID: 1504252136018615212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_123
+      rect:
+        serializedVersion: 2
+        x: 894
+        y: 0
+        width: 115
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9601b34d51be35650800000000000000
+      internalID: 6220573989316268137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_124
+      rect:
+        serializedVersion: 2
+        x: 1037
+        y: 29
+        width: 175
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 034e9ed547b0f7af0800000000000000
+      internalID: -396585647765593040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_125
+      rect:
+        serializedVersion: 2
+        x: 1067
+        y: 0
+        width: 115
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0ebeeaa2d3c40c80800000000000000
+      internalID: -8357339698914476531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_126
+      rect:
+        serializedVersion: 2
+        x: 1210
+        y: 29
+        width: 175
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51700cb504a13a7c0800000000000000
+      internalID: -4061373575238514923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_127
+      rect:
+        serializedVersion: 2
+        x: 1240
+        y: 0
+        width: 115
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c06984b5eb39ae740800000000000000
+      internalID: 5182116767027729932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_128
+      rect:
+        serializedVersion: 2
+        x: 1383
+        y: 29
+        width: 175
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 966ee9db960443600800000000000000
+      internalID: 447053085913572969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_129
+      rect:
+        serializedVersion: 2
+        x: 1413
+        y: 0
+        width: 115
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b904aa74e13b28a30800000000000000
+      internalID: 4216129143804936347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_130
+      rect:
+        serializedVersion: 2
+        x: 1556
+        y: 29
+        width: 175
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 150341e0a31674ad0800000000000000
+      internalID: -2718096948122603439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_131
+      rect:
+        serializedVersion: 2
+        x: 1586
+        y: 0
+        width: 115
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea29387e7589d3110800000000000000
+      internalID: 1242316575537861294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_132
+      rect:
+        serializedVersion: 2
+        x: 1729
+        y: 29
+        width: 175
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdbb70d68c398d250800000000000000
+      internalID: 5969683795111558111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_133
+      rect:
+        serializedVersion: 2
+        x: 1759
+        y: 0
+        width: 115
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67fc28fda09585b70800000000000000
+      internalID: 8887951767850110838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_134
+      rect:
+        serializedVersion: 2
+        x: 1902
+        y: 29
+        width: 175
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c18dbf1f18adc74c0800000000000000
+      internalID: -4288312493518104548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_135
+      rect:
+        serializedVersion: 2
+        x: 1932
+        y: 0
+        width: 115
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ba42d98d32ccd2a0800000000000000
+      internalID: -6711275775127827783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_136
+      rect:
+        serializedVersion: 2
+        x: 2075
+        y: 29
+        width: 175
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fa0315d2935209a0800000000000000
+      internalID: -6268355841241183496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_137
+      rect:
+        serializedVersion: 2
+        x: 2105
+        y: 0
+        width: 115
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0cc0a1a469e4ab40800000000000000
+      internalID: 5450738067442813963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_138
+      rect:
+        serializedVersion: 2
+        x: 2248
+        y: 29
+        width: 174
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f5e298fcaf3add70800000000000000
+      internalID: 9068630811801216500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_139
+      rect:
+        serializedVersion: 2
+        x: 2278
+        y: 0
+        width: 115
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd188eb1ff2b32d30800000000000000
+      internalID: 4405561669253104091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_140
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 0
+        width: 22
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ed34be2c07347970800000000000000
+      internalID: 8751680501350415841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_141
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 0
+        width: 22
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b73609d45578f5510800000000000000
+      internalID: 1540098398027277179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_142
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 0
+        width: 22
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e24647556544ab90800000000000000
+      internalID: -7231578800091938076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_143
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 0
+        width: 22
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02110de9a6ca4b7e0800000000000000
+      internalID: -1750584781209333472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_144
+      rect:
+        serializedVersion: 2
+        x: 785
+        y: 0
+        width: 22
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 233ad1e391dc2f740800000000000000
+      internalID: 5184431629356868402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_145
+      rect:
+        serializedVersion: 2
+        x: 958
+        y: 0
+        width: 22
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e543a7115434e87c0800000000000000
+      internalID: -4067239449543953314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_146
+      rect:
+        serializedVersion: 2
+        x: 1131
+        y: 0
+        width: 22
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98215ad5f74d962d0800000000000000
+      internalID: -3284860809693031799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_147
+      rect:
+        serializedVersion: 2
+        x: 1304
+        y: 0
+        width: 22
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9962b7bc4665718b0800000000000000
+      internalID: -5181577855355902311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_148
+      rect:
+        serializedVersion: 2
+        x: 1477
+        y: 0
+        width: 22
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91b379c65cdf1d300800000000000000
+      internalID: 275280076618545945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_149
+      rect:
+        serializedVersion: 2
+        x: 1650
+        y: 0
+        width: 22
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c36cff84ffd225e40800000000000000
+      internalID: 5643623857513285180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_150
+      rect:
+        serializedVersion: 2
+        x: 1823
+        y: 0
+        width: 22
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 249311a4672b0a1a0800000000000000
+      internalID: -6800239216210921150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_151
+      rect:
+        serializedVersion: 2
+        x: 1996
+        y: 0
+        width: 22
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 080a7d44e3d9a33e0800000000000000
+      internalID: -2073171787682176896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_152
+      rect:
+        serializedVersion: 2
+        x: 2169
+        y: 0
+        width: 22
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33e0eb1ccf3c3f300800000000000000
+      internalID: 284786691804106291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game tittle_strip14_153
+      rect:
+        serializedVersion: 2
+        x: 2342
+        y: 0
+        width: 22
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4be47dbacae7cae0800000000000000
+      internalID: -1528995391986144438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      game tittle_strip14_0: -1834884985329794929
+      game tittle_strip14_1: 9065709817819727423
+      game tittle_strip14_10: -2189205383874546041
+      game tittle_strip14_100: -5704060396665929587
+      game tittle_strip14_101: 7959644940188496497
+      game tittle_strip14_102: 7761583145228613577
+      game tittle_strip14_103: -4415597029660388324
+      game tittle_strip14_104: -7611783219383615388
+      game tittle_strip14_105: -8805840626330248047
+      game tittle_strip14_106: 5026925052640665478
+      game tittle_strip14_107: 2066765010065752732
+      game tittle_strip14_108: -9173870049267606273
+      game tittle_strip14_109: -2692122624678823589
+      game tittle_strip14_11: 1009082400839510047
+      game tittle_strip14_110: 3869620679448279754
+      game tittle_strip14_111: -8279757738437727153
+      game tittle_strip14_112: 7250629526178805398
+      game tittle_strip14_113: 7631837572602656131
+      game tittle_strip14_114: 633327679285441890
+      game tittle_strip14_115: 2170117320994712807
+      game tittle_strip14_116: 2547041084110695729
+      game tittle_strip14_117: 8330469384403867603
+      game tittle_strip14_118: -8916936373005830704
+      game tittle_strip14_119: -729230543227266885
+      game tittle_strip14_12: -4643070586107965869
+      game tittle_strip14_120: -4800788370475210240
+      game tittle_strip14_121: 6058133954917020827
+      game tittle_strip14_122: 1504252136018615212
+      game tittle_strip14_123: 6220573989316268137
+      game tittle_strip14_124: -396585647765593040
+      game tittle_strip14_125: -8357339698914476531
+      game tittle_strip14_126: -4061373575238514923
+      game tittle_strip14_127: 5182116767027729932
+      game tittle_strip14_128: 447053085913572969
+      game tittle_strip14_129: 4216129143804936347
+      game tittle_strip14_13: 397377741130230489
+      game tittle_strip14_130: -2718096948122603439
+      game tittle_strip14_131: 1242316575537861294
+      game tittle_strip14_132: 5969683795111558111
+      game tittle_strip14_133: 8887951767850110838
+      game tittle_strip14_134: -4288312493518104548
+      game tittle_strip14_135: -6711275775127827783
+      game tittle_strip14_136: -6268355841241183496
+      game tittle_strip14_137: 5450738067442813963
+      game tittle_strip14_138: 9068630811801216500
+      game tittle_strip14_139: 4405561669253104091
+      game tittle_strip14_14: -3411886076154751663
+      game tittle_strip14_140: 8751680501350415841
+      game tittle_strip14_141: 1540098398027277179
+      game tittle_strip14_142: -7231578800091938076
+      game tittle_strip14_143: -1750584781209333472
+      game tittle_strip14_144: 5184431629356868402
+      game tittle_strip14_145: -4067239449543953314
+      game tittle_strip14_146: -3284860809693031799
+      game tittle_strip14_147: -5181577855355902311
+      game tittle_strip14_148: 275280076618545945
+      game tittle_strip14_149: 5643623857513285180
+      game tittle_strip14_15: 729267941529791300
+      game tittle_strip14_150: -6800239216210921150
+      game tittle_strip14_151: -2073171787682176896
+      game tittle_strip14_152: 284786691804106291
+      game tittle_strip14_153: -1528995391986144438
+      game tittle_strip14_16: -6073442345842340959
+      game tittle_strip14_17: -1098311079296198369
+      game tittle_strip14_18: 74803193806439508
+      game tittle_strip14_19: 2332481582533357952
+      game tittle_strip14_2: -1277286419539176218
+      game tittle_strip14_20: -9000878183889290735
+      game tittle_strip14_21: -2028195924479566359
+      game tittle_strip14_22: 462524030450360404
+      game tittle_strip14_23: -8870663238276424822
+      game tittle_strip14_24: -3790520157523953780
+      game tittle_strip14_25: -8256600997804438389
+      game tittle_strip14_26: -5711443420281572016
+      game tittle_strip14_27: -5622161515059013058
+      game tittle_strip14_28: 7386617005591323114
+      game tittle_strip14_29: -2174995979680116707
+      game tittle_strip14_3: -2241015322237411033
+      game tittle_strip14_30: -6482394337361608548
+      game tittle_strip14_31: -7946895141328628106
+      game tittle_strip14_32: 1860525179152098503
+      game tittle_strip14_33: 588228585489145079
+      game tittle_strip14_34: -1265999647444619523
+      game tittle_strip14_35: -570023521348425319
+      game tittle_strip14_36: -4675716730965479011
+      game tittle_strip14_37: -4719129463717732379
+      game tittle_strip14_38: 4698888462992287412
+      game tittle_strip14_39: -2060830024804543498
+      game tittle_strip14_4: -3947439548262950156
+      game tittle_strip14_40: -6405310372556801944
+      game tittle_strip14_41: 4567391460542745587
+      game tittle_strip14_42: -7675751270173959516
+      game tittle_strip14_43: 6932094509821549265
+      game tittle_strip14_44: 8698977609570465978
+      game tittle_strip14_45: -7422641807364990299
+      game tittle_strip14_46: 6768670559065840786
+      game tittle_strip14_47: -2640957425459111900
+      game tittle_strip14_48: 8237567635892428008
+      game tittle_strip14_49: 3271332099695993188
+      game tittle_strip14_5: 2759834619127476672
+      game tittle_strip14_50: -1707359668413046930
+      game tittle_strip14_51: -1010229873666008844
+      game tittle_strip14_52: 2822508765872339781
+      game tittle_strip14_53: 5270339938436198669
+      game tittle_strip14_54: -1178661706061454882
+      game tittle_strip14_55: 3669335162268268406
+      game tittle_strip14_56: -7537746533688139249
+      game tittle_strip14_57: -5877011359431336710
+      game tittle_strip14_58: -4061926327578946820
+      game tittle_strip14_59: -725537872298428758
+      game tittle_strip14_6: 5894914851724244408
+      game tittle_strip14_60: -2782871280778433030
+      game tittle_strip14_61: -4516018909345056454
+      game tittle_strip14_62: -2712110062614836479
+      game tittle_strip14_63: -5141898148127009422
+      game tittle_strip14_64: -3274922464732713419
+      game tittle_strip14_65: -6947000226510509581
+      game tittle_strip14_66: -2673822931720799661
+      game tittle_strip14_67: 492044888078010030
+      game tittle_strip14_68: -6190993346425012423
+      game tittle_strip14_69: -2323451588468034076
+      game tittle_strip14_7: -536724812914480627
+      game tittle_strip14_70: 6465314865556781551
+      game tittle_strip14_71: 1034029183983208475
+      game tittle_strip14_72: 416243947995222308
+      game tittle_strip14_73: -4476242840853585885
+      game tittle_strip14_74: 7264177940675696677
+      game tittle_strip14_75: 5216115844180324247
+      game tittle_strip14_76: 5262321889408095016
+      game tittle_strip14_77: -4222881261760317943
+      game tittle_strip14_78: -5352811813397626493
+      game tittle_strip14_79: -8509436860207580439
+      game tittle_strip14_8: 13185077869909245
+      game tittle_strip14_80: 341967307081474217
+      game tittle_strip14_81: -1183627067419933247
+      game tittle_strip14_82: 7145621573244406638
+      game tittle_strip14_83: 5505621986184124307
+      game tittle_strip14_84: -4618479623150808213
+      game tittle_strip14_85: -5400733693296934753
+      game tittle_strip14_86: -2103840375132180170
+      game tittle_strip14_87: -7189468816401361272
+      game tittle_strip14_88: -4692346842246534976
+      game tittle_strip14_89: -4565022299922409792
+      game tittle_strip14_9: -4691603226047162747
+      game tittle_strip14_90: 1871441093443834112
+      game tittle_strip14_91: -7701104935835740552
+      game tittle_strip14_92: 4769240256291751372
+      game tittle_strip14_93: 4422435684810756818
+      game tittle_strip14_94: -4643171590927320640
+      game tittle_strip14_95: 5539333595364163658
+      game tittle_strip14_96: 2395745747962463306
+      game tittle_strip14_97: 5439743630151413902
+      game tittle_strip14_98: -2973692054304313097
+      game tittle_strip14_99: -6862826290507121572
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

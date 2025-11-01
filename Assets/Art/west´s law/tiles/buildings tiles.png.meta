@@ -1,0 +1,585 @@
+fileFormatVersion: 2
+guid: 0d367de2c54b97045bf1c3d305081a32
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6644720718276682488
+    second: buildings tiles_0
+  - first:
+      213: 2701939302842652245
+    second: buildings tiles_1
+  - first:
+      213: -3522423744241771891
+    second: buildings tiles_2
+  - first:
+      213: 265856530233816857
+    second: buildings tiles_3
+  - first:
+      213: 2770243740142811456
+    second: buildings tiles_4
+  - first:
+      213: -8218977196981156137
+    second: buildings tiles_5
+  - first:
+      213: -4039964973387419409
+    second: buildings tiles_6
+  - first:
+      213: -4983921514858623525
+    second: buildings tiles_7
+  - first:
+      213: -4216310443538080837
+    second: buildings tiles_8
+  - first:
+      213: 2871977017114231985
+    second: buildings tiles_9
+  - first:
+      213: -5672113687762311546
+    second: buildings tiles_10
+  - first:
+      213: -7836778593614237485
+    second: buildings tiles_11
+  - first:
+      213: -3942492264974803303
+    second: buildings tiles_12
+  - first:
+      213: -5001311896674356018
+    second: buildings tiles_13
+  - first:
+      213: -561629311036592016
+    second: buildings tiles_14
+  - first:
+      213: -5087323194684898632
+    second: buildings tiles_15
+  - first:
+      213: 4425745711551190981
+    second: buildings tiles_16
+  - first:
+      213: 1335470508017972084
+    second: buildings tiles_17
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: buildings tiles_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 650
+        width: 143
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f26f8cb94ac63c50800000000000000
+      internalID: 6644720718276682488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings tiles_1
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 631
+        width: 162
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5565a9efa773f7520800000000000000
+      internalID: 2701939302842652245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings tiles_2
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 621
+        width: 45
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8a51186446dd1fc0800000000000000
+      internalID: -3522423744241771891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings tiles_3
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 617
+        width: 38
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 917fdcd0b1380b300800000000000000
+      internalID: 265856530233816857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings tiles_4
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 619
+        width: 51
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04936781102e17620800000000000000
+      internalID: 2770243740142811456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings tiles_5
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 581
+        width: 69
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d607ec09c350fd80800000000000000
+      internalID: -8218977196981156137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings tiles_6
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 564
+        width: 34
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe0f838e2492fe7c0800000000000000
+      internalID: -4039964973387419409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings tiles_7
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 471
+        width: 210
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bddcc66c9cd85dab0800000000000000
+      internalID: -4983921514858623525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings tiles_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 543
+        width: 17
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbb94269df7ac75c0800000000000000
+      internalID: -4216310443538080837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings tiles_9
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 532
+        width: 42
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b40e2471ef4bd720800000000000000
+      internalID: 2871977017114231985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings tiles_10
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 526
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 686eb4337aa9841b0800000000000000
+      internalID: -5672113687762311546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings tiles_11
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 494
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d0fc30e36b2e3390800000000000000
+      internalID: -7836778593614237485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings tiles_12
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 270
+        width: 181
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99e93785c247949c0800000000000000
+      internalID: -3942492264974803303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings tiles_13
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 316
+        width: 144
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec43acbf355c79ab0800000000000000
+      internalID: -5001311896674356018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings tiles_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 116
+        width: 165
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07077340e11b438f0800000000000000
+      internalID: -561629311036592016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings tiles_15
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 119
+        width: 209
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b2833b12823669b0800000000000000
+      internalID: -5087323194684898632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings tiles_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 163
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c7973ba6486b6d30800000000000000
+      internalID: 4425745711551190981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings tiles_17
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 82
+        width: 50
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 473fb66f95b888210800000000000000
+      internalID: 1335470508017972084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      buildings tiles_0: 6644720718276682488
+      buildings tiles_1: 2701939302842652245
+      buildings tiles_10: -5672113687762311546
+      buildings tiles_11: -7836778593614237485
+      buildings tiles_12: -3942492264974803303
+      buildings tiles_13: -5001311896674356018
+      buildings tiles_14: -561629311036592016
+      buildings tiles_15: -5087323194684898632
+      buildings tiles_16: 4425745711551190981
+      buildings tiles_17: 1335470508017972084
+      buildings tiles_2: -3522423744241771891
+      buildings tiles_3: 265856530233816857
+      buildings tiles_4: 2770243740142811456
+      buildings tiles_5: -8218977196981156137
+      buildings tiles_6: -4039964973387419409
+      buildings tiles_7: -4983921514858623525
+      buildings tiles_8: -4216310443538080837
+      buildings tiles_9: 2871977017114231985
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
