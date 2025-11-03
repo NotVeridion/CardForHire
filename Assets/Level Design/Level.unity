@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 245177842}
   - component: {fileID: 245177841}
   - component: {fileID: 245177840}
+  - component: {fileID: 245177844}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -256,6 +257,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &245177844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 245177839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a772a43306d1fa4385ce89cf5884583, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1 &305134580
 GameObject:
   m_ObjectHideFlags: 0
@@ -46632,7 +46645,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 44
-      m_TileSpriteIndex: 49
+      m_TileSpriteIndex: 57
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -46642,7 +46655,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 43
-      m_TileSpriteIndex: 0
+      m_TileSpriteIndex: 49
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -47787,8 +47800,8 @@ Tilemap:
   - m_RefCount: 0
     m_Data: {fileID: 0}
   m_TileSpriteArray:
-  - m_RefCount: 1
-    m_Data: {fileID: -1508984844, guid: 3302a6dad54137e46bc8ae8252033edb, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: 2090347713, guid: 3302a6dad54137e46bc8ae8252033edb, type: 3}
   - m_RefCount: 3
@@ -47886,7 +47899,7 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: -575840453, guid: 3302a6dad54137e46bc8ae8252033edb, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: 1924598208, guid: 3302a6dad54137e46bc8ae8252033edb, type: 3}
+    m_Data: {fileID: -1508984844, guid: 3302a6dad54137e46bc8ae8252033edb, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: -207800958, guid: 3302a6dad54137e46bc8ae8252033edb, type: 3}
   - m_RefCount: 1
@@ -47901,8 +47914,8 @@ Tilemap:
     m_Data: {fileID: 2039245737, guid: 3302a6dad54137e46bc8ae8252033edb, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 441284633, guid: 3302a6dad54137e46bc8ae8252033edb, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 1924598208, guid: 3302a6dad54137e46bc8ae8252033edb, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 112
     m_Data:

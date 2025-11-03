@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PistolScriptableObject
   m_EditorClassIdentifier: Assembly-CSharp::GunScriptableObject
   gunName: Pistol
-  fireRate: 2
-  bulletMoveSpeed: 5
+  fireRate: 3
+  bulletMoveSpeed: 30
   bulletDamage: 10
   bulletDuration: 1
