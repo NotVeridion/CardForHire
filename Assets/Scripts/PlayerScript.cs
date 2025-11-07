@@ -5,6 +5,7 @@ public class PlayerScript : MonoBehaviour
     public float playerMoveSpeed;
     private float vertical;
     private float horizontal;
+    private Vector3 movementVector;
     private Animator playerAnimator;
     private SpriteRenderer playerSpriteRenderer;
     private SpriteRenderer gunSpriteRenderer;
@@ -19,6 +20,10 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        vertical = Input.GetAxisRaw("Vertical");
+        horizontal = Input.GetAxisRaw("Horizontal");
+        movementVector = new Vector3(horizontal, vertical, 0).normalized;
+
         Vector3 cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         if (transform.position.x <= cursorPos.x) // Cursor on right of player
         {
@@ -39,11 +44,9 @@ public class PlayerScript : MonoBehaviour
 
     void Move()
     {
-        vertical = Input.GetAxis("Vertical");
-        horizontal = Input.GetAxis("Horizontal");
 
-        transform.position += new Vector3(horizontal * playerMoveSpeed * Time.deltaTime, vertical * playerMoveSpeed * Time.deltaTime, 0);
-        transform.rotation = Quaternion.identity; // Stop physics from rotating player when colliding with walls
+        transform.position += movementVector * playerMoveSpeed * Time.fixedDeltaTime;
+
         if (vertical != 0 || horizontal != 0)
         {
             playerAnimator.SetBool("isMoving", true);
@@ -52,6 +55,5 @@ public class PlayerScript : MonoBehaviour
         {
             playerAnimator.SetBool("isMoving", false);
         }
-        Debug.Log(transform.position);
     }
 }
