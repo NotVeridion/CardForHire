@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class PistolScript : MonoBehaviour
+public class GunScript : MonoBehaviour
 {
     public GunScriptableObject gunScriptableObject;
     public GameObject bulletSpawner;

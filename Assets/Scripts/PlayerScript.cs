@@ -5,7 +5,7 @@ public class PlayerScript : MonoBehaviour
     public float playerMoveSpeed;
     private float vertical;
     private float horizontal;
-    private Vector3 movementVector;
+    private Vector3 movementVector;  
     private Animator playerAnimator;
     private SpriteRenderer playerSpriteRenderer;
     private SpriteRenderer gunSpriteRenderer;
@@ -56,4 +56,5 @@ public class PlayerScript : MonoBehaviour
             playerAnimator.SetBool("isMoving", false);
         }
     }
+
 }
