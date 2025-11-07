@@ -19,8 +19,6 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Move();
-
         Vector3 cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         if (transform.position.x <= cursorPos.x) // Cursor on right of player
         {
@@ -34,12 +32,18 @@ public class PlayerScript : MonoBehaviour
         }
     }
 
+    void FixedUpdate()
+    {
+        Move();
+    }
+
     void Move()
     {
         vertical = Input.GetAxis("Vertical");
         horizontal = Input.GetAxis("Horizontal");
 
         transform.position += new Vector3(horizontal * playerMoveSpeed * Time.deltaTime, vertical * playerMoveSpeed * Time.deltaTime, 0);
+        transform.rotation = Quaternion.identity; // Stop physics from rotating player when colliding with walls
         if (vertical != 0 || horizontal != 0)
         {
             playerAnimator.SetBool("isMoving", true);
