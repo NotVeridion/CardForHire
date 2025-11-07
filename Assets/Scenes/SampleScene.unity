@@ -471,9 +471,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1243843125}
   - component: {fileID: 1243843127}
-  - component: {fileID: 1243843126}
+  - component: {fileID: 1243843128}
   m_Layer: 0
-  m_Name: Rename
+  m_Name: Gun
   m_TagString: Gun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -495,21 +495,6 @@ Transform:
   - {fileID: 819076705}
   m_Father: {fileID: 1284259771}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1243843126
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1243843124}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e950dbbb1c749fd4d9d1269f97c2585d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PistolScript
-  gunScriptableObject: {fileID: 11400000, guid: 53e74909fea220f4684d5ab903e49dcd, type: 2}
-  bulletSpawner: {fileID: 819076704}
-  bullet: {fileID: 5843007583955890467, guid: 7cb066647a040eb48a75b1358d4d5d73, type: 3}
 --- !u!212 &1243843127
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -557,7 +542,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -4574740885726775581, guid: f97b686af13e91d41982c02788f4fef6, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -565,9 +550,24 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1243843128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1243843124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e950dbbb1c749fd4d9d1269f97c2585d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GunScript
+  currentGun: {fileID: 11400000, guid: 53e74909fea220f4684d5ab903e49dcd, type: 2}
+  bulletSpawner: {fileID: 819076704}
+  bullet: {fileID: 5843007583955890467, guid: 7cb066647a040eb48a75b1358d4d5d73, type: 3}
 --- !u!1 &1284259765
 GameObject:
   m_ObjectHideFlags: 0

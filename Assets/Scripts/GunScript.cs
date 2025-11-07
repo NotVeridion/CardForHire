@@ -1,9 +1,10 @@
 using UnityEngine;
 using System.Collections;
 
+[RequireComponent(typeof(SpriteRenderer))]
 public class GunScript : MonoBehaviour
 {
-    public GunScriptableObject gunScriptableObject;
+    public Gun currentGun;
     public GameObject bulletSpawner;
     public GameObject bullet;
     private Vector3 directionToCursor;
@@ -13,6 +14,7 @@ public class GunScript : MonoBehaviour
     void Start()
     {
         canFire = true;
+        GetComponent<SpriteRenderer>().sprite = currentGun.gunSprite;
     }
 
     // Update is called once per frame
@@ -35,23 +37,41 @@ public class GunScript : MonoBehaviour
 
     void Shoot()
     {
-        GameObject bulletObj = Instantiate(bullet, bulletSpawner.transform.position, transform.rotation);
+        if (currentGun.isSingleShot)
+        {
+            GameObject bulletObj = Instantiate(bullet, bulletSpawner.transform.position, transform.rotation);
+            SetBulletData(bulletObj);
+        }
+        else if (currentGun.isSpreadShot)
+        {
+            Quaternion[] equallySpreadRotations = new Quaternion[currentGun.numBulletsInSpread];
 
-        SetBulletData(bulletObj);
+            for (int i = 0; i < currentGun.numBulletsInSpread; i++)
+            {
+                float angle = -currentGun.spreadRange + currentGun.spreadRange*2 * i/ currentGun.numBulletsInSpread;
+                equallySpreadRotations[i] = Quaternion.Euler(Vector3.forward * angle);
+            }
+            
+            for (int i = 0; i < currentGun.numBulletsInSpread; i++)
+            {
+                GameObject bulletObj = Instantiate(bullet, bulletSpawner.transform.position, transform.rotation * equallySpreadRotations[i]);
+                SetBulletData(bulletObj);
+            }
+        }
     }
-    
+
     void SetBulletData(GameObject bullet)
     {
         BulletScript script = bullet.GetComponent<BulletScript>();
-        script.bulletMoveSpeed = gunScriptableObject.bulletMoveSpeed;
-        script.bulletDamage = gunScriptableObject.bulletDamage;
-        script.bulletDuration = gunScriptableObject.bulletDuration;
+        script.bulletMoveSpeed = currentGun.bulletMoveSpeed;
+        script.bulletDamage = currentGun.damage;
+        script.bulletDuration = currentGun.bulletDuration;
     }
-    
+
     IEnumerator fireRateHandler()
     {
         canFire = false;
-        yield return new WaitForSeconds(1 / gunScriptableObject.fireRate);
+        yield return new WaitForSeconds(1 / currentGun.fireRate);
 
         canFire = true;
     }
