@@ -11,8 +11,10 @@ public class Card : ScriptableObject
         Spades
     }
 
+    public Sprite sprite;
     public Suit suit;
     public int number;
+
 
 }
 

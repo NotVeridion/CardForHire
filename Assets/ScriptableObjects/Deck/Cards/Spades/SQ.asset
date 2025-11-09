@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a362b6f90b46b494d98aa736119ac28c, type: 3}
   m_Name: SQ
   m_EditorClassIdentifier: Assembly-CSharp::Card
+  sprite: {fileID: 1706419745, guid: 782a940109344e04d9a93e384252ee94, type: 3}
   suit: 3
   number: 10
