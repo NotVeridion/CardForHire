@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d0f21688c0e42b34892f64cf81ab2caa, type: 3}
-  m_Name: PistolScriptableObject
+  m_Name: Pistol
   m_EditorClassIdentifier: Assembly-CSharp::GunScriptableObject
   gunName: Pistol
   gunSprite: {fileID: 0}

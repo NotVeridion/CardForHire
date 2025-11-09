@@ -7,22 +7,34 @@ public class GunScript : MonoBehaviour
     public Gun currentGun;
     public GameObject bulletSpawner;
     public GameObject bullet;
+    private Card currentCard;
+    private DeckManagerScript deckManagerScript;
     private Vector3 directionToCursor;
     private float angleToCursor;
     private bool canFire;
+    private float currentTime;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         canFire = true;
         GetComponent<SpriteRenderer>().sprite = currentGun.gunSprite;
+        deckManagerScript = GameObject.FindWithTag("DeckManager").GetComponent<DeckManagerScript>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        currentCard = deckManagerScript.currentCard;
+
+        currentTime += Time.deltaTime;
+        if (currentTime >= 5f)
+        {
+            Debug.Log("Current card in gun: " + currentCard.number + " " + currentCard.suit);
+            currentTime = 0;
+        }
+
         directionToCursor = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         angleToCursor = Mathf.Atan2(directionToCursor.y, directionToCursor.x) * Mathf.Rad2Deg;
-
         transform.rotation = Quaternion.Euler(Vector3.forward * angleToCursor);
 
         if (Input.GetButton("Fire1"))
@@ -48,7 +60,7 @@ public class GunScript : MonoBehaviour
 
             for (int i = 0; i < currentGun.numBulletsInSpread; i++)
             {
-                float angle = -currentGun.spreadRange + currentGun.spreadRange*2 * i/ currentGun.numBulletsInSpread;
+                float angle = -currentGun.spreadRange + currentGun.spreadRange*2 * i / currentGun.numBulletsInSpread;
                 equallySpreadRotations[i] = Quaternion.Euler(Vector3.forward * angle);
             }
             
@@ -62,10 +74,11 @@ public class GunScript : MonoBehaviour
 
     void SetBulletData(GameObject bullet)
     {
-        BulletScript script = bullet.GetComponent<BulletScript>();
-        script.bulletMoveSpeed = currentGun.bulletMoveSpeed;
-        script.bulletDamage = currentGun.damage;
-        script.bulletDuration = currentGun.bulletDuration;
+        BulletScript bulletScript = bullet.GetComponent<BulletScript>();
+        bulletScript.bulletMoveSpeed = currentGun.bulletMoveSpeed;
+        bulletScript.bulletDamage = currentGun.damage;
+        bulletScript.bulletDuration = currentGun.bulletDuration;
+        bulletScript.applyCardToBullet(currentCard);
     }
 
     IEnumerator fireRateHandler()
@@ -74,5 +87,10 @@ public class GunScript : MonoBehaviour
         yield return new WaitForSeconds(1 / currentGun.fireRate);
 
         canFire = true;
+    }
+
+    public void setCurrentCard(Card card)
+    {
+        currentCard = card;
     }
 }
