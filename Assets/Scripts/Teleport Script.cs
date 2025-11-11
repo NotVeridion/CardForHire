@@ -33,5 +33,6 @@ public class TeleportScript : MonoBehaviour
     void Teleport()
     {
         player.transform.position = teleportPosition.transform.position;
+        teleportInfo.SetActive(false );
     }
 }
