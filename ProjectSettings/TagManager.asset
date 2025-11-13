@@ -7,7 +7,11 @@ TagManager:
   - Gun
   - Bullet
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   - DeckManager
+=======
+  - NPC
+>>>>>>> Stashed changes
 =======
   - NPC
 >>>>>>> Stashed changes
