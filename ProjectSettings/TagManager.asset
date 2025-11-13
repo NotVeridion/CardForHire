@@ -6,7 +6,11 @@ TagManager:
   tags:
   - Gun
   - Bullet
+<<<<<<< Updated upstream
   - DeckManager
+=======
+  - NPC
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
