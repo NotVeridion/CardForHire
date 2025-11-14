@@ -50,7 +50,14 @@ public class EnemyScript : MonoBehaviour
 
     void Update()
     {
-
+        if (player.transform.position.x < transform.position.x)
+        {
+            GetComponent<SpriteRenderer>().flipX = true;
+        }
+        else
+        {
+             GetComponent<SpriteRenderer>().flipX = false;
+        }
     }
 
     void FixedUpdate()
@@ -63,6 +70,7 @@ public class EnemyScript : MonoBehaviour
             {
                 currentState = EnemyState.ChasingPlayer;
             }
+            GetComponent<Animator>().SetBool("isMoving", false);
         }
         else if (currentState == EnemyState.ChasingPlayer)
         {
@@ -77,7 +85,7 @@ public class EnemyScript : MonoBehaviour
             {
                 currentState = EnemyState.Idle;
             }
-
+            GetComponent<Animator>().SetBool("isMoving", true);
         }
         else if (currentState == EnemyState.ShootingFromRange)
         {
@@ -105,6 +113,7 @@ public class EnemyScript : MonoBehaviour
             {
                 currentState = EnemyState.ChasingPlayer;
             }
+            GetComponent<Animator>().SetBool("isMoving", false);
         }
     }
 }
