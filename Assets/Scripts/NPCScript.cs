@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using NUnit.Framework;
 using TMPro;
+using Unity.VisualScripting.Dependencies.NCalc;
 
 public class NPCScript : MonoBehaviour, IInteractable
 {
@@ -16,13 +17,15 @@ public class NPCScript : MonoBehaviour, IInteractable
         dialogueUI = DialogueController.Instance;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    public void OnMouseDown()
     {
-        if (collision.gameObject.tag == "Player")
+        if (isDialogueActive)
         {
-            StartDialogue();
+            NextLine();
         }
-    
+        else
+            StartDialogue();
+            Debug.Log("test");
     }
     public bool CanInteract()
     {
@@ -121,11 +124,6 @@ public class NPCScript : MonoBehaviour, IInteractable
             yield return new WaitForSeconds(dialogueData.typingSpeed);
         }
         isTyping = false;
-        if (dialogueData.autoProgressLines.Length > dialogueIndex && dialogueData.autoProgressLines[dialogueIndex])
-        {
-            yield return new WaitForSeconds(dialogueData.autoProgressDelay);
-            NextLine();
-        }
     }
     public void NextLine()
     {
