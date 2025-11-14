@@ -6,13 +6,16 @@ public class CameraScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        if(playerObject != null)
         playerObject = GameObject.FindWithTag("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(playerObject != null){
         transform.position = new Vector3(playerObject.transform.position.x, playerObject.transform.position.y, -10);
         transform.rotation = Quaternion.identity;
+        }
     }
 }

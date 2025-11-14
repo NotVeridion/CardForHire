@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Gun
   - Bullet
+  - DeckManager
+  - NPC
+  - EnemyBullet
   layers:
   - Default
   - TransparentFX

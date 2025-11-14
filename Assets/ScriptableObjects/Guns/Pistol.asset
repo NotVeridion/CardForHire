@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0f21688c0e42b34892f64cf81ab2caa, type: 3}
+  m_Name: Pistol
+  m_EditorClassIdentifier: Assembly-CSharp::GunScriptableObject
+  gunName: Pistol
+  gunSprite: {fileID: -4574740885726775581, guid: f97b686af13e91d41982c02788f4fef6, type: 3}
+  fireRate: 3
+  damage: 10
+  bulletMoveSpeed: 30
+  bulletDuration: 1
+  isSingleShot: 1
+  isSpreadShot: 0
+  spreadRange: 0
+  numBulletsInSpread: 0

@@ -1,7 +1,5 @@
 using UnityEngine;
 using System.Collections;
-using TMPro;
-using System.Data;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -14,7 +12,7 @@ public class PlayerScript : MonoBehaviour
     private bool isDashing;
     private float vertical;
     private float horizontal;
-    private Vector3 movementVector;  
+    private Vector3 movementVector;
     private Animator playerAnimator;
     private SpriteRenderer playerSpriteRenderer;
     private SpriteRenderer gunSpriteRenderer;
