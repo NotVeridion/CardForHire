@@ -461,6 +461,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1243843125}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1033522519
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1033522520}
+  m_Layer: 0
+  m_Name: DeckManager
+  m_TagString: DeckManager
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1033522520
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1033522519}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.00809, y: 1.53049, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1243843124
 GameObject:
   m_ObjectHideFlags: 0
@@ -581,7 +612,6 @@ GameObject:
   - component: {fileID: 1284259769}
   - component: {fileID: 1284259768}
   - component: {fileID: 1284259767}
-  - component: {fileID: 1284259772}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -816,3 +846,4 @@ SceneRoots:
   - {fileID: 546771070}
   - {fileID: 1284259771}
   - {fileID: 1893850325}
+  - {fileID: 1033522520}
