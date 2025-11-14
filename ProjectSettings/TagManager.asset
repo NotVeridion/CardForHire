@@ -8,6 +8,7 @@ TagManager:
   - Bullet
   - DeckManager
   - NPC
+  - EnemyBullet
   layers:
   - Default
   - TransparentFX
