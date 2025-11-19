@@ -9,6 +9,8 @@ TagManager:
   - DeckManager
   - NPC
   - EnemyBullet
+  - TestDummy
+  - Enemy
   layers:
   - Default
   - TransparentFX

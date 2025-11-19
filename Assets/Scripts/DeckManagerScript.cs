@@ -10,6 +10,7 @@ public class DeckManagerScript : MonoBehaviour
     private List<Card> storedDeck;
     private List<Card> workingDeck;
     private float currentTime;
+    public int currentIdx;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -17,6 +18,7 @@ public class DeckManagerScript : MonoBehaviour
         storedDeck = chosenDeck.GetStartingDeck();
         workingDeck = FillWorkingDeck(); // Takes in # of shuffles
         currentCard = DrawCard();
+        currentIdx = 0;
     }
 
     // Update is called once per frame
@@ -24,12 +26,31 @@ public class DeckManagerScript : MonoBehaviour
     {
         currentTime += Time.deltaTime;
 
-        if (currentTime >= cardDuration)
+        // if (currentTime >= cardDuration)
+        // {
+        //     // Draw new card after current card runs out
+        //     // DrawCard() also refills working deck if empty
+        //     currentCard = DrawCard();
+        //     currentTime = 0;
+        // }
+
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            // Draw new card after current card runs out
-            // DrawCard() also refills working deck if empty
-            currentCard = DrawCard();
-            currentTime = 0;
+            currentIdx -= 1;
+            if (currentIdx < 0)
+            {
+                currentIdx = 0;
+            }
+            currentCard = storedDeck[currentIdx];
+        }
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            currentIdx += 1;
+            if (currentIdx > storedDeck.Count-1)
+            {
+                currentIdx = storedDeck.Count-1;
+            }
+            currentCard = storedDeck[currentIdx];
         }
     }
 

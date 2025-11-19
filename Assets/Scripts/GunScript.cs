@@ -84,6 +84,7 @@ public class GunScript : MonoBehaviour
     IEnumerator fireRateHandler()
     {
         canFire = false;
+        
         yield return new WaitForSeconds(1 / currentGun.fireRate);
 
         canFire = true;

@@ -4,9 +4,12 @@ using System.Collections;
 public class PlayerScript : MonoBehaviour
 {
     public float playerMoveSpeed;
+    public float playerHealth;
     public float dashPower;
     public float dashDuration;
+    public float currentDashCooldown;
     public float dashCooldown;
+    private TrailRenderer dashTrail;
     private Rigidbody2D rb;
     private bool canDash;
     private bool isDashing;
@@ -24,7 +27,9 @@ public class PlayerScript : MonoBehaviour
         playerAnimator = GetComponent<Animator>();
         playerSpriteRenderer = GetComponent<SpriteRenderer>();
         gunSpriteRenderer = GameObject.FindWithTag("Gun").GetComponent<SpriteRenderer>();
+        dashTrail = GetComponent<TrailRenderer>();
         canDash = true;
+        currentDashCooldown = dashCooldown;
     }
 
     // Update is called once per frame
@@ -87,16 +92,43 @@ public class PlayerScript : MonoBehaviour
 
     IEnumerator Dash()
     {
+        // While dashing
         canDash = false;
         isDashing = true;
-
         rb.linearVelocity = new Vector3(movementVector.x * dashPower, movementVector.y * dashPower, 0);
+        dashTrail.emitting = true;
 
         yield return new WaitForSeconds(dashDuration);
+
+        // While cooldown
+
         isDashing = false;
+        currentDashCooldown -= Time.deltaTime;
+        dashTrail.emitting = false;
 
         yield return new WaitForSeconds(dashCooldown);
 
+        // After cooldown
+
+        currentDashCooldown = dashCooldown;
         canDash = true;
+    }
+
+    public void TakeDamage(float dmg)
+    {
+        playerHealth -= dmg;
+        if (playerHealth < 0)
+        {
+            playerHealth = 0;
+        }
+    }
+
+    public void Heal(float amt)
+    {
+        playerHealth += amt;
+        if (playerHealth > 100)
+        {
+            playerHealth = 100;
+        }
     }
 }
