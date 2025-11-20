@@ -7,6 +7,10 @@ TagManager:
   - Gun
   - Bullet
   - DeckManager
+  - DamagePickup
+  - AttackSpeedPickup
+  - MovementSpeedPickup
+  - DashDistancePickup
   - NPC
   - EnemyBullet
   layers:
