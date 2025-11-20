@@ -61,12 +61,8 @@ public class GunScript : MonoBehaviour
             for (int i = 0; i < currentGun.numBulletsInSpread; i++)
             {
                 float angle = -currentGun.spreadRange + currentGun.spreadRange*2 * i / currentGun.numBulletsInSpread;
-                equallySpreadRotations[i] = Quaternion.Euler(Vector3.forward * angle);
-            }
-            
-            for (int i = 0; i < currentGun.numBulletsInSpread; i++)
-            {
-                GameObject bulletObj = Instantiate(bullet, bulletSpawner.transform.position, transform.rotation * equallySpreadRotations[i]);
+                Quaternion bulletRot = Quaternion.Euler(Vector3.forward * angle);
+                GameObject bulletObj = Instantiate(bullet, bulletSpawner.transform.position, transform.rotation * bulletRot);
                 SetBulletData(bulletObj);
             }
         }

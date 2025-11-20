@@ -11,6 +11,7 @@ TagManager:
   - EnemyBullet
   - TestDummy
   - Enemy
+  - Wall
   layers:
   - Default
   - TransparentFX
