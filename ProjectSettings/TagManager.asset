@@ -11,6 +11,8 @@ TagManager:
   - AttackSpeedPickup
   - MovementSpeedPickup
   - DashDistancePickup
+  - NPC
+  - EnemyBullet
   layers:
   - Default
   - TransparentFX

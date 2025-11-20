@@ -5,8 +5,8 @@ public class EnemyScript : MonoBehaviour
     public float enemyMoveSpeed;
     public float enemyBulletSpeed;
     public float enemyShootPauseTime;
-    public int enemyHP;
-    public int enemyBulletDamage;
+    public float enemyHP;
+    public float enemyBulletDamage;
     public float detectPlayerRange;
     public float attackPlayerRange;
     public float bulletDuration;
@@ -24,7 +24,7 @@ public class EnemyScript : MonoBehaviour
     }
     private EnemyState currentState;
     
-    private void takeDamage(int damage)
+    private void takeDamage(float damage)
     {
         enemyHP -= damage;
         if (enemyHP <= 0)
@@ -37,7 +37,9 @@ public class EnemyScript : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Bullet"))
         {
-            takeDamage(0);
+            BulletScript playerBullet = collision.gameObject.GetComponent<BulletScript>();
+            takeDamage(playerBullet.bulletDamage);
+            Destroy(collision.gameObject);
         }
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -48,7 +50,14 @@ public class EnemyScript : MonoBehaviour
 
     void Update()
     {
-
+        if (player.transform.position.x < transform.position.x)
+        {
+            GetComponent<SpriteRenderer>().flipX = true;
+        }
+        else
+        {
+             GetComponent<SpriteRenderer>().flipX = false;
+        }
     }
 
     void FixedUpdate()
@@ -61,6 +70,7 @@ public class EnemyScript : MonoBehaviour
             {
                 currentState = EnemyState.ChasingPlayer;
             }
+            GetComponent<Animator>().SetBool("isMoving", false);
         }
         else if (currentState == EnemyState.ChasingPlayer)
         {
@@ -75,7 +85,7 @@ public class EnemyScript : MonoBehaviour
             {
                 currentState = EnemyState.Idle;
             }
-
+            GetComponent<Animator>().SetBool("isMoving", true);
         }
         else if (currentState == EnemyState.ShootingFromRange)
         {
@@ -103,6 +113,7 @@ public class EnemyScript : MonoBehaviour
             {
                 currentState = EnemyState.ChasingPlayer;
             }
+            GetComponent<Animator>().SetBool("isMoving", false);
         }
     }
 }

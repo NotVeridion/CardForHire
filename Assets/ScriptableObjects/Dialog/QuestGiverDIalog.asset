@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8768da70380e2ae4ea55b0de80a596b3, type: 3}
+  m_Name: QuestGiverDIalog
+  m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
+  npcName: Quest Giver
+  dialogueLines:
+  - Hi, I need you to collect 5 chips
+  - I need you to collect 5 chips
+  - Thank you! Here's your reward.
+  - 'Thanks! They should be all scattered inside this dungeon '
+  endDialogueLines: 00000101
+  typingSpeed: 0.05
+  voiceSound: {fileID: 8300000, guid: c0071e59fa308884d815b596e8000d95, type: 3}
+  voicePitch: 1
+  choices:
+  - dialogueIndex: 0
+    choices:
+    - Accept
+    - Refuse
+    nextDialogueIndexes: 03000000
+    givesQuest: 0100
+  questInProgressIndex: 3
+  questCompletedIndex: 2
+  quest: {fileID: 0}

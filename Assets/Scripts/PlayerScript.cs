@@ -1,11 +1,15 @@
 using UnityEngine;
-using System.Collections.Generic;
+using System.Collections;
 
 public class PlayerScript : MonoBehaviour
 {
     public float playerMoveSpeed;
-    public float playerHealth;
-    public GameObject gun;
+    public float dashPower;
+    public float dashDuration;
+    public float dashCooldown;
+    private Rigidbody2D rb;
+    private bool canDash;
+    private bool isDashing;
     private float vertical;
     private float horizontal;
     private Vector3 movementVector;
@@ -16,9 +20,11 @@ public class PlayerScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
         playerSpriteRenderer = GetComponent<SpriteRenderer>();
-        gunSpriteRenderer = gun.GetComponent<SpriteRenderer>();
+        gunSpriteRenderer = GameObject.FindWithTag("Gun").GetComponent<SpriteRenderer>();
+        canDash = true;
     }
 
     // Update is called once per frame
@@ -39,17 +45,35 @@ public class PlayerScript : MonoBehaviour
             playerSpriteRenderer.flipX = true;
             gunSpriteRenderer.flipY = true;
         }
+
+        if (!isDashing)
+        {
+            Move();
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
+        {
+            StartCoroutine(nameof(Dash));
+        }
     }
 
     void FixedUpdate()
     {
-        Move();
+        // if (!isDashing)
+        // {
+        //     Move();
+        // }
+
+        // if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
+        // {
+        //     StartCoroutine(nameof(Dash));
+        // }
+
     }
 
     void Move()
     {
-
-        transform.position += movementVector * playerMoveSpeed * Time.fixedDeltaTime;
+        rb.linearVelocity = new Vector3(movementVector.x * playerMoveSpeed, movementVector.y * playerMoveSpeed, 0);
 
         if (vertical != 0 || horizontal != 0)
         {
@@ -61,18 +85,18 @@ public class PlayerScript : MonoBehaviour
         }
     }
 
-    void TakeDamage(float damage)
+    IEnumerator Dash()
     {
-        playerHealth -= damage;
-        if (playerHealth < 0)
-        {
-            playerHealth = 0;
-            //Death();
-        }
-    }
+        canDash = false;
+        isDashing = true;
 
-    void Death()
-    {
-        // TODO: Implement game over screen
+        rb.linearVelocity = new Vector3(movementVector.x * dashPower, movementVector.y * dashPower, 0);
+
+        yield return new WaitForSeconds(dashDuration);
+        isDashing = false;
+
+        yield return new WaitForSeconds(dashCooldown);
+
+        canDash = true;
     }
 }
