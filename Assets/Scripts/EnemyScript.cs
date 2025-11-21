@@ -38,7 +38,7 @@ public class EnemyScript : MonoBehaviour
         if (collision.gameObject.CompareTag("Bullet"))
         {
             BulletScript playerBullet = collision.gameObject.GetComponent<BulletScript>();
-            takeDamage(playerBullet.bulletDamage);
+            TakeDamage(playerBullet.bulletDamage);
             Destroy(collision.gameObject);
         }
     }
