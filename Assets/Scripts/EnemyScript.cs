@@ -24,7 +24,7 @@ public class EnemyScript : MonoBehaviour
     }
     private EnemyState currentState;
     
-    private void takeDamage(float damage)
+    public void TakeDamage(float damage)
     {
         enemyHP -= damage;
         if (enemyHP <= 0)
