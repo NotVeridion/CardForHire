@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using NUnit.Framework.Internal;
 using System;
+using NUnit.Framework;
+using Unity.Mathematics;
 public class BulletScript : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -18,7 +20,10 @@ public class BulletScript : MonoBehaviour
     private bool isPiercing;
     private bool isKnockback;
     public float knockbackForce = 2;
-    private bool isRicochet;
+    private bool isHoming;
+    public float homingRadius = 4f;
+    public float rotationSpeed = 1f;
+    private GameObject target;
     private float currentTime;
     void Start()
     {
@@ -34,6 +39,34 @@ public class BulletScript : MonoBehaviour
     void Update()
     {
         transform.position += transform.right * bulletMoveSpeed * Time.deltaTime;
+
+        if (isHoming)
+        {
+            RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, homingRadius, transform.right, homingRadius);
+            
+            foreach (RaycastHit2D hit in hits)
+            {
+                if (hit.collider.CompareTag("Enemy") || hit.collider.CompareTag("TestDummy"))
+                {
+                    Vector3 direction = hit.collider.transform.position - transform.position;
+                    float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+                    transform.position = Vector2.MoveTowards(transform.position, hit.collider.transform.position, bulletMoveSpeed * Time.deltaTime);
+                    Quaternion newRotation = Quaternion.Euler(Vector3.forward * angle);
+                    transform.rotation = Quaternion.RotateTowards(transform.rotation, newRotation, rotationSpeed * Time.deltaTime);
+                }
+            }
+        }
+    }
+
+    // void OnDrawGizmos()
+    // {
+    //     Gizmos.DrawSphere(transform.position, homingRadius);
+    // }
+
+    void FixedUpdate()
+    {
+        Debug.DrawRay(transform.position, transform.right, Color.blue);
+        Debug.DrawRay(transform.position, transform.up, Color.red);
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -77,17 +110,13 @@ public class BulletScript : MonoBehaviour
 
                 Destroy(gameObject);
             }
-            else if (isRicochet)
+            else if (isHoming)
             {
-                List<ContactPoint2D> contacts = new List<ContactPoint2D>();
-                int count = other.GetContacts(contacts);
-                if (count > 0)
+                if (other_obj.TryGetComponent<TestDummy>(out TestDummy script))
                 {
-                    Vector3 reflectDir = Vector3.Reflect(transform.right.normalized, contacts[0].point);
-                    float rotAngle = Mathf.Atan2(reflectDir.y, reflectDir.x) * Mathf.Rad2Deg;
-                    transform.eulerAngles = new Vector3(0, 0, rotAngle);
-                    transform.position += transform.right * 0.1f;
+                    script.TakeDamage(bulletDamage);
                 }
+                Destroy(gameObject);
             }
         }
     }
@@ -109,7 +138,7 @@ public class BulletScript : MonoBehaviour
                 knockbackForce += 0.5f * card.number;
                 break;
             case Card.Suit.Spades:
-                isRicochet = true;
+                isHoming = true;
                 break;
         }
     }

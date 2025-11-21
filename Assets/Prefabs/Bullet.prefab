@@ -109,6 +109,8 @@ MonoBehaviour:
   bulletDuration: 0
   raycastLength: 1
   knockbackForce: 20
+  homingRadius: 3
+  rotationSpeed: 1
 --- !u!58 &7046615320657249216
 CircleCollider2D:
   m_ObjectHideFlags: 0

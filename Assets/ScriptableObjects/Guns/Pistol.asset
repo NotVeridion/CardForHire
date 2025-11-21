@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GunScriptableObject
   gunName: Pistol
   gunSprite: {fileID: -4574740885726775581, guid: f97b686af13e91d41982c02788f4fef6, type: 3}
-  fireRate: 3
+  fireRate: 5
   damage: 10
-  bulletMoveSpeed: 30
+  bulletMoveSpeed: 20
   bulletDuration: 1
   isSingleShot: 1
   isSpreadShot: 0
