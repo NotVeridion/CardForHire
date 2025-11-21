@@ -13,6 +13,9 @@ TagManager:
   - DashDistancePickup
   - NPC
   - EnemyBullet
+  - TestDummy
+  - Enemy
+  - Wall
   layers:
   - Default
   - TransparentFX

@@ -24,7 +24,7 @@ public class EnemyScript : MonoBehaviour
     }
     private EnemyState currentState;
     
-    private void takeDamage(float damage)
+    public void TakeDamage(float damage)
     {
         enemyHP -= damage;
         if (enemyHP <= 0)
@@ -38,7 +38,7 @@ public class EnemyScript : MonoBehaviour
         if (collision.gameObject.CompareTag("Bullet"))
         {
             BulletScript playerBullet = collision.gameObject.GetComponent<BulletScript>();
-            takeDamage(playerBullet.bulletDamage);
+            TakeDamage(playerBullet.bulletDamage);
             Destroy(collision.gameObject);
         }
     }

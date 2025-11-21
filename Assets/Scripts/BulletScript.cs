@@ -1,51 +1,122 @@
 using UnityEngine;
-
+using System.Collections;
+using System.Collections.Generic;
+using Unity.VisualScripting;
+using NUnit.Framework.Internal;
+using System;
+using NUnit.Framework;
+using Unity.Mathematics;
 public class BulletScript : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public float bulletMoveSpeed;
     public float bulletDamage;
     public float bulletDuration;
-    public PlayerScript playerScript;
-    private Vector3 prevPosition;
-    private RaycastHit2D[] prevHits;
-    private Rigidbody2D rb;
-    bool isHealing;
-    bool isPiercing;
-    bool isKnockback;
-    bool isRicochet;
+    public float raycastLength;
+    private float raycastFreq;
+    private PlayerScript playerScript;
+    private List<GameObject> prevHits; // For piercing bullets
+    private bool isHealing;
+    private bool isPiercing;
+    private bool isKnockback;
+    public float knockbackForce = 2;
+    private bool isHoming;
+    public float homingRadius = 4f;
+    public float rotationSpeed = 1f;
+    private GameObject target;
+    private float currentTime;
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        rb.linearVelocity = transform.right * bulletMoveSpeed;
+
+        // Piercing
+        raycastFreq = 0.1f; 
+        prevHits = new List<GameObject>();
+
         Destroy(gameObject, bulletDuration);
-
-        prevPosition = transform.position;
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Draw raycast to previous position after a few frames
-        if (Time.frameCount % 5 == 0)
+        transform.position += transform.right * bulletMoveSpeed * Time.deltaTime;
+
+        if (isHoming)
         {
-            RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, prevPosition);
+            RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, homingRadius, transform.right, homingRadius);
+            
+            foreach (RaycastHit2D hit in hits)
+            {
+                if (hit.collider.CompareTag("Enemy") || hit.collider.CompareTag("TestDummy"))
+                {
+                    Vector3 direction = hit.collider.transform.position - transform.position;
+                    float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+                    transform.position = Vector2.MoveTowards(transform.position, hit.collider.transform.position, bulletMoveSpeed * Time.deltaTime);
+                    Quaternion newRotation = Quaternion.Euler(Vector3.forward * angle);
+                    transform.rotation = Quaternion.RotateTowards(transform.rotation, newRotation, rotationSpeed * Time.deltaTime);
+                }
+            }
+        }
+    }
+
+    // void OnDrawGizmos()
+    // {
+    //     Gizmos.DrawSphere(transform.position, homingRadius);
+    // }
+
+    void FixedUpdate()
+    {
+        Debug.DrawRay(transform.position, transform.right, Color.blue);
+        Debug.DrawRay(transform.position, transform.up, Color.red);
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        GameObject other_obj = other.gameObject;
+        if (other_obj.CompareTag("TestDummy") || other_obj.CompareTag("Enemy") || other_obj.CompareTag("Wall"))
+        {
             if (isHealing)
             {
-                handleHealing(hits);
+                playerScript = GameObject.FindWithTag("Player").GetComponent<PlayerScript>();
+                if (other_obj.TryGetComponent<TestDummy>(out TestDummy script))
+                {
+                    script.TakeDamage(bulletDamage);
+                    playerScript.Heal(bulletDamage);
+                }
+                Destroy(gameObject);
             }
             else if (isPiercing)
             {
-                handlePiercing(hits);
+                if (prevHits.Contains(other_obj))
+                {
+                    return;
+                }
+                else
+                {
+                    if (other_obj.TryGetComponent<TestDummy>(out TestDummy script))
+                    {
+                        script.TakeDamage(bulletDamage);
+                    }
+                    prevHits.Add(other_obj);
+                }
             }
             else if (isKnockback)
             {
-                handleKnockback(hits);
+                // Needs to knock enemy back in opposite direction between bullet and enemy
+                if (other_obj.TryGetComponent<TestDummy>(out TestDummy script))
+                {
+                    script.TakeDamage(bulletDamage);
+                    other_obj.GetComponent<Rigidbody2D>().AddForce(transform.right * 2, ForceMode2D.Impulse);
+                }
+
+                Destroy(gameObject);
             }
-            else if (isRicochet)
+            else if (isHoming)
             {
-                handleBouncing(hits);
+                if (other_obj.TryGetComponent<TestDummy>(out TestDummy script))
+                {
+                    script.TakeDamage(bulletDamage);
+                }
+                Destroy(gameObject);
             }
         }
     }
@@ -64,30 +135,11 @@ public class BulletScript : MonoBehaviour
                 break;
             case Card.Suit.Clubs:
                 isKnockback = true;
+                knockbackForce += 0.5f * card.number;
                 break;
             case Card.Suit.Spades:
-                isRicochet = true;
+                isHoming = true;
                 break;
         }
-    }
-
-    void handleHealing(RaycastHit2D[] raycast)
-    {
-        
-    }
-
-    void handlePiercing(RaycastHit2D[] raycast)
-    {
-
-    }
-
-    void handleKnockback(RaycastHit2D[] raycast)
-    {
-
-    }
-    
-    void handleBouncing(RaycastHit2D[] raycast)
-    {
-        
     }
 }
