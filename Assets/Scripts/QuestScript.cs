@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class QuestScript : MonoBehaviour
 {
+    public bool HasQuestInProgress => activateQuests.Count > 0;
     public static QuestScript Instance { get; private set; }
     public List<Quest.QuestProgress> activateQuests = new();
     private QuestUI questUI;
@@ -14,6 +15,11 @@ public class QuestScript : MonoBehaviour
     }
     public void AcceptQuest(Quest quest)
     {
+         if (HasQuestInProgress)
+        {
+            Debug.Log("Cannot accept new quest: already have a quest in progress.");
+            return;
+        }
         if (IsQuestActive(quest.questID))
             return;
         activateQuests.Add(new Quest.QuestProgress(quest));

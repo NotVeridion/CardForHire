@@ -17,15 +17,21 @@ public class NPCScript : MonoBehaviour, IInteractable
         dialogueUI = DialogueController.Instance;
     }
 
-    public void OnMouseDown()
+    void Update()
     {
-        if (isDialogueActive)
+        if (Input.GetKeyDown(KeyCode.Space) && isDialogueActive)
         {
-            NextLine();
+            if (isTyping)
+            {
+            StopAllCoroutines();
+            dialogueUI.SetDialogueText(dialogueData.dialogueLines[dialogueIndex]);
+            isTyping = false;
+            Debug.Log("skip typing");
+            }
+            else NextLine();
         }
-        else
+        else if (Input.GetKeyDown(KeyCode.Space) && !isDialogueActive)
             StartDialogue();
-            Debug.Log("test");
     }
     public bool CanInteract()
     {
@@ -58,6 +64,8 @@ public class NPCScript : MonoBehaviour, IInteractable
         {
             dialogueIndex = dialogueData.questCompletedIndex;
         }
+        else
+            Debug.Log("Quest State Not Found!");
         isDialogueActive = true;
         dialogueUI.SetNPCInfo(dialogueData.npcName);
         dialogueUI.ShowDialogueUI(true);
@@ -91,7 +99,13 @@ public class NPCScript : MonoBehaviour, IInteractable
     }
     void ChooseOption(int nextIndex, bool givesQuest)
     {
-        if (givesQuest)
+        if (givesQuest && QuestScript.Instance.HasQuestInProgress)
+        {
+            Debug.Log("Player already has a quest in progress — cannot take another.");
+            dialogueUI.SetDialogueText("You must finish your current quest first!");
+            return;
+        }
+        else if (givesQuest)
         {
             QuestScript.Instance.AcceptQuest(dialogueData.quest);
             questState = QuestState.InProgress;
@@ -124,6 +138,7 @@ public class NPCScript : MonoBehaviour, IInteractable
             yield return new WaitForSeconds(dialogueData.typingSpeed);
         }
         isTyping = false;
+        Debug.Log("done typing");
     }
     public void NextLine()
     {
@@ -132,13 +147,10 @@ public class NPCScript : MonoBehaviour, IInteractable
             StopAllCoroutines();
             dialogueUI.SetDialogueText(dialogueData.dialogueLines[dialogueIndex]);
             isTyping = false;
+            Debug.Log("skip typing");
+            
         }
         dialogueUI.ClearChoices();
-        if (dialogueData.endDialogueLines.Length > dialogueIndex && dialogueData.endDialogueLines[dialogueIndex])
-        {
-            EndDialogue();
-            return;
-        }
         foreach (DialogueChoice dialogueChoice in dialogueData.choices)
         {
             if (dialogueChoice.dialogueIndex == dialogueIndex)
@@ -147,6 +159,12 @@ public class NPCScript : MonoBehaviour, IInteractable
                 return;
             }
         }
+        if (dialogueData.endDialogueLines.Length > dialogueIndex && dialogueData.endDialogueLines[dialogueIndex])
+        {
+            EndDialogue();
+            return;
+        }
+
         if (++dialogueIndex < dialogueData.dialogueLines.Length)
         {
             DisplayCurrentLine();

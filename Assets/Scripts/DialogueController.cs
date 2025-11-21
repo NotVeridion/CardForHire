@@ -9,6 +9,11 @@ public class DialogueController : MonoBehaviour
     public TMP_Text dialogueText, nameText;
     public Transform choiceContainer;
     public GameObject choiceButtonPrefab;
+
+    void Start()
+    {
+        ShowDialogueUI(false);
+    }
     void Awake()
     {
         if (Instance == null)
