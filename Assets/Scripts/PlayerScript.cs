@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using TMPro;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -7,8 +8,10 @@ public class PlayerScript : MonoBehaviour
     public float playerHealth;
     public float dashPower;
     public float dashDuration;
-    public float currentDashCooldown;
+    private float currentDashDuration;
     public float dashCooldown;
+    private float currentDashCooldown;
+    private TextMeshPro dashCooldownText;
     private TrailRenderer dashTrail;
     private Rigidbody2D rb;
     private bool canDash;
@@ -28,13 +31,16 @@ public class PlayerScript : MonoBehaviour
         playerSpriteRenderer = GetComponent<SpriteRenderer>();
         gunSpriteRenderer = GameObject.FindWithTag("Gun").GetComponent<SpriteRenderer>();
         dashTrail = GetComponent<TrailRenderer>();
+        dashCooldownText = GetComponentInChildren<TextMeshPro>();
         canDash = true;
-        currentDashCooldown = dashCooldown;
+        currentDashDuration = dashDuration;
+        currentDashCooldown = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
+        dashCooldownText.text = "CD: " + currentDashCooldown.ToString();
         vertical = Input.GetAxisRaw("Vertical");
         horizontal = Input.GetAxisRaw("Horizontal");
         movementVector = new Vector3(horizontal, vertical, 0).normalized;
@@ -51,28 +57,51 @@ public class PlayerScript : MonoBehaviour
             gunSpriteRenderer.flipY = true;
         }
 
+        // DASH has two parts: dash duration + dash cooldown
+        // Dash duration -> Amount of time the velocity of player is set in direction of movement for
+        //      - Movement is disabled during dash duration
+        // Dash cooldown -> Amount of time the dash is disabled. For UI, grab this value from the player every frame.
+        //      - Once duration is over, dash cooldown begins to count down from dashCooldown to 0
+        //      - While dash is ready, the cd stays at a value of 0
+
+        if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
+        {
+            // Starting up the dash
+            canDash = false;
+            isDashing = true;
+            currentDashCooldown = dashCooldown;
+            rb.linearVelocity = new Vector3(movementVector.x * dashPower, movementVector.y * dashPower, 0);
+            dashTrail.emitting = true;
+        }
+
         if (!isDashing)
         {
             Move();
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
+        if (isDashing)
         {
-            StartCoroutine(nameof(Dash));
+            currentDashDuration -= Time.deltaTime;
+            if (currentDashDuration <= 0)
+            {
+                currentDashDuration = dashDuration;
+                isDashing = false;
+                dashTrail.emitting = true;
+            }
+        }
+        else if (canDash == false)
+        {
+            currentDashCooldown -= Time.deltaTime;
+            if (currentDashCooldown < 0)
+            {
+                currentDashCooldown = 0;
+                canDash = true;
+            }
         }
     }
 
     void FixedUpdate()
     {
-        // if (!isDashing)
-        // {
-        //     Move();
-        // }
-
-        // if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
-        // {
-        //     StartCoroutine(nameof(Dash));
-        // }
 
     }
 
@@ -88,30 +117,6 @@ public class PlayerScript : MonoBehaviour
         {
             playerAnimator.SetBool("isMoving", false);
         }
-    }
-
-    IEnumerator Dash()
-    {
-        // While dashing
-        canDash = false;
-        isDashing = true;
-        rb.linearVelocity = new Vector3(movementVector.x * dashPower, movementVector.y * dashPower, 0);
-        dashTrail.emitting = true;
-
-        yield return new WaitForSeconds(dashDuration);
-
-        // While cooldown
-
-        isDashing = false;
-        currentDashCooldown -= Time.deltaTime;
-        dashTrail.emitting = false;
-
-        yield return new WaitForSeconds(dashCooldown);
-
-        // After cooldown
-
-        currentDashCooldown = dashCooldown;
-        canDash = true;
     }
 
     public void TakeDamage(float dmg)
