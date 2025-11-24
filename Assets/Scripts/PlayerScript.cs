@@ -10,7 +10,7 @@ public class PlayerScript : MonoBehaviour
     public float dashDuration;
     private float currentDashDuration;
     public float dashCooldown;
-    private float currentDashCooldown;
+    public float currentDashCooldown;
     private TextMeshPro dashCooldownText;
     private TrailRenderer dashTrail;
     private Rigidbody2D rb;
