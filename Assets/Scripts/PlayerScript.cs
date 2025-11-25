@@ -6,6 +6,7 @@ public class PlayerScript : MonoBehaviour
 {
     public float playerMoveSpeed;
     public float playerHealth;
+    public int playerCash;
     public float dashPower;
     public float dashDuration;
     private float currentDashDuration;
@@ -40,7 +41,7 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        dashCooldownText.text = "CD: " + currentDashCooldown.ToString();
+        dashCooldownText.text = "CD: " + Mathf.Ceil(currentDashCooldown).ToString();
         vertical = Input.GetAxisRaw("Vertical");
         horizontal = Input.GetAxisRaw("Horizontal");
         movementVector = new Vector3(horizontal, vertical, 0).normalized;
@@ -105,6 +106,17 @@ public class PlayerScript : MonoBehaviour
 
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("EnemyBullet"))
+        {
+            EnemyBulletScript enemyBullet = collision.gameObject.GetComponent<EnemyBulletScript>();
+            TakeDamage(enemyBullet.bulletDamage);
+
+            Destroy(collision.gameObject);
+        }
+    }
+
     void Move()
     {
         rb.linearVelocity = new Vector3(movementVector.x * playerMoveSpeed, movementVector.y * playerMoveSpeed, 0);
@@ -134,6 +146,23 @@ public class PlayerScript : MonoBehaviour
         if (playerHealth > 100)
         {
             playerHealth = 100;
+        }
+    }
+
+    public void ChangeStat(string stat, float amt)
+    {
+        switch (stat)
+        {
+            case "FireRate":
+                GetComponentInChildren<GunScript>().currentGun.fireRate += amt;
+                break;
+            case "EnergyRegain":
+                currentDashCooldown += amt;
+                if (currentDashCooldown <= 0)
+                {
+                    currentDashCooldown = 0;
+                }
+                break;
         }
     }
 }

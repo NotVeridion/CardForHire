@@ -108,8 +108,17 @@ MonoBehaviour:
   bulletDamage: 0
   bulletDuration: 0
   raycastLength: 1
+  raycastFreq: 0
+  debuffs:
+  - {fileID: 424449249894449829, guid: 2abb7e37a9a148d4c8a67a64866f0b33, type: 3}
+  - {fileID: 4846062130123336365, guid: 5c963750cb98551489dd2c643a3cbaf9, type: 3}
+  - {fileID: 5774128817213433994, guid: 397d3015596440e4a8eaad3243df8900, type: 3}
+  - {fileID: 8466255207554317760, guid: 3bb7ba170160d7f4ea39004040a5dd62, type: 3}
+  - {fileID: 6294165028077311033, guid: efdcd2c47af4a0d448ddbebfad4bc8bc, type: 3}
+  card: {fileID: 0}
+  isPiercing: 0
   knockbackForce: 20
-  homingRadius: 3
+  homingRadius: 4
   rotationSpeed: 1
 --- !u!58 &7046615320657249216
 CircleCollider2D:

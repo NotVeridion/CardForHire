@@ -16,6 +16,7 @@ TagManager:
   - TestDummy
   - Enemy
   - Wall
+  - Bleed
   layers:
   - Default
   - TransparentFX
