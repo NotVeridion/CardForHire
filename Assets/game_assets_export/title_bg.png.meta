@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 5f8aeada01f10a549b8b74164b16f5bd
+guid: 63e2036bc7ecf0a4a8c76de31c88234b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4536812336720293997
-    second: Skillicon14_05_0
+      213: 5722359834925803881
+    second: title_bg_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Slow
+      name: title_bg_0
       rect:
         serializedVersion: 2
-        x: 7
-        y: 5
-        width: 18
-        height: 22
+        x: 0
+        y: 0
+        width: 1902
+        height: 1080
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 39f4d2187310a01c0800000000000000
-      internalID: -4536812336720293997
+      spriteID: 96927b593f7e96f40800000000000000
+      internalID: 5722359834925803881
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: a02310a0def494e40b887853af82dbf3
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Slow: -4536812336720293997
+      title_bg_0: 5722359834925803881
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

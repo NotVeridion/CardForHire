@@ -65,9 +65,17 @@ public class TeleportScript : MonoBehaviour
 
     void SpawnEnemies()
     {
+        if(currentEnemies.Count > 0)
+        {
+            foreach(GameObject enemy in currentEnemies)
+            {
+                Destroy(enemy);
+            }
+            currentEnemies.Clear();
+        }
         foreach(GameObject point in spawnPositions)
         {
-            currentEnemies.Add(Instantiate(enemiesPrefab[Random.Range(0, enemiesPrefab.Count)], transform));
+            currentEnemies.Add(Instantiate(enemiesPrefab[Random.Range(0, enemiesPrefab.Count)], point.transform));
         }
     }
 
