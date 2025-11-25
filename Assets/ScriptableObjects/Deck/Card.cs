@@ -16,7 +16,6 @@ public class Card : ScriptableObject
     public int number;
     public bool slow; //Slow enemies
     public bool bleed; //Puts a bleed on enemies
-    public bool pierce; //Shots can go through multiple enemies
     public bool knockOut; //Enemies are knocked out for a few seconds
     public bool energyRegain; //Reduce time of dash
     public bool faster; //Bullets are faster
