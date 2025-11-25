@@ -8,6 +8,11 @@ public class Store : MonoBehaviour
     [SerializeField] GameObject store;
     [SerializeField] GameObject player;
 
+    //Spining Cards
+
+    [SerializeField] GameObject buySpinGameObject;
+    [SerializeField] GameObject selectUpgradeGameObject;
+
     [SerializeField] List<Image> abilityImages;
     [SerializeField] List<Sprite> abilitySprites;
 
@@ -77,6 +82,9 @@ public class Store : MonoBehaviour
             notification.SetActive(true);
             store.SetActive(false);
             player.SetActive(true);
+            buySpinGameObject.SetActive(true);
+            selectUpgradeGameObject.SetActive(false);
+
         }
     }
 

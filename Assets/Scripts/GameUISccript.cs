@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,6 +8,7 @@ public class GameUISccript : MonoBehaviour
 
     [SerializeField] Slider health;
     [SerializeField] Slider dashCoolDown;
+    [SerializeField] Image dashSliderImage;
 
     [SerializeField] GameObject dashDistanceAbility;
     [SerializeField] GameObject attackSpeedAbility;
@@ -20,6 +22,8 @@ public class GameUISccript : MonoBehaviour
     [SerializeField] GameObject stunObject;
     [SerializeField] GameObject slowObject;
     [SerializeField] GameObject energyObject;
+
+    [SerializeField] TextMeshProUGUI moneyText;
 
     //Pausing
     [SerializeField] GameObject pausePanel;
@@ -71,7 +75,15 @@ public class GameUISccript : MonoBehaviour
         }
 
         health.value = playerScript.playerHealth / 100f;
-        dashCoolDown.value = playerScript.currentDashCooldown / playerScript.dashCooldown;
+        dashCoolDown.value =1 - playerScript.currentDashCooldown / playerScript.dashCooldown;
+        if(dashCoolDown.value >= 1)
+        {
+            dashSliderImage.color = Color.green;
+        }
+        else
+        {  
+            dashSliderImage.color = Color.gray;
+        }
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {

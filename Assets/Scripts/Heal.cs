@@ -15,7 +15,7 @@ public class Heal : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F) && notification.activeSelf)
         {
-            player.playerHealth = 100;
+            player.Heal(1000);
         }
     }
 }
