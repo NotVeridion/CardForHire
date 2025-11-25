@@ -12,7 +12,6 @@ public class PlayerScript : MonoBehaviour
     private float currentDashDuration;
     public float dashCooldown;
     public float currentDashCooldown;
-    private TextMeshPro dashCooldownText;
     private TrailRenderer dashTrail;
     private Rigidbody2D rb;
     private bool canDash;
@@ -32,7 +31,6 @@ public class PlayerScript : MonoBehaviour
         playerSpriteRenderer = GetComponent<SpriteRenderer>();
         gunSpriteRenderer = GameObject.FindWithTag("Gun").GetComponent<SpriteRenderer>();
         dashTrail = GetComponent<TrailRenderer>();
-        dashCooldownText = GetComponentInChildren<TextMeshPro>();
         canDash = true;
         currentDashDuration = dashDuration;
         currentDashCooldown = 0;
@@ -41,7 +39,6 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        dashCooldownText.text = "CD: " + Mathf.Ceil(currentDashCooldown).ToString();
         vertical = Input.GetAxisRaw("Vertical");
         horizontal = Input.GetAxisRaw("Horizontal");
         movementVector = new Vector3(horizontal, vertical, 0).normalized;
