@@ -14,21 +14,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
   npcName: Quest Giver
   dialogueLines:
-  - Hi, I need you to collect 5 chips
-  - I need you to collect 5 chips
-  - Thank you! Here's your reward.
-  - 'Thanks! They should be all scattered inside this dungeon '
-  endDialogueLines: 00000101
+  - Element 0 Element 0 Element 0 Element 0 Element 0 Element 0
+  - Element 1?
+  - Element 2!
+  - Element 3...
+  - Element 4
+  endDialogueLines: 0000010101
   typingSpeed: 0.05
   voiceSound: {fileID: 8300000, guid: c0071e59fa308884d815b596e8000d95, type: 3}
   voicePitch: 1
   choices:
-  - dialogueIndex: 0
+  - dialogueIndex: 1
     choices:
-    - Accept
-    - Refuse
-    nextDialogueIndexes: 03000000
-    givesQuest: 0100
+    - 
+    nextDialogueIndexes: 02000000
+    givesQuest: 01
   questInProgressIndex: 3
-  questCompletedIndex: 2
-  quest: {fileID: 0}
+  questCompletedIndex: 4
+  quest: {fileID: 11400000, guid: f9e3ec53421d16e4a81866b9dcc677ec, type: 2}
