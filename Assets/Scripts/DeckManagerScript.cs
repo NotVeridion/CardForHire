@@ -82,9 +82,9 @@ public class DeckManagerScript : MonoBehaviour
         // Deck shuffle using Fisher-Yates algorithm repeated {numShuffles} times
         for (int i = 0; i < numShuffles; i++)
         {
-            for(int j = newDeck.Count - 1; j > 1; j--)
+            for(int j = newDeck.Count - 1; j >= 0; j--)
             {
-                int idx = Random.Range(j, newDeck.Count - 1);
+                int idx = Random.Range(j, newDeck.Count);
                 Card temp = newDeck[idx];
                 newDeck[idx] = newDeck[j];
                 newDeck[j] = temp;

@@ -471,6 +471,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1243843125}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1229635963 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4391791703281409790, guid: 20d143510ac6978b69e91b2f94ab0701, type: 3}
+  m_PrefabInstance: {fileID: 1356408927}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4751ca7556c8cc3e7a7983a9989cec43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyGunScript
 --- !u!1 &1243843124
 GameObject:
   m_ObjectHideFlags: 0
@@ -634,8 +645,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerScript
   playerMoveSpeed: 10
-  playerHealth: 100
-  gun: {fileID: 1243843124}
+  dashPower: 0
+  dashDuration: 0
+  dashCooldown: 0
 --- !u!50 &1284259769
 Rigidbody2D:
   serializedVersion: 5
@@ -792,6 +804,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 93604099071429693, guid: 20d143510ac6978b69e91b2f94ab0701, type: 3}
+      propertyPath: gun
+      value: 
+      objectReference: {fileID: 1229635963}
+    - target: {fileID: 93604099071429693, guid: 20d143510ac6978b69e91b2f94ab0701, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1284259768}
@@ -818,6 +834,22 @@ PrefabInstance:
     - target: {fileID: 3093168112109348268, guid: 20d143510ac6978b69e91b2f94ab0701, type: 3}
       propertyPath: m_Name
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4391791703281409790, guid: 20d143510ac6978b69e91b2f94ab0701, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1284259765}
+    - target: {fileID: 4391791703281409790, guid: 20d143510ac6978b69e91b2f94ab0701, type: 3}
+      propertyPath: currentGun
+      value: 
+      objectReference: {fileID: 11400000, guid: 5d9eeb1200425f32c8b798ff1c3b8efd, type: 2}
+    - target: {fileID: 5016536644159171168, guid: 20d143510ac6978b69e91b2f94ab0701, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016536644159171168, guid: 20d143510ac6978b69e91b2f94ab0701, type: 3}
+      propertyPath: m_FlipY
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6644786968760179561, guid: 20d143510ac6978b69e91b2f94ab0701, type: 3}
       propertyPath: m_LocalPosition.x
