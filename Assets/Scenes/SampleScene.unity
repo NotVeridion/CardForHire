@@ -119,6 +119,78 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &137328988
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 93604099071429693, guid: 20d143510ac6978b69e91b2f94ab0701, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1284259768}
+    - target: {fileID: 93604099071429693, guid: 20d143510ac6978b69e91b2f94ab0701, type: 3}
+      propertyPath: enemyHP
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3093168112109348268, guid: 20d143510ac6978b69e91b2f94ab0701, type: 3}
+      propertyPath: m_Name
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 3093168112109348268, guid: 20d143510ac6978b69e91b2f94ab0701, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6644786968760179561, guid: 20d143510ac6978b69e91b2f94ab0701, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.3811061
+      objectReference: {fileID: 0}
+    - target: {fileID: 6644786968760179561, guid: 20d143510ac6978b69e91b2f94ab0701, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.92244
+      objectReference: {fileID: 0}
+    - target: {fileID: 6644786968760179561, guid: 20d143510ac6978b69e91b2f94ab0701, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6644786968760179561, guid: 20d143510ac6978b69e91b2f94ab0701, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6644786968760179561, guid: 20d143510ac6978b69e91b2f94ab0701, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6644786968760179561, guid: 20d143510ac6978b69e91b2f94ab0701, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6644786968760179561, guid: 20d143510ac6978b69e91b2f94ab0701, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6644786968760179561, guid: 20d143510ac6978b69e91b2f94ab0701, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6644786968760179561, guid: 20d143510ac6978b69e91b2f94ab0701, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6644786968760179561, guid: 20d143510ac6978b69e91b2f94ab0701, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7456789338789815773, guid: 20d143510ac6978b69e91b2f94ab0701, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+  m_SourcePrefab: {fileID: 100100000, guid: 20d143510ac6978b69e91b2f94ab0701, type: 3}
 --- !u!1 &471308316
 GameObject:
   m_ObjectHideFlags: 0
@@ -178,8 +250,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1062f56f78dbb494c8ab9cb243749e0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  dummyHealth: 0
-  dummyMovementSpeed: 0
+  dummyHealth: 100
+  dummyMovementSpeed: 5
+  isStunned: 0
 --- !u!212 &471308320
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -711,8 +784,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1062f56f78dbb494c8ab9cb243749e0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  dummyHealth: 0
-  dummyMovementSpeed: 0
+  dummyHealth: 100
+  dummyMovementSpeed: 5
+  isStunned: 0
 --- !u!50 &546771073
 Rigidbody2D:
   serializedVersion: 5
@@ -1153,6 +1227,7 @@ MonoBehaviour:
   chosenDeck: {fileID: 11400000, guid: 2d53d490f26baf343bed1c982dd9a498, type: 2}
   numShuffles: 0
   currentCard: {fileID: 0}
+  storedDeck: []
   currentIdx: 0
 --- !u!1 &1243843124
 GameObject:
@@ -1319,9 +1394,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerScript
   playerMoveSpeed: 10
   playerHealth: 50
+  playerCash: 0
   dashPower: 20
   dashDuration: 0.2
-  dashCooldown: 1
+  dashCooldown: 5
   currentDashCooldown: 0
 --- !u!50 &1284259769
 Rigidbody2D:
@@ -2524,3 +2600,4 @@ SceneRoots:
   - {fileID: 1893850325}
   - {fileID: 1033522520}
   - {fileID: 999836742}
+  - {fileID: 137328988}

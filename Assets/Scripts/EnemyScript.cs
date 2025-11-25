@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class EnemyScript : MonoBehaviour
@@ -13,6 +14,7 @@ public class EnemyScript : MonoBehaviour
     
     public PlayerScript player;
     public EnemyBulletScript bullet;
+    public bool isStunned;
     
     private float enemyShootTimer = 0f;
     
@@ -33,15 +35,20 @@ public class EnemyScript : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Bullet"))
         {
             BulletScript playerBullet = collision.gameObject.GetComponent<BulletScript>();
             TakeDamage(playerBullet.bulletDamage);
-            Destroy(collision.gameObject);
+
+            if (!playerBullet.isPiercing)
+            {
+                Destroy(collision.gameObject);
+            }
         }
     }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -62,6 +69,11 @@ public class EnemyScript : MonoBehaviour
 
     void FixedUpdate()
     {
+        // If stunned, don't do anything
+        if (isStunned)
+        {
+            return;
+        }
         
         if (currentState == EnemyState.Idle)
         {
@@ -114,6 +126,19 @@ public class EnemyScript : MonoBehaviour
                 currentState = EnemyState.ChasingPlayer;
             }
             GetComponent<Animator>().SetBool("isMoving", false);
+        }
+    }
+
+    // Amount will be positive or negative based on the instantiated effect that calls it
+    // Has to be += to allow for debuff to be applied then reverted by ApplyEffect() in TimedEffect.cs
+    //      and classes deriving it
+    public void ChangeStat(string stat, float amt)
+    {
+        switch (stat)
+        {
+            case "Slow":
+                enemyMoveSpeed += amt;
+                break;
         }
     }
 }

@@ -7,7 +7,7 @@ public class TimedEffect : MonoBehaviour
     public float repeatTime;
 
     [HideInInspector]
-    public GameObject target;
+    public EnemyScript target;
 
     void Start()
     {

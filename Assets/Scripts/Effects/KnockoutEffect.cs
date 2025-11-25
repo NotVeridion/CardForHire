@@ -1,17 +1,16 @@
 using UnityEngine;
 
-public class SlowEffect : TimedEffect
+public class KnockoutEffect : TimedEffect
 {
-    public float slowAmt;
-
+    public float probability;
     protected override void ApplyEffect()
     {
-        target.ChangeStat("Slow", slowAmt);
+        target.isStunned = true;
     }
 
     protected override void EndEffect()
     {
-        target.ChangeStat("Slow", -slowAmt);
+        target.isStunned = false;
         base.EndEffect();
     }
 }
