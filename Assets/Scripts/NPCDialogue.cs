@@ -13,6 +13,7 @@ public class NPCDialogue : ScriptableObject
     public DialogueChoice[] choices;
     public int questInProgressIndex;
     public int questCompletedIndex;
+    public int questPostCompletedIndex;
     public Quest quest;
 
 

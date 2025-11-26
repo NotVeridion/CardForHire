@@ -17,7 +17,7 @@ public class QuestUI : MonoBehaviour
         {
             Destroy(child.gameObject);
         }
-        foreach(var quest in QuestScript.Instance.activateQuests)
+        foreach(var quest in QuestController.Instance.activateQuests)
         {
             GameObject entry = Instantiate(questEntryPrefab, questListContent);
             TMP_Text questNameText = entry.transform.Find("QuestNameText").GetComponent<TMP_Text>();
