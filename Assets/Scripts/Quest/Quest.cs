@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+[CreateAssetMenu(fileName = "Quest", menuName = "Quests")]
 
 public class Quest : ScriptableObject
 {

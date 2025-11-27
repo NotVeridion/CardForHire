@@ -9,6 +9,12 @@ public class DialogueController : MonoBehaviour
     public TMP_Text dialogueText, nameText;
     public Transform choiceContainer;
     public GameObject choiceButtonPrefab;
+    public event System.Action OnDialogueClosed;
+
+    void Start()
+    {
+        ShowDialogueUI(false);
+    }
     void Awake()
     {
         if (Instance == null)
@@ -19,6 +25,9 @@ public class DialogueController : MonoBehaviour
     public void ShowDialogueUI(bool show)
     {
         dialoguePanel.SetActive(show);
+
+    if (!show)
+        OnDialogueClosed?.Invoke();
     }
     public void SetNPCInfo(string npcName)
     {
