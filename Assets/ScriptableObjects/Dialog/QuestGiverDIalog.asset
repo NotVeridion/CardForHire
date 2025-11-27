@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8768da70380e2ae4ea55b0de80a596b3, type: 3}
   m_Name: QuestGiverDIalog
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
-  npcName: Quest Giver
+  npcName: Bounty Board
   dialogueLines:
-  - Element 0 Element 0 Element 0 Element 0 Element 0 Element 0
-  - Element 1?
-  - Element 2!
-  - Element 3...
-  - Element 4
+  - Collect all the boxes scattered around the town!
+  - Accept the quest?
+  - Quest started!
+  - Collect all the boxes before you can receive your reward!
+  - Great work! Here's your reward.
+  - Great work! Here's your reward.
   endDialogueLines: 0000010101
   typingSpeed: 0.05
   voiceSound: {fileID: 8300000, guid: c0071e59fa308884d815b596e8000d95, type: 3}
@@ -30,5 +31,7 @@ MonoBehaviour:
     nextDialogueIndexes: 02000000
     givesQuest: 01
   questInProgressIndex: 3
+  questStartDialogueIndex: 1
   questCompletedIndex: 4
+  questPostCompletedIndex: 5
   quest: {fileID: 11400000, guid: f9e3ec53421d16e4a81866b9dcc677ec, type: 2}

@@ -12,6 +12,7 @@ public class NPCDialogue : ScriptableObject
     public float voicePitch = 1f;
     public DialogueChoice[] choices;
     public int questInProgressIndex;
+    public int questStartDialogueIndex;
     public int questCompletedIndex;
     public int questPostCompletedIndex;
     public Quest quest;

@@ -10,9 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ed729716c04c8de4185a80104701fdbd, type: 3}
-  m_Name: TalkToNPC
+  m_Name: CollectTest
   m_EditorClassIdentifier: Assembly-CSharp::Quest
-  questID: 
-  questName: 
-  description: 
-  objectives: []
+  questID: 1
+  questName: Collect
+  description: Collect Object
+  objectives:
+  - objectiveID: 1
+    description: Get this item!
+    type: 0
+    requiredAmount: 3
+    currentAmount: 0

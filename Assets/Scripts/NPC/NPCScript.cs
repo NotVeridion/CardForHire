@@ -10,6 +10,9 @@ public class NPCScript : MonoBehaviour, IInteractable
 
     [Header("NPC Identifier")]
     public string npcID;
+
+    [Header("Quest Role")]
+    public bool isQuestGiver = false;
     private QuestMarkerController marker;
     private DialogueController dialogueUI;
     private int dialogueIndex;
@@ -18,18 +21,32 @@ public class NPCScript : MonoBehaviour, IInteractable
     private QuestState questState = QuestState.NotStarted;
     private void Start()
     {
- dialogueUI = DialogueController.Instance;
-    marker = GetComponentInChildren<QuestMarkerController>();
+        dialogueUI = DialogueController.Instance;
+        marker = GetComponentInChildren<QuestMarkerController>();
+        UpdateMarker();
 
-    // Ensure marker reflects current state at start
-    UpdateMarker();
-
-    // Subscribe to quest progress updates so marker refreshes when items are picked up
-    if (QuestController.Instance != null)
-        QuestController.Instance.OnQuestProgressUpdated += OnQuestProgressUpdated;
+        if (QuestController.Instance != null)
+            QuestController.Instance.OnQuestProgressUpdated += OnQuestProgressUpdated;
+        dialogueUI.OnDialogueClosed += HandleDialogueClosed;
     }
+    void Update()
+{
+    if (Input.GetKeyDown(KeyCode.Space) && isDialogueActive)
+        {
+            if (isTyping)
+        {
+            StopAllCoroutines();
+            dialogueUI.SetDialogueText(dialogueData.dialogueLines[dialogueIndex]);
+            isTyping = false;
+        }
+        else
+        {
+            NextLine();
+        }
+        }
 
-   private void OnMouseDown()
+}
+   private void OnMouseDown() // For testing, should be changed to button interact using player
 {
     // If player clicks the NPC while dialogue is active
     if (isDialogueActive)
@@ -39,7 +56,6 @@ public class NPCScript : MonoBehaviour, IInteractable
             StopAllCoroutines();
             dialogueUI.SetDialogueText(dialogueData.dialogueLines[dialogueIndex]);
             isTyping = false;
-            Debug.Log("skip typing");
         }
         else
         {
@@ -71,16 +87,22 @@ public class NPCScript : MonoBehaviour, IInteractable
     void StartDialogue()
     {
         SyncQuestState();
-    CheckTalkNPCObjectives();
-    // 🔥 If quest was completed before talking, hand it in immediately
+        dialogueUI.ClearChoices();
+        CheckTalkNPCObjectives();
     if (questState == QuestState.Completed)
     {
+         if (isQuestGiver)
+    {
         QuestController.Instance.HandInQuest(dialogueData.quest.questID);
-        Debug.Log("Quest handed in!");
-
-        // Refresh state after hand-in
-        //questState = QuestState.PostCompleted;
+        Debug.Log("Quest handed in by quest giver NPC!");
         marker.HideMarker();
+    }
+    else
+    {
+        Debug.Log("Quest is completed but must be turned in to the original quest giver.");
+        
+    }
+        
     }
 
     // After hand-in or normal state detection, choose dialogue path
@@ -149,12 +171,36 @@ public class NPCScript : MonoBehaviour, IInteractable
 
     void DisplayChoices(DialogueChoice choice)
     {
-        for (int i = 0; i < choice.choices.Length; i++)
+          dialogueUI.ClearChoices();
+
+    if (!isQuestGiver)
+    {
+        // No choices should appear on non-quest-givers
+        return;
+    }
+
+
+    for (int i = 0; i < choice.choices.Length; i++)
+    {
+        string choiceText = choice.choices[i];
+        int nextIndex = choice.nextDialogueIndexes[i];
+        bool givesQuest = choice.givesQuest[i];
+
+
+        if (givesQuest)
         {
-            int nextIndex = choice.nextDialogueIndexes[i];
-            bool givesQuest = choice.givesQuest[i];
-            dialogueUI.CreateChoiceButton(choice.choices[i], () => ChooseOption(nextIndex, givesQuest));
+            
+            if (dialogueIndex != dialogueData.questStartDialogueIndex)
+                continue;
+
+           
+            if (QuestController.Instance.HasQuestInProgress)
+                continue;
         }
+
+
+        dialogueUI.CreateChoiceButton(choiceText, () => ChooseOption(nextIndex, givesQuest));
+    }
     }
     void ChooseOption(int nextIndex, bool givesQuest)
     {
@@ -296,6 +342,7 @@ public class NPCScript : MonoBehaviour, IInteractable
 {
      if (QuestController.Instance != null)
         QuestController.Instance.OnQuestProgressUpdated -= OnQuestProgressUpdated;
+    dialogueUI.OnDialogueClosed -= HandleDialogueClosed;
 }
 
 private void CheckTalkNPCObjectives()
@@ -321,19 +368,24 @@ private void CheckTalkNPCObjectives()
             objective.objectiveID == npcID &&
             objective.currentAmount < objective.requiredAmount)
         {
-            // Player has talked to the correct NPC
+            
             objective.currentAmount++;
 
             Debug.Log($"TalkNPC Objective Updated! NPC: {npcID}  ({objective.currentAmount}/{objective.requiredAmount})");
 
-            // Update Quest UI
+            
             QuestController.Instance.questUI.UpdateQuestUI();
 
-            // Notify system of progress change 
+            
             QuestController.Instance.NotifyQuestProgressUpdated(questID);
 
             return; // Only update one objective per talk
         }
     }
+}
+    private void HandleDialogueClosed()
+{
+    isDialogueActive = false;
+    isTyping = false;
 }
 }
