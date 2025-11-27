@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.Collections;
-using TMPro;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -12,6 +11,7 @@ public class PlayerScript : MonoBehaviour
     private float currentDashDuration;
     public float dashCooldown;
     public float currentDashCooldown;
+    private GunScript gunScript;
     private TrailRenderer dashTrail;
     private Rigidbody2D rb;
     private bool canDash;
@@ -30,6 +30,7 @@ public class PlayerScript : MonoBehaviour
         playerAnimator = GetComponent<Animator>();
         playerSpriteRenderer = GetComponent<SpriteRenderer>();
         gunSpriteRenderer = GameObject.FindWithTag("Gun").GetComponent<SpriteRenderer>();
+        gunScript = GetComponentInChildren<GunScript>();
         dashTrail = GetComponent<TrailRenderer>();
         canDash = true;
         currentDashDuration = dashDuration;
@@ -89,6 +90,7 @@ public class PlayerScript : MonoBehaviour
         }
         else if (canDash == false)
         {
+            dashTrail.emitting = false;
             currentDashCooldown -= Time.deltaTime;
             if (currentDashCooldown < 0)
             {
@@ -103,14 +105,39 @@ public class PlayerScript : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D other)
     {
-        if (collision.gameObject.CompareTag("EnemyBullet"))
+
+        if (other.gameObject.CompareTag("AttackSpeedPickup"))
         {
-            EnemyBulletScript enemyBullet = collision.gameObject.GetComponent<EnemyBulletScript>();
+            PickupScript script = other.gameObject.GetComponent<PickupScript>();
+            StartCoroutine(applyAttackSpeedBuff(script.value, script.duration));
+        }
+        if (other.gameObject.CompareTag("DamagePickup"))
+        {
+            PickupScript script = other.gameObject.GetComponent<PickupScript>();
+            StartCoroutine(applyDamageBuff(script.value, script.duration));
+        }
+        if (other.gameObject.CompareTag("DashDistancePickup"))
+        {
+            PickupScript script = other.gameObject.GetComponent<PickupScript>();
+            StartCoroutine(applyDashDistanceBuff(script.value, script.duration));
+        }
+        if (other.gameObject.CompareTag("MovementSpeedPickup"))
+        {
+            PickupScript script = other.gameObject.GetComponent<PickupScript>();
+            StartCoroutine(applyMovementSpeedBuff(script.value, script.duration));
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("EnemyBullet"))
+        {
+            EnemyBulletScript enemyBullet = other.gameObject.GetComponent<EnemyBulletScript>();
             TakeDamage(enemyBullet.bulletDamage);
 
-            Destroy(collision.gameObject);
+            Destroy(other.gameObject);
         }
     }
 
@@ -151,7 +178,7 @@ public class PlayerScript : MonoBehaviour
         switch (stat)
         {
             case "FireRate":
-                GetComponentInChildren<GunScript>().currentGun.fireRate += amt;
+                gunScript.currentGun.fireRate += amt;
                 break;
             case "EnergyRegain":
                 currentDashCooldown += amt;
@@ -160,6 +187,45 @@ public class PlayerScript : MonoBehaviour
                     currentDashCooldown = 0;
                 }
                 break;
+            case "Damage":
+                gunScript.currentGun.damage += amt;
+                break;
+            case "Bullet Count":
+                gunScript.currentGun.numBulletsInSpread += (int) amt;
+                break;
         }
+    }
+
+    IEnumerator applyAttackSpeedBuff(float amt, float duration)
+    {
+        gunScript.currentGun.fireRate += amt;
+        
+        yield return new WaitForSeconds(duration);
+
+        gunScript.currentGun.fireRate -= amt;
+    }
+    IEnumerator applyDamageBuff(float amt, float duration)
+    {
+        gunScript.currentGun.damage += amt;
+        
+        yield return new WaitForSeconds(duration);
+
+        gunScript.currentGun.damage -= amt;
+    }
+    IEnumerator applyDashDistanceBuff(float amt, float duration)
+    {
+        dashDuration += amt;
+        
+        yield return new WaitForSeconds(duration);
+
+        dashDuration -= amt;
+    }
+    IEnumerator applyMovementSpeedBuff(float amt, float duration)
+    {
+        playerMoveSpeed += amt;
+        
+        yield return new WaitForSeconds(duration);
+
+        playerMoveSpeed -= amt;
     }
 }

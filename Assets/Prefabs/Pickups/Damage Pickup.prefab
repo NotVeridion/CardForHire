@@ -5169,8 +5169,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PickupScript
   spriteIcon: {fileID: 8961995183932469127}
-  value: 0
-  duration: 0
+  value: 10
+  duration: 5
 --- !u!1 &8961995183932469127
 GameObject:
   m_ObjectHideFlags: 0
