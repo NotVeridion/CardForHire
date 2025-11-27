@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameUISccript : MonoBehaviour
@@ -14,6 +15,12 @@ public class GameUISccript : MonoBehaviour
     [SerializeField] GameObject attackSpeedAbility;
     [SerializeField] GameObject damageAbility;
     [SerializeField] GameObject movementSpeedAbility;
+
+    [SerializeField] Image dashDistanceSlider;
+    [SerializeField] Image attackSpeedSlider;
+    [SerializeField] Image damageSlider;
+    [SerializeField] Image movementSpeedSlider;
+
 
     [SerializeField] Image cardImage;
 
@@ -30,11 +37,21 @@ public class GameUISccript : MonoBehaviour
     [SerializeField] GameObject storeUI;
     [SerializeField] GameObject gameoverPanel;
 
+    [SerializeField] GameObject respawnPosition;
+
+
+    //Deck Selection
+    [SerializeField] Deck standard;
+    [SerializeField] Deck red;
+    [SerializeField] Deck black;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         deckManager = FindAnyObjectByType<DeckManagerScript>();
         playerScript = FindAnyObjectByType<PlayerScript>();
+
+        playerScript.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -85,20 +102,36 @@ public class GameUISccript : MonoBehaviour
             dashSliderImage.color = Color.gray;
         }
 
+        moneyText.text = playerScript.playerCash.ToString();
+
+        dashDistanceSlider.fillAmount = 1;
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Pause();
         }
 
+        if(playerScript.playerHealth <= 0)
+        {
+            GameOver();
+        }
+
+
     }
 
     public void Pause()
     {
+        if (gameoverPanel.activeSelf)
+        {
+            return;
+        }
+
         if (pausePanel.activeSelf)
         {
             pausePanel.SetActive(false);
             playerScript.gameObject.SetActive(true);
             storeUI.SetActive(true);
+            GameObject.FindWithTag("Gun").GetComponent<GunScript>().RestoreFire();
         }
         else
         {
@@ -111,6 +144,45 @@ public class GameUISccript : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
+    }
+
+    public void SelectDeck(string deckName)
+    {
+        if(deckName == "Red")
+        {
+            deckManager.chosenDeck = red;
+        }
+        else if(deckName == "Black")
+        {
+            deckManager.chosenDeck = black;
+        }
+        else
+        {
+            deckManager.chosenDeck = standard;
+        }
+        deckManager.StartDeck();
+        playerScript.gameObject.SetActive(true);
+    }
+
+    public void GameOver()
+    {
+        playerScript.gameObject.SetActive(false);
+        gameoverPanel.SetActive(true);
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void RespawnPlayer()
+    {
+        playerScript.gameObject.transform.position = respawnPosition.transform.position;
+        playerScript.Heal(1000);
+        playerScript.gameObject.SetActive(true);
+        gameoverPanel.SetActive(false);
+        GameObject.FindWithTag("Gun").GetComponent<GunScript>().RestoreFire();
+
     }
 
 }

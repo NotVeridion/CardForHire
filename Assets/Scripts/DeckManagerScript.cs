@@ -71,7 +71,7 @@ public class DeckManagerScript : MonoBehaviour
         return card;
     }
 
-    List<Card> FillWorkingDeck()
+    public List<Card> FillWorkingDeck()
     {
         List<Card> newDeck = new List<Card>(storedDeck);
 

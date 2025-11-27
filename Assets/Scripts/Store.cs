@@ -1,12 +1,27 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using TMPro;
 
 public class Store : MonoBehaviour
 {
     [SerializeField] GameObject notification;
     [SerializeField] GameObject store;
     [SerializeField] GameObject player;
+
+    public int cardIndex;
+    public int abilityIndex;
+
+    public int CardIndex {  get { return cardIndex; } set { cardIndex = value; CheckUpgrade(); } }
+    public int AbilityIndex {  get { return abilityIndex; } set {  abilityIndex = value; CheckUpgrade(); } }
+
+
+    [SerializeField] TextMeshProUGUI abilityInfoText;
+
+    [SerializeField] Button upgradeButton;
+
+    List<Card> cards;
+    [SerializeField] DeckManagerScript deckManager;
 
     //Spining Cards
 
@@ -18,37 +33,25 @@ public class Store : MonoBehaviour
 
     [SerializeField] List<Image> cardImages;
 
-    [SerializeField] GameObject bleedObject1;
-    [SerializeField] GameObject stunObject1;
-    [SerializeField] GameObject slowObject1;
-    [SerializeField] GameObject energyObject1;
+    [SerializeField] List<GameObject> bleedObjects;
+    [SerializeField] List<GameObject> stunObjects;
+    [SerializeField] List<GameObject> slowObjects;
+    [SerializeField] List<GameObject> energyObjects;
 
-    [SerializeField] GameObject bleedObject2;
-    [SerializeField] GameObject stunObject2;
-    [SerializeField] GameObject slowObject2;
-    [SerializeField] GameObject energyObject2;
-
-    [SerializeField] GameObject bleedObject3;
-    [SerializeField] GameObject stunObject3;
-    [SerializeField] GameObject slowObject3;
-    [SerializeField] GameObject energyObject3;
-
-    [SerializeField] GameObject bleedObject4;
-    [SerializeField] GameObject stunObject4;
-    [SerializeField] GameObject slowObject4;
-    [SerializeField] GameObject energyObject4;
-
-    [SerializeField] GameObject bleedObject5;
-    [SerializeField] GameObject stunObject5;
-    [SerializeField] GameObject slowObject5;
-    [SerializeField] GameObject energyObject5;
-
+    [SerializeField] PlayerScript playerInfo;
+    [SerializeField] TextMeshProUGUI costText;
+    [SerializeField] Button buyButton;
+    [SerializeField] int cost;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         player = GameObject.FindWithTag("Player");
+        deckManager = FindAnyObjectByType<DeckManagerScript>();
+        playerInfo = player.GetComponent<PlayerScript>();
+
+        costText.text = "Cost " + cost.ToString();
     }
 
     // Update is called once per frame
@@ -57,6 +60,15 @@ public class Store : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F) && notification.activeSelf)
         {
             ActivateStore();
+        }
+
+        if(cost > playerInfo.playerCash)
+        {
+            buyButton.interactable = false;
+        }
+        else
+        {
+            buyButton.interactable = true;
         }
     }
 
@@ -110,11 +122,195 @@ public class Store : MonoBehaviour
             abilityImages[i].sprite = abilitySprites[i];
         }
 
+        cards = deckManager.FillWorkingDeck();
+        for(int i = 0; i < cardImages.Count; i++)
+        {
+            cardImages[i].sprite = cards[i].sprite;
+            if (cards[i].bleed)
+            {
+                bleedObjects[i].SetActive(true);
+            }
+            else
+            {
+                bleedObjects[i].SetActive(false);
+            }
+            if (cards[i].slow)
+            {
+                slowObjects[i].SetActive(true);
+            }
+            else
+            {
+                slowObjects[i].SetActive(false);
+            }
+            if (cards[i].stun)
+            {
+                stunObjects[i].SetActive(true);
+            }
+            else
+            {
+                stunObjects[i].SetActive(false);
+            }
+            if (cards[i].energyRegain)
+            {
+                energyObjects[i].SetActive(true);
+            }
+            else
+            {
+                energyObjects[i].SetActive(false);
+            }
+
+        }
+        CheckUpgrade();
+    }
+
+    public void CheckUpgrade()
+    {
+        switch (abilitySprites[abilityIndex].name)
+        {
+            case "Bleed":
+                if (cards[cardIndex].bleed)
+                {
+                    upgradeButton.interactable = false;
+                }
+                else
+                {
+                    upgradeButton.interactable = true;
+                }
+                break;
+
+            case "Slow":
+                if (cards[cardIndex].slow)
+                {
+                    upgradeButton.interactable = false;
+                }
+                else
+                {
+                    upgradeButton.interactable = true;
+                }
+                break;
+
+            case "Energy":
+                if (cards[cardIndex].energyRegain)
+                {
+                    upgradeButton.interactable = false;
+                }
+                else
+                {
+                    upgradeButton.interactable = true;
+                }
+                break;
+
+            case "Stun":
+                if (cards[cardIndex].stun)
+                {
+                    upgradeButton.interactable = false;
+                }
+                else
+                {
+                    upgradeButton.interactable = true;
+                }
+                break;
+
+            case "Add":
+                upgradeButton.interactable = true;
+                break;
+        }
     }
 
     public void SelectUpgrade()
     {
+        switch(abilitySprites[abilityIndex].name)
+        {
+            case "Bleed":
+                cards[cardIndex].bleed = true;
+                break;
 
+            case "Slow":
+                cards[cardIndex].slow = true;
+                break;
+
+            case "Energy":
+                cards[cardIndex].energyRegain = true;
+                break;
+
+            case "Stun":
+                cards[cardIndex].stun = true;
+                break;
+
+            case "Add":
+                cards.Add(Instantiate(cards[cardIndex]));
+                break;
+        }
+        deckManager.storedDeck = cards;
+        for (int i = 0; i < cardImages.Count; i++)
+        {
+            cardImages[i].sprite = cards[i].sprite;
+            if (cards[i].bleed)
+            {
+                bleedObjects[i].SetActive(true);
+            }
+            else
+            {
+                bleedObjects[i].SetActive(false);
+            }
+            if (cards[i].slow)
+            {
+                slowObjects[i].SetActive(true);
+            }
+            else
+            {
+                slowObjects[i].SetActive(false);
+            }
+            if (cards[i].stun)
+            {
+                stunObjects[i].SetActive(true);
+            }
+            else
+            {
+                stunObjects[i].SetActive(false);
+            }
+            if (cards[i].energyRegain)
+            {
+                energyObjects[i].SetActive(true);
+            }
+            else
+            {
+                energyObjects[i].SetActive(false);
+            }
+
+        }
+    }
+
+
+    public void AbilityTextInfo(int i)
+    {
+        switch (abilitySprites[i].name)
+        {
+            case "Bleed":
+                abilityInfoText.text = "Applies a bleed to enemies.";
+                break;
+
+            case "Slow":
+                abilityInfoText.text = "Applies a slow to enemies.";
+                break;
+
+            case "Energy":
+                abilityInfoText.text = "Reduce the cooldown of dash.";
+                break;
+
+            case "Stun":
+                abilityInfoText.text = "A chance to stun enemies.";
+                break;
+
+            case "Add":
+                abilityInfoText.text = "Create a copy of selected card.";
+                break;
+        }
+    }
+
+    public void ClearTextInfo()
+    {
+        abilityInfoText.text = string.Empty;
     }
 
 }
