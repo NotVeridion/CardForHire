@@ -36,6 +36,7 @@ public class GameUISccript : MonoBehaviour
     [SerializeField] GameObject pausePanel;
     [SerializeField] GameObject storeUI;
     [SerializeField] GameObject gameoverPanel;
+    [SerializeField] GameObject storeUI2;
 
     [SerializeField] GameObject respawnPosition;
 
@@ -131,13 +132,15 @@ public class GameUISccript : MonoBehaviour
             pausePanel.SetActive(false);
             playerScript.gameObject.SetActive(true);
             storeUI.SetActive(true);
+            storeUI2.SetActive(true);
             GameObject.FindWithTag("Gun").GetComponent<GunScript>().RestoreFire();
         }
         else
         {
             pausePanel.SetActive(true);
             playerScript.gameObject.SetActive(false);
-            storeUI.SetActive(false );  
+            storeUI.SetActive(false );
+            storeUI2.SetActive(false);
         }
     }
 
