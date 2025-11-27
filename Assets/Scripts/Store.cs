@@ -142,7 +142,7 @@ public class Store : MonoBehaviour
             {
                 slowObjects[i].SetActive(false);
             }
-            if (cards[i].stun)
+            if (cards[i].knockOut)
             {
                 stunObjects[i].SetActive(true);
             }
@@ -201,7 +201,7 @@ public class Store : MonoBehaviour
                 break;
 
             case "Stun":
-                if (cards[cardIndex].stun)
+                if (cards[cardIndex].knockOut)
                 {
                     upgradeButton.interactable = false;
                 }
@@ -234,7 +234,7 @@ public class Store : MonoBehaviour
                 break;
 
             case "Stun":
-                cards[cardIndex].stun = true;
+                cards[cardIndex].knockOut = true;
                 break;
 
             case "Add":
@@ -261,7 +261,7 @@ public class Store : MonoBehaviour
             {
                 slowObjects[i].SetActive(false);
             }
-            if (cards[i].stun)
+            if (cards[i].knockOut)
             {
                 stunObjects[i].SetActive(true);
             }

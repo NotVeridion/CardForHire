@@ -83,7 +83,7 @@ public class GameUISccript : MonoBehaviour
         {
             energyObject.SetActive(false);
         }
-        if(deckManager.getCurrentCard().stun)
+        if(deckManager.getCurrentCard().knockOut)
         {
             stunObject.SetActive(true);
         }
