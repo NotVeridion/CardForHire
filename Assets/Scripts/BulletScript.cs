@@ -1,11 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
-using NUnit.Framework.Internal;
-using System;
-using NUnit.Framework;
-using Unity.Mathematics;
+
 public class BulletScript : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -13,11 +9,14 @@ public class BulletScript : MonoBehaviour
     public float bulletDamage;
     public float bulletDuration;
     public float raycastLength;
-    private float raycastFreq;
+    public float raycastFreq;
+    public List<GameObject> debuffs;
+    public Card card;
     private PlayerScript playerScript;
-    private List<GameObject> prevHits; // For piercing bullets
+    private List<int> prevHits; // For piercing bullets
     private bool isHealing;
-    private bool isPiercing;
+    [HideInInspector]
+    public bool isPiercing;
     private bool isKnockback;
     public float knockbackForce = 2;
     private bool isHoming;
@@ -30,7 +29,7 @@ public class BulletScript : MonoBehaviour
 
         // Piercing
         raycastFreq = 0.1f; 
-        prevHits = new List<GameObject>();
+        prevHits = new List<int>();
 
         Destroy(gameObject, bulletDuration);
     }
@@ -72,58 +71,50 @@ public class BulletScript : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         GameObject other_obj = other.gameObject;
-        if (other_obj.CompareTag("TestDummy") || other_obj.CompareTag("Enemy") || other_obj.CompareTag("Wall"))
+        if (other_obj.CompareTag("TestDummy") || other_obj.CompareTag("Enemy"))
         {
             if (isHealing)
             {
                 playerScript = GameObject.FindWithTag("Player").GetComponent<PlayerScript>();
-                if (other_obj.TryGetComponent<TestDummy>(out TestDummy script))
-                {
-                    script.TakeDamage(bulletDamage);
-                    playerScript.Heal(bulletDamage);
-                }
-                Destroy(gameObject);
+                playerScript.Heal(bulletDamage);
             }
             else if (isPiercing)
             {
-                if (prevHits.Contains(other_obj))
+                if (prevHits.Contains(other_obj.GetInstanceID()))
                 {
                     return;
                 }
                 else
                 {
-                    if (other_obj.TryGetComponent<TestDummy>(out TestDummy script))
-                    {
-                        script.TakeDamage(bulletDamage);
-                    }
-                    prevHits.Add(other_obj);
+                    prevHits.Add(other_obj.GetInstanceID());
                 }
             }
             else if (isKnockback)
             {
                 // Needs to knock enemy back in opposite direction between bullet and enemy
-                if (other_obj.TryGetComponent<TestDummy>(out TestDummy script))
+
+                if (other_obj.TryGetComponent(out EnemyScript eScript))
                 {
-                    script.TakeDamage(bulletDamage);
                     other_obj.GetComponent<Rigidbody2D>().AddForce(transform.right * 2, ForceMode2D.Impulse);
                 }
-
-                Destroy(gameObject);
-            }
-            else if (isHoming)
-            {
-                if (other_obj.TryGetComponent<TestDummy>(out TestDummy script))
+                else if (other_obj.TryGetComponent(out TestDummy script))
                 {
-                    script.TakeDamage(bulletDamage);
+                    other_obj.GetComponent<Rigidbody2D>().AddForce(transform.right * 2, ForceMode2D.Impulse);
                 }
-                Destroy(gameObject);
             }
+
+            applyDebuffToTarget(other_obj);
+        }
+        else if (other_obj.CompareTag("Wall"))
+        {
+            Destroy(gameObject);
         }
     }
 
     public void applyCardToBullet(Card card)
     {
         bulletDamage += card.number; // Number adds to current bullet damage
+        this.card = card;
 
         switch (card.suit)
         {
@@ -140,6 +131,104 @@ public class BulletScript : MonoBehaviour
             case Card.Suit.Spades:
                 isHoming = true;
                 break;
+        }
+    }
+
+    public void applyDebuffToTarget(GameObject target)
+    {
+        if (card.slow)
+        {
+            foreach (GameObject debuff in debuffs)
+            {
+                if (debuff.name == "Slow")
+                {
+                    // If already slowed, remove slow and reapply
+                    foreach (Transform child in target.transform)
+                    {
+                        if (child.TryGetComponent(out SlowEffect script))
+                        {
+                            target.GetComponent<EnemyScript>().ChangeStat("Slow", script.amt);
+                            Destroy(child.gameObject);
+                        }
+                    }
+
+                    GameObject debuffObj = Instantiate(debuff, target.transform.position, target.transform.rotation);
+                    debuffObj.transform.parent = target.transform; // Debuff becomes child of target
+                    debuffObj.GetComponent<SlowEffect>().target = target.GetComponent<EnemyScript>();
+                    break;
+                }
+            }
+        }
+        if (card.bleed)
+        {
+            foreach (GameObject debuff in debuffs)
+            {
+                if (debuff.name == "Bleed")
+                {
+                    GameObject debuffObj = Instantiate(debuff, target.transform.position, target.transform.rotation);
+                    debuffObj.transform.parent = target.transform; // Debuff becomes child of target
+                    debuffObj.GetComponent<BleedEffect>().target = target.GetComponent<EnemyScript>();
+                    break;
+                }
+            }
+        }
+        if (card.knockOut)
+        {
+            foreach (GameObject debuff in debuffs)
+            {
+                if (debuff.name == "Knockout")
+                {
+                    float prob = debuff.GetComponent<KnockoutEffect>().probability;
+
+                    // Roll for chance to NOT happen
+                    float randomNum = Random.Range(0, 101);
+                    if (randomNum <= 100 * (1 - prob))
+                    {
+                        break;
+                    }
+
+                    // If already stunned, remove and reapply
+                    foreach (Transform child in target.transform)
+                    {
+                        if (child.TryGetComponent(out SlowEffect script))
+                        {
+                            target.GetComponent<EnemyScript>().isStunned = false;
+                            Destroy(child.gameObject);
+                        }
+                    }
+
+                    GameObject debuffObj = Instantiate(debuff, target.transform.position, target.transform.rotation);
+                    debuffObj.transform.parent = target.transform; // Debuff becomes child of target
+                    debuffObj.GetComponent<KnockoutEffect>().target = target.GetComponent<EnemyScript>();
+                    break;
+                }
+            }
+        }
+        if (card.faster)
+        {
+            foreach (GameObject debuff in debuffs)
+            {
+                if (debuff.name == "FireRate")
+                {
+                    GameObject debuffObj = Instantiate(debuff, playerScript.transform.position, playerScript.transform.rotation);
+                    debuffObj.transform.parent = playerScript.transform; // Debuff becomes child of target
+                    debuffObj.GetComponent<FireRateEffect>().player = playerScript;
+                    break;
+                }
+            }
+        }
+        if (card.energyRegain)
+        {
+            foreach (GameObject debuff in debuffs)
+            {
+                if (debuff.name == "EnergyRegain")
+                {
+                    GameObject debuffObj = Instantiate(debuff, playerScript.transform.position, playerScript.transform.rotation);
+                    debuffObj.transform.parent = playerScript.transform; // Debuff becomes child of target
+                    debuffObj.GetComponent<EnergyRegainEffect>().player = playerScript;
+                    break;
+                }
+            }
         }
     }
 }

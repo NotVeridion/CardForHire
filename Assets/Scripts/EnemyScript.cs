@@ -1,10 +1,11 @@
+using TMPro;
 using UnityEngine;
 
 public class EnemyScript : MonoBehaviour
 {
     public float enemyMoveSpeed;
     public float enemyBulletSpeed;
-    public float enemyShootPauseTime;
+    //public float enemyShootPauseTime;
     public float enemyHP;
     public float enemyBulletDamage;
     public float detectPlayerRange;
@@ -12,9 +13,11 @@ public class EnemyScript : MonoBehaviour
     public float bulletDuration;
     
     public PlayerScript player;
-    public EnemyBulletScript bullet;
+    public EnemyGunScript gun;
+    //public EnemyBulletScript bullet;
+    public bool isStunned;
     
-    private float enemyShootTimer = 0f;
+    //private float enemyShootTimer = 0f;
     
     private enum EnemyState
     {
@@ -33,15 +36,20 @@ public class EnemyScript : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Bullet"))
         {
             BulletScript playerBullet = collision.gameObject.GetComponent<BulletScript>();
             TakeDamage(playerBullet.bulletDamage);
-            Destroy(collision.gameObject);
+
+            if (!playerBullet.isPiercing)
+            {
+                Destroy(collision.gameObject);
+            }
         }
     }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -62,9 +70,17 @@ public class EnemyScript : MonoBehaviour
 
     void FixedUpdate()
     {
+        // If stunned, don't do anything
+        if (isStunned)
+        {
+            return;
+        }
         
         if (currentState == EnemyState.Idle)
         {
+            gun.isPointingAtPlayer = false;
+            gun.isShooting = false;
+            
             float distanceToPlayer = Vector2.Distance(transform.position, player.transform.position);
             if (distanceToPlayer <= detectPlayerRange)
             {
@@ -74,6 +90,9 @@ public class EnemyScript : MonoBehaviour
         }
         else if (currentState == EnemyState.ChasingPlayer)
         {
+            gun.isPointingAtPlayer = false;
+            gun.isShooting = false;
+            
             transform.position = Vector2.MoveTowards(transform.position, player.transform.position, enemyMoveSpeed * Time.deltaTime);
 
             float distanceToPlayer = Vector2.Distance(transform.position, player.transform.position);
@@ -89,23 +108,8 @@ public class EnemyScript : MonoBehaviour
         }
         else if (currentState == EnemyState.ShootingFromRange)
         {
-            enemyShootTimer += Time.deltaTime;
-            if (enemyShootTimer >= enemyShootPauseTime)
-            {
-                EnemyBulletScript newBullet = Instantiate(bullet);
-                newBullet.transform.position = transform.position;
-
-
-                var distance = (player.transform.position - transform.position).normalized;
-                float angle = Mathf.Atan2(distance.y, distance.x) * (180 / Mathf.PI);
-                newBullet.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
-
-                newBullet.bulletMoveSpeed = enemyBulletSpeed;
-                newBullet.bulletDamage = enemyBulletDamage;
-                newBullet.bulletDuration = bulletDuration;
-
-                enemyShootTimer = 0f;
-            }
+            gun.isPointingAtPlayer = true;
+            gun.isShooting = true;
 
 
             float distanceToPlayer = Vector2.Distance(transform.position, player.transform.position);
@@ -114,6 +118,19 @@ public class EnemyScript : MonoBehaviour
                 currentState = EnemyState.ChasingPlayer;
             }
             GetComponent<Animator>().SetBool("isMoving", false);
+        }
+    }
+
+    // Amount will be positive or negative based on the instantiated effect that calls it
+    // Has to be += to allow for debuff to be applied then reverted by ApplyEffect() in TimedEffect.cs
+    //      and classes deriving it
+    public void ChangeStat(string stat, float amt)
+    {
+        switch (stat)
+        {
+            case "Slow":
+                enemyMoveSpeed += amt;
+                break;
         }
     }
 }

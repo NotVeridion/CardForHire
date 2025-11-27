@@ -7,18 +7,14 @@ public class DeckManagerScript : MonoBehaviour
     public Deck chosenDeck;
     public int numShuffles;
     public Card currentCard;
-    private List<Card> storedDeck;
+    public List<Card> storedDeck;
     private List<Card> workingDeck;
     private float currentTime;
     public int currentIdx;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        // Initial decks and card
-        storedDeck = chosenDeck.GetStartingDeck();
-        workingDeck = FillWorkingDeck(); // Takes in # of shuffles
-        currentCard = DrawCard();
-        currentIdx = 0;
+        StartDeck();
     }
 
     // Update is called once per frame
@@ -82,9 +78,9 @@ public class DeckManagerScript : MonoBehaviour
         // Deck shuffle using Fisher-Yates algorithm repeated {numShuffles} times
         for (int i = 0; i < numShuffles; i++)
         {
-            for(int j = newDeck.Count - 1; j > 1; j--)
+            for(int j = newDeck.Count - 1; j >= 0; j--)
             {
-                int idx = Random.Range(j, newDeck.Count - 1);
+                int idx = Random.Range(j, newDeck.Count);
                 Card temp = newDeck[idx];
                 newDeck[idx] = newDeck[j];
                 newDeck[j] = temp;
@@ -93,5 +89,13 @@ public class DeckManagerScript : MonoBehaviour
         
         Debug.Log("Deck reshuffled!");
         return newDeck;
+    }
+
+    public void StartDeck()
+    {
+        // Initial decks and card
+        storedDeck = chosenDeck.GetStartingDeck();
+        workingDeck = FillWorkingDeck();
+        currentCard = DrawCard();
     }
 }
