@@ -12,23 +12,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8768da70380e2ae4ea55b0de80a596b3, type: 3}
   m_Name: QuestGiverDIalog
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
-  npcName: Quest Giver
+  npcName: Bounty Board
   dialogueLines:
-  - Hi, I need you to collect 5 chips
-  - I need you to collect 5 chips
-  - Thank you! Here's your reward.
-  - 'Thanks! They should be all scattered inside this dungeon '
-  endDialogueLines: 00000101
+  - Collect all the boxes scattered around the town!
+  - Accept the quest?
+  - Quest started!
+  - Collect all the boxes before you can receive your reward!
+  - Great work! Here's your reward.
+  - Great work! Here's your reward.
+  endDialogueLines: 0000010101
   typingSpeed: 0.05
   voiceSound: {fileID: 8300000, guid: c0071e59fa308884d815b596e8000d95, type: 3}
   voicePitch: 1
   choices:
-  - dialogueIndex: 0
+  - dialogueIndex: 1
     choices:
-    - Accept
-    - Refuse
-    nextDialogueIndexes: 03000000
-    givesQuest: 0100
+    - 
+    nextDialogueIndexes: 02000000
+    givesQuest: 01
   questInProgressIndex: 3
-  questCompletedIndex: 2
-  quest: {fileID: 0}
+  questStartDialogueIndex: 1
+  questCompletedIndex: 4
+  questPostCompletedIndex: 5
+  quest: {fileID: 11400000, guid: f9e3ec53421d16e4a81866b9dcc677ec, type: 2}
