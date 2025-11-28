@@ -19,7 +19,6 @@ public class Card : ScriptableObject
     public bool knockOut; //Enemies are knocked out for a few seconds
     public bool energyRegain; //Reduce time of dash
     public bool faster; //Bullets are faster
-    public bool stun;
 
 }
 

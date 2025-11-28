@@ -46,6 +46,17 @@ public class GameUISccript : MonoBehaviour
     [SerializeField] Deck red;
     [SerializeField] Deck black;
 
+
+
+    float currentDamage;
+    float startDamage;
+    float currentAS;
+    float startAS;
+    float currentMove;
+    float startMove;
+    float currentDash;
+    float startDash;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -83,7 +94,7 @@ public class GameUISccript : MonoBehaviour
         {
             energyObject.SetActive(false);
         }
-        if(deckManager.getCurrentCard().stun)
+        if(deckManager.getCurrentCard().knockOut)
         {
             stunObject.SetActive(true);
         }
@@ -106,6 +117,48 @@ public class GameUISccript : MonoBehaviour
         moneyText.text = playerScript.playerCash.ToString();
 
         dashDistanceSlider.fillAmount = 1;
+
+        if (currentDash >0)
+        {
+            dashDistanceSlider.fillAmount = currentDash / startDash;
+            currentDash -= Time.deltaTime;
+        }
+        else
+        {
+            dashDistanceAbility.SetActive(false);
+        }
+
+        if(currentAS > 0)
+        {
+            attackSpeedSlider.fillAmount = currentAS / startAS;
+            currentAS -= Time.deltaTime;
+        }
+        else
+        {
+            attackSpeedAbility.SetActive(false);
+        }
+
+        if(currentMove > 0)
+        {
+            movementSpeedSlider.fillAmount = currentMove / startMove;
+            currentMove -= Time.deltaTime;
+        }
+        else
+        {
+            movementSpeedAbility.SetActive(false);
+        }
+
+        if(currentDamage > 0)
+        {
+            damageSlider.fillAmount = currentDamage / startDamage;
+            currentDamage -= Time.deltaTime;
+        }
+        else
+        {
+            damageAbility.SetActive(false);
+        }
+
+
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -187,5 +240,35 @@ public class GameUISccript : MonoBehaviour
         GameObject.FindWithTag("Gun").GetComponent<GunScript>().RestoreFire();
 
     }
+    
+    public void AttackSpeedDuration(float duration)
+    {
+        startAS = duration;
+        currentAS = startAS;
+        attackSpeedAbility.SetActive(true);
+    }
+
+    public void DamageDuration(float duration)
+    {
+        startDamage = duration;
+        currentDamage = startDamage;
+        damageAbility.SetActive(true);
+    }
+
+
+    public void MovementDuration(float duration)
+    {
+        startMove = duration;
+        currentMove = duration;
+        movementSpeedAbility.SetActive(true);
+    }
+
+    public void DashDistance(float duration)
+    {
+        startDash = duration;
+        currentDash = duration;
+        dashDistanceAbility.SetActive(true);
+    }
+
 
 }
