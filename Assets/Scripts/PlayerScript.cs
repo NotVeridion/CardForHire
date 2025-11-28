@@ -10,7 +10,10 @@ public class PlayerScript : MonoBehaviour
     public float dashDuration;
     private float currentDashDuration;
     public float dashCooldown;
+    [HideInInspector]
     public float currentDashCooldown;
+    [HideInInspector]
+    public string location;
     private GunScript gunScript;
     private TrailRenderer dashTrail;
     private Rigidbody2D rb;
@@ -22,6 +25,7 @@ public class PlayerScript : MonoBehaviour
     private Animator playerAnimator;
     private SpriteRenderer playerSpriteRenderer;
     private SpriteRenderer gunSpriteRenderer;
+    private AudioManagerScript audioManagerScript;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -30,6 +34,7 @@ public class PlayerScript : MonoBehaviour
         playerAnimator = GetComponent<Animator>();
         playerSpriteRenderer = GetComponent<SpriteRenderer>();
         gunSpriteRenderer = GameObject.FindWithTag("Gun").GetComponent<SpriteRenderer>();
+        audioManagerScript = GameObject.FindWithTag("AudioManager").GetComponent<AudioManagerScript>();
         gunScript = GetComponentInChildren<GunScript>();
         dashTrail = GetComponent<TrailRenderer>();
         canDash = true;
@@ -152,6 +157,10 @@ public class PlayerScript : MonoBehaviour
         else
         {
             playerAnimator.SetBool("isMoving", false);
+        }
+
+        if (!audioManagerScript.SFXSource.isPlaying){
+            audioManagerScript.PlayRandomSFX(audioManagerScript.WalkingGrass);
         }
     }
 

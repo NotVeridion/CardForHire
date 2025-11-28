@@ -1810,6 +1810,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -0.74
       objectReference: {fileID: 0}
+    - target: {fileID: 3862964533569818996, guid: 9927951c9bb33d24784dbc60866b3b38, type: 3}
+      propertyPath: m_TagString
+      value: ShopLocation
+      objectReference: {fileID: 0}
     - target: {fileID: 5592031073162697961, guid: 9927951c9bb33d24784dbc60866b3b38, type: 3}
       propertyPath: m_Name
       value: Teleport Shop Building
@@ -1821,6 +1825,10 @@ PrefabInstance:
     - target: {fileID: 6281961478729305326, guid: 9927951c9bb33d24784dbc60866b3b38, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 6938244157420988665, guid: 9927951c9bb33d24784dbc60866b3b38, type: 3}
+      propertyPath: m_TagString
+      value: TownLocation
       objectReference: {fileID: 0}
     - target: {fileID: 7330292214394043537, guid: 9927951c9bb33d24784dbc60866b3b38, type: 3}
       propertyPath: m_Size.x
@@ -265873,6 +265881,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.81
       objectReference: {fileID: 0}
+    - target: {fileID: 3862964533569818996, guid: 9927951c9bb33d24784dbc60866b3b38, type: 3}
+      propertyPath: m_TagString
+      value: CasinoLocation
+      objectReference: {fileID: 0}
     - target: {fileID: 5191875382756647796, guid: 9927951c9bb33d24784dbc60866b3b38, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -265908,6 +265920,10 @@ PrefabInstance:
     - target: {fileID: 6281961478729305326, guid: 9927951c9bb33d24784dbc60866b3b38, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 1.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 6938244157420988665, guid: 9927951c9bb33d24784dbc60866b3b38, type: 3}
+      propertyPath: m_TagString
+      value: TownLocation
       objectReference: {fileID: 0}
     - target: {fileID: 7330292214394043537, guid: 9927951c9bb33d24784dbc60866b3b38, type: 3}
       propertyPath: m_Size.x
@@ -287531,6 +287547,7 @@ MonoBehaviour:
   dashDuration: 0.2
   dashCooldown: 5
   currentDashCooldown: 0
+  location: 
 --- !u!50 &1284259769
 Rigidbody2D:
   serializedVersion: 5
@@ -287888,6 +287905,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 7.58
       objectReference: {fileID: 0}
+    - target: {fileID: 3862964533569818996, guid: 9927951c9bb33d24784dbc60866b3b38, type: 3}
+      propertyPath: m_TagString
+      value: CaveLocation
+      objectReference: {fileID: 0}
     - target: {fileID: 5592031073162697961, guid: 9927951c9bb33d24784dbc60866b3b38, type: 3}
       propertyPath: m_Name
       value: Teleport Cave
@@ -287899,6 +287920,10 @@ PrefabInstance:
     - target: {fileID: 6281961478729305326, guid: 9927951c9bb33d24784dbc60866b3b38, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 1.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 6938244157420988665, guid: 9927951c9bb33d24784dbc60866b3b38, type: 3}
+      propertyPath: m_TagString
+      value: TownLocation
       objectReference: {fileID: 0}
     - target: {fileID: 8386699791529741286, guid: 9927951c9bb33d24784dbc60866b3b38, type: 3}
       propertyPath: m_LocalPosition.x
@@ -361505,6 +361530,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 6.23
       objectReference: {fileID: 0}
+    - target: {fileID: 3862964533569818996, guid: 9927951c9bb33d24784dbc60866b3b38, type: 3}
+      propertyPath: m_TagString
+      value: NPCHouseLocation
+      objectReference: {fileID: 0}
     - target: {fileID: 5592031073162697961, guid: 9927951c9bb33d24784dbc60866b3b38, type: 3}
       propertyPath: m_Name
       value: Teleport NPC House
@@ -361516,6 +361545,10 @@ PrefabInstance:
     - target: {fileID: 6281961478729305326, guid: 9927951c9bb33d24784dbc60866b3b38, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0.617
+      objectReference: {fileID: 0}
+    - target: {fileID: 6938244157420988665, guid: 9927951c9bb33d24784dbc60866b3b38, type: 3}
+      propertyPath: m_TagString
+      value: NPCHouseLocation
       objectReference: {fileID: 0}
     - target: {fileID: 7330292214394043537, guid: 9927951c9bb33d24784dbc60866b3b38, type: 3}
       propertyPath: m_Size.x
@@ -370115,6 +370148,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Position 2 Exit
       objectReference: {fileID: 0}
+    - target: {fileID: 3862964533569818996, guid: 9927951c9bb33d24784dbc60866b3b38, type: 3}
+      propertyPath: m_TagString
+      value: SheriffLocation
+      objectReference: {fileID: 0}
     - target: {fileID: 5592031073162697961, guid: 9927951c9bb33d24784dbc60866b3b38, type: 3}
       propertyPath: m_Name
       value: Teleport Sheriff Building
@@ -370138,6 +370175,10 @@ PrefabInstance:
     - target: {fileID: 6938244157420988665, guid: 9927951c9bb33d24784dbc60866b3b38, type: 3}
       propertyPath: m_Name
       value: Position 1 Enter
+      objectReference: {fileID: 0}
+    - target: {fileID: 6938244157420988665, guid: 9927951c9bb33d24784dbc60866b3b38, type: 3}
+      propertyPath: m_TagString
+      value: TownLocation
       objectReference: {fileID: 0}
     - target: {fileID: 7330292214394043537, guid: 9927951c9bb33d24784dbc60866b3b38, type: 3}
       propertyPath: m_Size.x

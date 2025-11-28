@@ -13,6 +13,7 @@ public class GunScript : MonoBehaviour
     private float angleToCursor;
     private bool canFire;
     private float currentTime;
+    private AudioManagerScript audioManagerScript;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -21,8 +22,8 @@ public class GunScript : MonoBehaviour
         GetComponent<SpriteRenderer>().sprite = currentGun.gunSprite;
 
         currentGun = Instantiate(currentGun);
-
         deckManagerScript = GameObject.FindWithTag("DeckManager").GetComponent<DeckManagerScript>();
+        audioManagerScript = GameObject.FindWithTag("AudioManager").GetComponent<AudioManagerScript>();
     }
 
     // Update is called once per frame
@@ -47,12 +48,14 @@ public class GunScript : MonoBehaviour
             {
                 Shoot();
                 StartCoroutine(nameof(fireRateHandler));
+
             }
         }
     }
 
     void Shoot()
     {
+        audioManagerScript.PlayRandomSFX(audioManagerScript.Shooting);
         if (currentGun.isSingleShot)
         {
             GameObject bulletObj = Instantiate(bullet, bulletSpawner.transform.position, transform.rotation);

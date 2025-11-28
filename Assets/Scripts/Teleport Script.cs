@@ -14,6 +14,7 @@ public class TeleportScript : MonoBehaviour
     public List<GameObject> currentEnemies;
     public GameObject spawnHolder;
 
+    private AudioManagerScript audioManagerScript;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -26,6 +27,8 @@ public class TeleportScript : MonoBehaviour
                 spawnPositions.Add(spawnHolder.transform.GetChild(i).gameObject);
             }
         }
+
+        audioManagerScript = GameObject.FindWithTag("AudioManager").GetComponent<AudioManagerScript>();
     }
 
     private void Update()
@@ -61,6 +64,45 @@ public class TeleportScript : MonoBehaviour
                 DeSpawnEnemies();
             }
         }
+
+        ChangeMusic();
+    }
+
+    void ChangeMusic()
+    {
+        AudioClip musicClip = null;
+        if (teleportPosition.CompareTag("TownLocation"))
+        {
+            player.GetComponent<PlayerScript>().location = "Town";
+            musicClip = audioManagerScript.TownMusic;
+        }
+        else if (teleportPosition.CompareTag("ShopLocation"))
+        {
+            player.GetComponent<PlayerScript>().location = "Shop";
+            musicClip = audioManagerScript.ShopMusic;
+        }
+        // Going into houses will keep the town music
+        else if (teleportPosition.CompareTag("SheriffLocation"))
+        {
+            player.GetComponent<PlayerScript>().location = "Sheriff";
+        }
+        else if (teleportPosition.CompareTag("NPCHouseLocation"))
+        {
+            player.GetComponent<PlayerScript>().location = "NPCHouse";
+        }
+        //
+        else if (teleportPosition.CompareTag("CasinoLocation"))
+        {
+            player.GetComponent<PlayerScript>().location = "Casino";
+            musicClip = audioManagerScript.DungeonMusic;
+        }
+        else if (teleportPosition.CompareTag("CaveLocation"))
+        {
+            player.GetComponent<PlayerScript>().location = "Cave";
+            musicClip = audioManagerScript.CaveMusic;
+        }
+
+        audioManagerScript.ChangeMusic(musicClip);
     }
 
     void SpawnEnemies()

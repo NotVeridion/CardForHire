@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuScript : MonoBehaviour
 {
-    
+    public AudioManagerScript audioManagerScript;
     public void QuitGame()
     {
         Application.Quit();
@@ -11,6 +11,11 @@ public class MainMenuScript : MonoBehaviour
 
     public void PlayGame()
     {
+        audioManagerScript.musicSource.Stop();
+        
+        audioManagerScript.musicSource.clip = audioManagerScript.TownMusic;
+        audioManagerScript.musicSource.Play();
+
         SceneManager.LoadScene("Level");
     }
 }
