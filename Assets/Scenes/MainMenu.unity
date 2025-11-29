@@ -814,6 +814,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
+    - target: {fileID: 3952996462276426651, guid: 9d3681ddb6764f34092284afe88ef036, type: 3}
+      propertyPath: Dash
+      value: 
+      objectReference: {fileID: 8300000, guid: 3f497fa408349864785e8adb5956179b, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

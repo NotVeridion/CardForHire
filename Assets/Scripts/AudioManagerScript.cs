@@ -16,6 +16,9 @@ public class AudioManagerScript : MonoBehaviour
 
     [Header("   Sound Effects  ")]
     public AudioClip Pickup;
+    public AudioClip Hit;
+    public AudioClip Dash;
+    public AudioClip Button;
     public AudioClip[] ThroughDoor;
     public AudioClip[] WalkingGrass;
     public AudioClip[] WalkingStone;
@@ -23,6 +26,17 @@ public class AudioManagerScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        GameObject[] audioObjs = GameObject.FindGameObjectsWithTag("AudioManager");
+        if (audioObjs.Length > 1)
+        {
+            foreach (GameObject obj in audioObjs){
+                if (obj != gameObject)
+                {
+                    Destroy(obj);
+                }
+            }
+        }
+
         DontDestroyOnLoad(gameObject);
         musicSource.clip = MainMenuMusic;
         musicSource.Play();

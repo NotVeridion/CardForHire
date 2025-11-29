@@ -183,7 +183,10 @@ MonoBehaviour:
   ShopMusic: {fileID: 8300000, guid: 88b98996579344442a72f3837bb5daa7, type: 3}
   DungeonMusic: {fileID: 8300000, guid: f662bf185132c204eaf96d2ad81906cb, type: 3}
   BossMusic: {fileID: 8300000, guid: 8ffd3ceafe1512c4e8d80e90ff8dbd48, type: 3}
-  Pickup: {fileID: 8300000, guid: 7e8511836cd925444a00a65f08d87027, type: 3}
+  Pickup: {fileID: 8300000, guid: 5384efb2eb4bcc0498bb08d5451688c6, type: 3}
+  Hit: {fileID: 8300000, guid: ee4b567fa874a814cb335d469e9c06f2, type: 3}
+  Dash: {fileID: 8300000, guid: 3f497fa408349864785e8adb5956179b, type: 3}
+  Button: {fileID: 8300000, guid: 1dd0cb834196dc3439f8bf4e2df946b6, type: 3}
   ThroughDoor:
   - {fileID: 8300000, guid: 8d0f4b64f601e9e45b505ad597806d42, type: 3}
   - {fileID: 8300000, guid: fb3bf851060eee447b7e7ece05425b04, type: 3}

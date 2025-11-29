@@ -76,6 +76,8 @@ public class PlayerScript : MonoBehaviour
             currentDashCooldown = dashCooldown;
             rb.linearVelocity = new Vector3(movementVector.x * dashPower, movementVector.y * dashPower, 0);
             dashTrail.emitting = true;
+
+            audioManagerScript.PlayOneShotSFX(audioManagerScript.Dash);
         }
 
         if (!isDashing)
@@ -112,26 +114,28 @@ public class PlayerScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
+        if (other.gameObject.CompareTag("AttackSpeedPickup") || other.gameObject.CompareTag("DamagePickup")
+            || other.gameObject.CompareTag("DashDistancePickup") || other.gameObject.CompareTag("MovementSpeedPickup"))
+        {
+            PickupScript script = other.gameObject.GetComponent<PickupScript>();
+            if (other.gameObject.CompareTag("AttackSpeedPickup"))
+            {
+                StartCoroutine(applyAttackSpeedBuff(script.value, script.duration));
+            }
+            if (other.gameObject.CompareTag("DamagePickup"))
+            {
+                StartCoroutine(applyDamageBuff(script.value, script.duration));
+            }
+            if (other.gameObject.CompareTag("DashDistancePickup"))
+            {
+                StartCoroutine(applyDashDistanceBuff(script.value, script.duration));
+            }
+            if (other.gameObject.CompareTag("MovementSpeedPickup"))
+            {
+                StartCoroutine(applyMovementSpeedBuff(script.value, script.duration));
+            }
 
-        if (other.gameObject.CompareTag("AttackSpeedPickup"))
-        {
-            PickupScript script = other.gameObject.GetComponent<PickupScript>();
-            StartCoroutine(applyAttackSpeedBuff(script.value, script.duration));
-        }
-        if (other.gameObject.CompareTag("DamagePickup"))
-        {
-            PickupScript script = other.gameObject.GetComponent<PickupScript>();
-            StartCoroutine(applyDamageBuff(script.value, script.duration));
-        }
-        if (other.gameObject.CompareTag("DashDistancePickup"))
-        {
-            PickupScript script = other.gameObject.GetComponent<PickupScript>();
-            StartCoroutine(applyDashDistanceBuff(script.value, script.duration));
-        }
-        if (other.gameObject.CompareTag("MovementSpeedPickup"))
-        {
-            PickupScript script = other.gameObject.GetComponent<PickupScript>();
-            StartCoroutine(applyMovementSpeedBuff(script.value, script.duration));
+            audioManagerScript.PlayOneShotSFX(audioManagerScript.Pickup);
         }
     }
 
@@ -141,6 +145,7 @@ public class PlayerScript : MonoBehaviour
         {
             EnemyBulletScript enemyBullet = other.gameObject.GetComponent<EnemyBulletScript>();
             TakeDamage(enemyBullet.bulletDamage);
+            audioManagerScript.PlayOneShotSFX(audioManagerScript.Hit);
 
             Destroy(other.gameObject);
         }
@@ -153,14 +158,14 @@ public class PlayerScript : MonoBehaviour
         if (vertical != 0 || horizontal != 0)
         {
             playerAnimator.SetBool("isMoving", true);
+
+            if (!audioManagerScript.SFXSource.isPlaying){
+                audioManagerScript.PlayRandomSFX(audioManagerScript.WalkingGrass);
+            }
         }
         else
         {
             playerAnimator.SetBool("isMoving", false);
-        }
-
-        if (!audioManagerScript.SFXSource.isPlaying){
-            audioManagerScript.PlayRandomSFX(audioManagerScript.WalkingGrass);
         }
     }
 

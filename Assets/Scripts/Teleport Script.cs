@@ -71,38 +71,51 @@ public class TeleportScript : MonoBehaviour
     void ChangeMusic()
     {
         AudioClip musicClip = null;
+
         if (teleportPosition.CompareTag("TownLocation"))
         {
+            if (player.GetComponent<PlayerScript>().location == "Sheriff" || player.GetComponent<PlayerScript>().location == "NPCHouse")
+            {
+                player.GetComponent<PlayerScript>().location = "Town";
+                return;
+            }
+
             player.GetComponent<PlayerScript>().location = "Town";
             musicClip = audioManagerScript.TownMusic;
+            audioManagerScript.ChangeMusic(musicClip);
+            audioManagerScript.PlayRandomSFX(audioManagerScript.ThroughDoor);
         }
         else if (teleportPosition.CompareTag("ShopLocation"))
         {
-            player.GetComponent<PlayerScript>().location = "Shop";
             musicClip = audioManagerScript.ShopMusic;
+            audioManagerScript.ChangeMusic(musicClip);
+            audioManagerScript.PlayRandomSFX(audioManagerScript.ThroughDoor);
+            player.GetComponent<PlayerScript>().location = "Shop";
         }
         // Going into houses will keep the town music
         else if (teleportPosition.CompareTag("SheriffLocation"))
         {
+            audioManagerScript.PlayRandomSFX(audioManagerScript.ThroughDoor);
             player.GetComponent<PlayerScript>().location = "Sheriff";
         }
         else if (teleportPosition.CompareTag("NPCHouseLocation"))
         {
+            audioManagerScript.PlayRandomSFX(audioManagerScript.ThroughDoor);
             player.GetComponent<PlayerScript>().location = "NPCHouse";
         }
         //
         else if (teleportPosition.CompareTag("CasinoLocation"))
         {
-            player.GetComponent<PlayerScript>().location = "Casino";
             musicClip = audioManagerScript.DungeonMusic;
+            audioManagerScript.ChangeMusic(musicClip);
+            player.GetComponent<PlayerScript>().location = "Casino";
         }
         else if (teleportPosition.CompareTag("CaveLocation"))
         {
-            player.GetComponent<PlayerScript>().location = "Cave";
             musicClip = audioManagerScript.CaveMusic;
+            audioManagerScript.ChangeMusic(musicClip);
+            player.GetComponent<PlayerScript>().location = "Cave";
         }
-
-        audioManagerScript.ChangeMusic(musicClip);
     }
 
     void SpawnEnemies()

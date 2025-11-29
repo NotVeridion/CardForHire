@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class MainMenuScript : MonoBehaviour
 {
     public AudioManagerScript audioManagerScript;
+
     public void QuitGame()
     {
         Application.Quit();
@@ -11,6 +12,7 @@ public class MainMenuScript : MonoBehaviour
 
     public void PlayGame()
     {
+        audioManagerScript.PlayOneShotSFX(audioManagerScript.Button);
         audioManagerScript.musicSource.Stop();
         
         audioManagerScript.musicSource.clip = audioManagerScript.TownMusic;
