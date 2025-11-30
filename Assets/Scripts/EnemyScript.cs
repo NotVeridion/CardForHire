@@ -22,6 +22,7 @@ public class EnemyScript : MonoBehaviour
     {
         Idle,
         ChasingPlayer,
+        ShotByPlayer,
         ShootingFromRange
     }
     private EnemyState currentState;
@@ -32,6 +33,10 @@ public class EnemyScript : MonoBehaviour
         if (enemyHP <= 0)
         {
             Destroy(gameObject);
+        }
+        if (currentState == EnemyState.Idle)
+        {
+            currentState = EnemyState.ShotByPlayer;
         }
     }
 
@@ -102,6 +107,20 @@ public class EnemyScript : MonoBehaviour
             else if (distanceToPlayer > detectPlayerRange)
             {
                 currentState = EnemyState.Idle;
+            }
+            GetComponent<Animator>().SetBool("isMoving", true);
+        }
+        else if (currentState == EnemyState.ShotByPlayer)
+        {
+            gun.isPointingAtPlayer = false;
+            gun.isShooting = false;
+            
+            transform.position = Vector2.MoveTowards(transform.position, player.transform.position, enemyMoveSpeed * Time.deltaTime);
+
+            float distanceToPlayer = Vector2.Distance(transform.position, player.transform.position);
+            if (distanceToPlayer <= attackPlayerRange)
+            {
+                currentState = EnemyState.ShootingFromRange;
             }
             GetComponent<Animator>().SetBool("isMoving", true);
         }

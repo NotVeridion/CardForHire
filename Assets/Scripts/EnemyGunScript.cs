@@ -55,15 +55,26 @@ public class EnemyGunScript : MonoBehaviour
             }
             else
             {
-                GetComponent<SpriteRenderer>().flipX = true;
-                GetComponent<SpriteRenderer>().flipY = false;
+                transform.rotation = Quaternion.Euler(Vector3.forward * 180);
+                GetComponent<SpriteRenderer>().flipX = false;
+                GetComponent<SpriteRenderer>().flipY = true;
             }
         }
         else
         {
-            GetComponent<SpriteRenderer>().flipX = false;
-            GetComponent<SpriteRenderer>().flipY = false;
+            if (isPointingAtPlayer)
+            {
+                GetComponent<SpriteRenderer>().flipX = false;
+                GetComponent<SpriteRenderer>().flipY = false;
+            }
+            else
+            {
+                transform.rotation = Quaternion.Euler(Vector3.forward);
+                GetComponent<SpriteRenderer>().flipX = false;
+                GetComponent<SpriteRenderer>().flipY = false;
+            }
         }
+        
     }
     
     void Shoot()
