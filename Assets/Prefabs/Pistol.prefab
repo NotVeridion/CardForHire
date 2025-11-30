@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 2298481013144660147}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.09, y: -0.469, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -104,7 +104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e950dbbb1c749fd4d9d1269f97c2585d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PistolScript
-  gunScriptableObject: {fileID: 11400000, guid: 53e74909fea220f4684d5ab903e49dcd, type: 2}
+  currentGun: {fileID: 0}
   bulletSpawner: {fileID: 3617166048149049447}
   bullet: {fileID: 5843007583955890467, guid: 7cb066647a040eb48a75b1358d4d5d73, type: 3}
 --- !u!1 &3617166048149049447

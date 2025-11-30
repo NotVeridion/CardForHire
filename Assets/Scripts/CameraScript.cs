@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class CameraScript : MonoBehaviour
 {
+    public float zoom;
     private GameObject playerObject;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -15,6 +16,8 @@ public class CameraScript : MonoBehaviour
         if(playerObject != null){
             transform.position = new Vector3(playerObject.transform.position.x, playerObject.transform.position.y, -10);
             transform.rotation = Quaternion.identity;
+
+            Camera.main.orthographicSize = zoom;
         }
     }
 }

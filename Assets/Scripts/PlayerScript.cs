@@ -171,6 +171,11 @@ public class PlayerScript : MonoBehaviour
 
     public void TakeDamage(float dmg)
     {
+        if (isDashing)
+        {
+            return;
+        }
+
         playerHealth -= dmg;
         if (playerHealth < 0)
         {

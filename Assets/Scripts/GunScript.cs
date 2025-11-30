@@ -48,7 +48,6 @@ public class GunScript : MonoBehaviour
             {
                 Shoot();
                 StartCoroutine(nameof(fireRateHandler));
-
             }
         }
     }
@@ -72,6 +71,10 @@ public class GunScript : MonoBehaviour
                 GameObject bulletObj = Instantiate(bullet, bulletSpawner.transform.position, transform.rotation * bulletRot);
                 SetBulletData(bulletObj);
             }
+
+            // Add a singular bullet that flies towards direction
+            GameObject midBullet = Instantiate(bullet, bulletSpawner.transform.position, transform.rotation);
+            SetBulletData(midBullet);
         }
     }
 

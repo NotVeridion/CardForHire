@@ -63,7 +63,7 @@ public class EnemyScript : MonoBehaviour
         }
         else
         {
-             GetComponent<SpriteRenderer>().flipX = false;
+            GetComponent<SpriteRenderer>().flipX = false;
         }
     }
 

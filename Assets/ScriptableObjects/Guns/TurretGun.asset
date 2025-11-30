@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0f21688c0e42b34892f64cf81ab2caa, type: 3}
+  m_Name: TurretGun
+  m_EditorClassIdentifier: Assembly-CSharp::Gun
+  gunName: 
+  gunSprite: {fileID: 0}
+  fireRate: 0
+  damage: 0
+  bulletMoveSpeed: 0
+  bulletDuration: 0
+  isSingleShot: 0
+  isSpreadShot: 0
+  spreadRange: 0
+  numBulletsInSpread: 0
