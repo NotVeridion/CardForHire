@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.Collections;
-using TMPro;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -11,7 +10,11 @@ public class PlayerScript : MonoBehaviour
     public float dashDuration;
     private float currentDashDuration;
     public float dashCooldown;
+    [HideInInspector]
     public float currentDashCooldown;
+    [HideInInspector]
+    public string location;
+    private GunScript gunScript;
     private TrailRenderer dashTrail;
     private Rigidbody2D rb;
     private bool canDash;
@@ -22,6 +25,7 @@ public class PlayerScript : MonoBehaviour
     private Animator playerAnimator;
     private SpriteRenderer playerSpriteRenderer;
     private SpriteRenderer gunSpriteRenderer;
+    private AudioManagerScript audioManagerScript;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -30,6 +34,8 @@ public class PlayerScript : MonoBehaviour
         playerAnimator = GetComponent<Animator>();
         playerSpriteRenderer = GetComponent<SpriteRenderer>();
         gunSpriteRenderer = GameObject.FindWithTag("Gun").GetComponent<SpriteRenderer>();
+        audioManagerScript = GameObject.FindWithTag("AudioManager").GetComponent<AudioManagerScript>();
+        gunScript = GetComponentInChildren<GunScript>();
         dashTrail = GetComponent<TrailRenderer>();
         canDash = true;
         currentDashDuration = dashDuration;
@@ -70,6 +76,8 @@ public class PlayerScript : MonoBehaviour
             currentDashCooldown = dashCooldown;
             rb.linearVelocity = new Vector3(movementVector.x * dashPower, movementVector.y * dashPower, 0);
             dashTrail.emitting = true;
+
+            audioManagerScript.PlayOneShotSFX(audioManagerScript.Dash);
         }
 
         if (!isDashing)
@@ -89,6 +97,7 @@ public class PlayerScript : MonoBehaviour
         }
         else if (canDash == false)
         {
+            dashTrail.emitting = false;
             currentDashCooldown -= Time.deltaTime;
             if (currentDashCooldown < 0)
             {
@@ -103,14 +112,42 @@ public class PlayerScript : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D other)
     {
-        if (collision.gameObject.CompareTag("EnemyBullet"))
+        if (other.gameObject.CompareTag("AttackSpeedPickup") || other.gameObject.CompareTag("DamagePickup")
+            || other.gameObject.CompareTag("DashDistancePickup") || other.gameObject.CompareTag("MovementSpeedPickup"))
         {
-            EnemyBulletScript enemyBullet = collision.gameObject.GetComponent<EnemyBulletScript>();
-            TakeDamage(enemyBullet.bulletDamage);
+            PickupScript script = other.gameObject.GetComponent<PickupScript>();
+            if (other.gameObject.CompareTag("AttackSpeedPickup"))
+            {
+                StartCoroutine(applyAttackSpeedBuff(script.value, script.duration));
+            }
+            if (other.gameObject.CompareTag("DamagePickup"))
+            {
+                StartCoroutine(applyDamageBuff(script.value, script.duration));
+            }
+            if (other.gameObject.CompareTag("DashDistancePickup"))
+            {
+                StartCoroutine(applyDashDistanceBuff(script.value, script.duration));
+            }
+            if (other.gameObject.CompareTag("MovementSpeedPickup"))
+            {
+                StartCoroutine(applyMovementSpeedBuff(script.value, script.duration));
+            }
 
-            Destroy(collision.gameObject);
+            audioManagerScript.PlayOneShotSFX(audioManagerScript.Pickup);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("EnemyBullet"))
+        {
+            EnemyBulletScript enemyBullet = other.gameObject.GetComponent<EnemyBulletScript>();
+            TakeDamage(enemyBullet.bulletDamage);
+            audioManagerScript.PlayOneShotSFX(audioManagerScript.Hit);
+
+            Destroy(other.gameObject);
         }
     }
 
@@ -121,6 +158,10 @@ public class PlayerScript : MonoBehaviour
         if (vertical != 0 || horizontal != 0)
         {
             playerAnimator.SetBool("isMoving", true);
+
+            if (!audioManagerScript.SFXSource.isPlaying){
+                audioManagerScript.PlayRandomSFX(audioManagerScript.WalkingGrass);
+            }
         }
         else
         {
@@ -151,7 +192,7 @@ public class PlayerScript : MonoBehaviour
         switch (stat)
         {
             case "FireRate":
-                GetComponentInChildren<GunScript>().currentGun.fireRate += amt;
+                gunScript.currentGun.fireRate += amt;
                 break;
             case "EnergyRegain":
                 currentDashCooldown += amt;
@@ -160,6 +201,45 @@ public class PlayerScript : MonoBehaviour
                     currentDashCooldown = 0;
                 }
                 break;
+            case "Damage":
+                gunScript.currentGun.damage += amt;
+                break;
+            case "Bullet Count":
+                gunScript.currentGun.numBulletsInSpread += (int) amt;
+                break;
         }
+    }
+
+    IEnumerator applyAttackSpeedBuff(float amt, float duration)
+    {
+        gunScript.currentGun.fireRate += amt;
+        
+        yield return new WaitForSeconds(duration);
+
+        gunScript.currentGun.fireRate -= amt;
+    }
+    IEnumerator applyDamageBuff(float amt, float duration)
+    {
+        gunScript.currentGun.damage += amt;
+        
+        yield return new WaitForSeconds(duration);
+
+        gunScript.currentGun.damage -= amt;
+    }
+    IEnumerator applyDashDistanceBuff(float amt, float duration)
+    {
+        dashDuration += amt;
+        
+        yield return new WaitForSeconds(duration);
+
+        dashDuration -= amt;
+    }
+    IEnumerator applyMovementSpeedBuff(float amt, float duration)
+    {
+        playerMoveSpeed += amt;
+        
+        yield return new WaitForSeconds(duration);
+
+        playerMoveSpeed -= amt;
     }
 }

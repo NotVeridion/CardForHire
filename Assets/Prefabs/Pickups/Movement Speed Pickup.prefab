@@ -287,7 +287,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.1
+      scalar: 0.2
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -1368,8 +1368,8 @@ ParticleSystem:
         m_NumAlphaKeys: 2
   UVModule:
     serializedVersion: 2
-    enabled: 0
-    mode: 0
+    enabled: 1
+    mode: 1
     timeMode: 0
     fps: 30
     frameOverTime:
@@ -1487,7 +1487,7 @@ ParticleSystem:
     uvChannelMask: -1
     rowMode: 1
     sprites:
-    - sprite: {fileID: 0}
+    - sprite: {fileID: 1746656750441003446, guid: 7fe67cd27b60f504ba51b88f708094fc, type: 3}
     flipU: 0
     flipV: 0
   VelocityModule:
@@ -5079,8 +5079,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PickupScript
   spriteIcon: {fileID: 6991017298630872150}
-  value: 0
-  duration: 0
+  value: 4
+  duration: 5
 --- !u!1 &6991017298630872150
 GameObject:
   m_ObjectHideFlags: 0

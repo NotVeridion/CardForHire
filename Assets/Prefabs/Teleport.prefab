@@ -342,6 +342,37 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!1 &2654742222685166562
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5191875382756647796}
+  m_Layer: 0
+  m_Name: Enemies Position Holder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5191875382756647796
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2654742222685166562}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -192.03981, y: -77.88158, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3405714063389157958}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3300924923424038992
 GameObject:
   m_ObjectHideFlags: 0
@@ -586,6 +617,12 @@ MonoBehaviour:
   teleportPosition: {fileID: 6938244157420988665}
   player: {fileID: 0}
   teleportInfo: {fileID: 1296316211412194916}
+  dangerous: 0
+  spawn: 0
+  spawnPositions: []
+  enemiesPrefab: []
+  currentEnemies: []
+  spawnHolder: {fileID: 0}
 --- !u!61 &7330292214394043537
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -663,6 +700,7 @@ Transform:
   m_Children:
   - {fileID: 3730725082194341974}
   - {fileID: 8386699791529741286}
+  - {fileID: 5191875382756647796}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6938244157420988665
@@ -773,6 +811,12 @@ MonoBehaviour:
   teleportPosition: {fileID: 3862964533569818996}
   player: {fileID: 0}
   teleportInfo: {fileID: 1580935681825409962}
+  dangerous: 0
+  spawn: 0
+  spawnPositions: []
+  enemiesPrefab: []
+  currentEnemies: []
+  spawnHolder: {fileID: 2654742222685166562}
 --- !u!61 &1777121446779268961
 BoxCollider2D:
   m_ObjectHideFlags: 0

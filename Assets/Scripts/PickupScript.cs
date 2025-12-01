@@ -8,6 +8,14 @@ public class PickupScript : MonoBehaviour
     public float value;
     public float duration;
 
+    [SerializeField] GameUISccript uISccript;
+
+    private void Start()
+    {
+        uISccript = FindAnyObjectByType<GameUISccript>();
+    }
+
+
     // Update is called once per frame
     void Update()
     {
@@ -19,6 +27,24 @@ public class PickupScript : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             GetComponentInParent<PickupSpawnerScript>().empty = true;
+            switch (gameObject.tag)
+            {
+                case "AttackSpeedPickup":
+                    uISccript.AttackSpeedDuration(duration);
+                    break;
+
+                case "DamagePickup":
+                    uISccript.DamageDuration(duration);
+                    break;
+
+                case "MovementSpeedPickup":
+                    uISccript.MovementDuration(duration);
+                    break;
+
+                case "DashDistancePickup":
+                    uISccript.DashDistance(duration);
+                    break;
+            }
             Destroy(gameObject);
         }
     }

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6644786968760179561}
   - component: {fileID: 2456360090407257367}
   - component: {fileID: 93604099071429693}
+  - component: {fileID: 8503482066232468030}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -113,6 +114,29 @@ MonoBehaviour:
   bulletDuration: 5
   player: {fileID: 0}
   gun: {fileID: 0}
+  isStunned: 0
+--- !u!95 &8503482066232468030
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3093168112109348268}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &4168351313088271227
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -126,12 +150,20 @@ PrefabInstance:
       value: EnemyPistol
       objectReference: {fileID: 0}
     - target: {fileID: 5395701266323089991, guid: ff217cb217850a490adbd0ebf80a1170, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5395701266323089991, guid: ff217cb217850a490adbd0ebf80a1170, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5395701266323089991, guid: ff217cb217850a490adbd0ebf80a1170, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.131
       objectReference: {fileID: 0}
     - target: {fileID: 5395701266323089991, guid: ff217cb217850a490adbd0ebf80a1170, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.21132994
+      value: -0.263
       objectReference: {fileID: 0}
     - target: {fileID: 5395701266323089991, guid: ff217cb217850a490adbd0ebf80a1170, type: 3}
       propertyPath: m_LocalPosition.z
