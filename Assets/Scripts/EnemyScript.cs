@@ -19,7 +19,7 @@ public class EnemyScript : MonoBehaviour
     public bool doesRoamAround = true;
     
     private float idleStopWalkingTimer = 0f;
-    private float radius = 5f;
+    private float radius = 1f;
     
     private bool isCurrentlyRoaming = false;
     
@@ -100,6 +100,11 @@ public class EnemyScript : MonoBehaviour
                     if (!isCurrentlyRoaming)
                     {
                         nextIdlePosition = Random.insideUnitCircle * radius;
+                        RaycastHit2D hit = Physics2D.Raycast(transform.position, nextIdlePosition, Vector2.Distance(transform.position, nextIdlePosition), LayerMask.GetMask("Wall"));
+                        if (hit)
+                        {
+                            nextIdlePosition = transform.position;
+                        }
                     }
                     
                     isCurrentlyRoaming = true;
@@ -116,15 +121,10 @@ public class EnemyScript : MonoBehaviour
                     {
                         idleStopWalkingTimer = 0f;
                         isCurrentlyRoaming = false;
-                        //GetComponent<Animator>().SetBool("isMoving", false);
                     }
                 }
 
-            }/*
-            else
-            {
-                GetComponent<Animator>().SetBool("isMoving", false);
-            }*/
+            }
             float distanceToPlayer = Vector2.Distance(transform.position, player.transform.position);
             if (distanceToPlayer <= detectPlayerRange)
             {
