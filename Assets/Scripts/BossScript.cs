@@ -77,14 +77,22 @@ public class BossScript : MonoBehaviour
 
         StateMachine.Update();
 
-        if (currentHealth <= maxHealth / 4 && !wasFinalState)
+        if (currentHealth <= (maxHealth - maxHealth/2) && !wasFinalState)
         {
+            // Destroy all bullets currently on screen
+            foreach (GameObject bullet in GameObject.FindGameObjectsWithTag("EnemyBullet"))
+            {
+                Destroy(bullet);
+            }
+
             StateMachine.ChangeState(FinalState);
+            gun.GetComponent<SpriteRenderer>().sprite = null;
             wasFinalState = true;
         }
-        else if (currentHealth <= maxHealth / 2 && !wasSpecialState)
+        else if (currentHealth <= (maxHealth - maxHealth/3) && !wasSpecialState)
         {
             StateMachine.ChangeState(SpecialAttackState);
+            gun.GetComponent<SpriteRenderer>().sprite = gun.currentGun.gunSprite;
             wasSpecialState = true;
         }
     }

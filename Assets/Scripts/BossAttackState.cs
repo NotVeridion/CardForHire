@@ -8,6 +8,11 @@ public class BossAttackState : BossState
     {
         boss.gun.currentGun = boss.gun.bossShotgun;
         boss.gun.canFire = true;
+
+        Vector3 centerPos = boss.positionCenter.transform.position;
+        Camera.main.transform.position = new Vector3(centerPos.x, centerPos.y, -1);
+        Camera.main.orthographicSize = 15;
+        Camera.main.GetComponent<CameraScript>().inFinalBoss = true;
     }
 
     public override void Exit()

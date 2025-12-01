@@ -111,6 +111,14 @@ public class BulletScript : MonoBehaviour
         }
     }
 
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Wall"))
+        {
+            Destroy(gameObject);
+        }
+    }
+
     public void applyCardToBullet(Card card)
     {
         bulletDamage += card.number; // Number adds to current bullet damage

@@ -15,15 +15,17 @@ public class BossGunScript : MonoBehaviour
     public Gun currentGun;
     public GameObject indicatorPrefab;
     public float indicatorDuration;
+    public bool inFinalState;
     private GameObject currentIndicator;
     private GameObject player;
     private bool isIndicating;
-    private Quaternion indicationDirection;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         currentGun = bossShotgun;
+        GetComponent<SpriteRenderer>().sprite = currentGun.gunSprite;
         player = GameObject.FindWithTag("Player");
         canFire = true;
     }
@@ -31,7 +33,7 @@ public class BossGunScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!isIndicating)
+        if (!isIndicating && !inFinalState)
         {
             Vector2 dirToPlayer = (player.transform.position - transform.position).normalized;
             float angleToPlayer = Mathf.Atan2(dirToPlayer.y, dirToPlayer.x) * Mathf.Rad2Deg;
@@ -55,14 +57,16 @@ public class BossGunScript : MonoBehaviour
         {
             for (int i = 0; i < currentGun.numBulletsInSpread; i++)
             {
+                int randomOffset = Random.Range(0, 25);
                 float angle = -currentGun.spreadRange + currentGun.spreadRange*2 * i / currentGun.numBulletsInSpread;
-                Quaternion bulletRot = Quaternion.Euler(Vector3.forward * angle);
+                Quaternion bulletRot = Quaternion.Euler(Vector3.forward * (angle + randomOffset));
                 GameObject bulletObj = Instantiate(regularBullet, bulletSpawner.transform.position, transform.rotation * bulletRot);
                 SetBulletData(bulletObj);
             }
 
             // Add a singular bullet that flies towards direction
-            GameObject midBullet = Instantiate(regularBullet, bulletSpawner.transform.position, transform.rotation);
+            
+            GameObject midBullet = Instantiate(regularBullet, bulletSpawner.transform.position, transform.rotation * Quaternion.Euler(Vector3.forward *  Random.Range(0, 3)));
             SetBulletData(midBullet);
 
             StartCoroutine(fireRateHandler());
