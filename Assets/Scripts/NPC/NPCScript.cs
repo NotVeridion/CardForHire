@@ -7,7 +7,7 @@ using Unity.VisualScripting.Dependencies.NCalc;
 public class NPCScript : MonoBehaviour, IInteractable
 {
     public NPCDialogue dialogueData;
-
+    
     [Header("NPC Identifier")]
     public string npcID;
 
