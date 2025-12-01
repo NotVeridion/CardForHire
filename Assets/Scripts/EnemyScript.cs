@@ -4,19 +4,26 @@ public class EnemyScript : MonoBehaviour
 {
     public float enemyMoveSpeed;
     public float enemyBulletSpeed;
-    //public float enemyShootPauseTime;
     public float enemyHP;
     public float enemyBulletDamage;
     public float detectPlayerRange;
     public float attackPlayerRange;
     public float bulletDuration;
+    public float idleStopWalingTime = 5f;
     
     public PlayerScript player;
     public EnemyGunScript gun;
-    //public EnemyBulletScript bullet;
-    public bool isStunned;
+    public GameObject enemySpawner;
     
-    //private float enemyShootTimer = 0f;
+    public bool isStunned;
+    public bool doesRoamAround = true;
+    
+    private float idleStopWalkingTimer = 0f;
+    private float radius = 5f;
+    
+    private bool isCurrentlyRoaming = false;
+    
+    private Vector3 nextIdlePosition;
     
     private enum EnemyState
     {
@@ -82,15 +89,48 @@ public class EnemyScript : MonoBehaviour
         
         if (currentState == EnemyState.Idle)
         {
+            GetComponent<Animator>().SetBool("isMoving", false);
             gun.isPointingAtPlayer = false;
             gun.isShooting = false;
-            
+            if (doesRoamAround)
+            {
+                idleStopWalkingTimer += Time.deltaTime;
+                if (idleStopWalkingTimer >= idleStopWalingTime)
+                {
+                    if (!isCurrentlyRoaming)
+                    {
+                        nextIdlePosition = Random.insideUnitCircle * radius;
+                    }
+                    
+                    isCurrentlyRoaming = true;
+                    
+                    Vector3 distanceToNextPoint = nextIdlePosition - transform.position;
+                    Vector3 direction = (nextIdlePosition - transform.position).normalized;
+
+                    if (distanceToNextPoint.magnitude >= 0.1f)
+                    {
+                        transform.position += direction * (enemyMoveSpeed / 2.0f) * Time.deltaTime;
+                        GetComponent<Animator>().SetBool("isMoving", true);
+                    }
+                    else
+                    {
+                        idleStopWalkingTimer = 0f;
+                        isCurrentlyRoaming = false;
+                        //GetComponent<Animator>().SetBool("isMoving", false);
+                    }
+                }
+
+            }/*
+            else
+            {
+                GetComponent<Animator>().SetBool("isMoving", false);
+            }*/
             float distanceToPlayer = Vector2.Distance(transform.position, player.transform.position);
             if (distanceToPlayer <= detectPlayerRange)
             {
                 currentState = EnemyState.ChasingPlayer;
             }
-            GetComponent<Animator>().SetBool("isMoving", false);
+            
         }
         else if (currentState == EnemyState.ChasingPlayer)
         {
@@ -109,6 +149,7 @@ public class EnemyScript : MonoBehaviour
                 currentState = EnemyState.Idle;
             }
             GetComponent<Animator>().SetBool("isMoving", true);
+            isCurrentlyRoaming = false;
         }
         else if (currentState == EnemyState.ShotByPlayer)
         {
@@ -123,6 +164,7 @@ public class EnemyScript : MonoBehaviour
                 currentState = EnemyState.ShootingFromRange;
             }
             GetComponent<Animator>().SetBool("isMoving", true);
+            isCurrentlyRoaming = false;
         }
         else if (currentState == EnemyState.ShootingFromRange)
         {
