@@ -90,37 +90,43 @@ public bool playerInRange = false;
     }
     void StartDialogue()
     {
-        if (IsBlockedByActiveQuest())
-{
-    dialogueUI.SetNPCInfo(dialogueData.npcName);
-    dialogueUI.ShowDialogueUI(true);
-    player.isMovementLocked = true;
-    isDialogueActive = true;
+        if (isQuestGiver && QuestController.Instance != null && QuestController.Instance.HasQuestInProgress)
+    {
+        if (dialogueData != null && dialogueData.quest != null)
+        {
+            string thisQuestID = dialogueData.quest.questID;
 
-    dialogueUI.SetDialogueText("(Complete your current quest first before you can accept another!)");
-    return;
-}
-        player.isMovementLocked = true;
-        SyncQuestState();
-        dialogueUI.ClearChoices();
-        CheckTalkNPCObjectives();
+
+            if (!QuestController.Instance.IsQuestActive(thisQuestID))
+            {
+                player.isMovementLocked = true;
+                isDialogueActive = true;
+
+                dialogueUI.SetNPCInfo(dialogueData.npcName);
+                dialogueUI.ShowDialogueUI(true);
+                dialogueUI.ClearChoices();
+                dialogueUI.SetDialogueText("(You need to complete the current quest before accepting another!)");
+
+                return; 
+            }
+        }
+    }
+
+
+    player.isMovementLocked = true;
+    SyncQuestState();
+    dialogueUI.ClearChoices();
+    CheckTalkNPCObjectives();
+
     if (questState == QuestState.Completed)
     {
-         if (isQuestGiver)
-    {
-        QuestController.Instance.HandInQuest(dialogueData.quest.questID);
-        Debug.Log("Quest handed in by quest giver NPC!");
-        marker.HideMarker();
-    }
-    else
-    {
-        Debug.Log("Quest is completed but must be turned in to the original quest giver.");
-        
-    }
-        
+        if (isQuestGiver)
+        {
+            QuestController.Instance.HandInQuest(dialogueData.quest.questID);
+            marker.HideMarker();
+        }
     }
 
-    // After hand-in or normal state detection, choose dialogue path
     if (questState == QuestState.NotStarted)
     {
         dialogueIndex = 0;
@@ -133,7 +139,7 @@ public bool playerInRange = false;
     {
         dialogueIndex = dialogueData.questCompletedIndex;
     }
-        else if (questState == QuestState.PostCompleted)
+    else if (questState == QuestState.PostCompleted)
     {
         dialogueIndex = dialogueData.questPostCompletedIndex;
     }
