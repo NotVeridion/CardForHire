@@ -20,7 +20,7 @@ MonoBehaviour:
   rewardSFX: {fileID: 0}
   objectives:
   - objectiveID: 1
-    description: Pick up all the boxes scattered around the area
+    description: Pick up all the supply boxes scattered around the area
     type: 0
     requiredAmount: 5
     currentAmount: 0
