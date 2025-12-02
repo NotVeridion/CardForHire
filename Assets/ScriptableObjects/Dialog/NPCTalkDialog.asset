@@ -14,15 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
   npcName: Guy
   dialogueLines:
-  - Hi! Talk to the girl first.
-  - Hi!
+  - Howdy!
+  - Hey there, tell my sister I will be right back!
+  - Check out the gunstore if you haven't!
   endDialogueLines: 0101
   typingSpeed: 0.05
   voiceSound: {fileID: 0}
   voicePitch: 1
   choices: []
   questInProgressIndex: 1
-  questStartDialogueIndex: 3
+  questStartDialogueIndex: 0
   questCompletedIndex: 1
-  questPostCompletedIndex: 1
+  questPostCompletedIndex: 2
   quest: {fileID: 11400000, guid: ea5f07f5fc1c32e46aebeceb38c1b919, type: 2}

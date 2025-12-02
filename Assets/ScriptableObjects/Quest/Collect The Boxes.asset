@@ -15,9 +15,12 @@ MonoBehaviour:
   questID: 1
   questName: Collect
   description: Collect Object
+  questGiverID: 3
+  cashReward: 50
+  rewardSFX: {fileID: 0}
   objectives:
   - objectiveID: 1
     description: Pick up all the boxes scattered around the area
     type: 0
-    requiredAmount: 3
+    requiredAmount: 5
     currentAmount: 0

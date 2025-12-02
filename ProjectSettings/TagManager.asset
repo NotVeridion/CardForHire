@@ -24,6 +24,7 @@ TagManager:
   - SheriffLocation
   - CasinoLocation
   - NPCHouseLocation
+  - NPCInteraction
   layers:
   - Default
   - TransparentFX

@@ -12,10 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed729716c04c8de4185a80104701fdbd, type: 3}
   m_Name: Defeat The Enemies
   m_EditorClassIdentifier: Assembly-CSharp::Quest
-  questID: 
+  questID: 3
   questName: 
   description: 
-  questGiverID: 
-  cashReward: 0
+  questGiverID: 4
+  cashReward: 500
   rewardSFX: {fileID: 0}
-  objectives: []
+  objectives:
+  - objectiveID: 3
+    description: Defeat the enemies
+    type: 1
+    requiredAmount: 10
+    currentAmount: 0

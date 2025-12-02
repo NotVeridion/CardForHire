@@ -19,7 +19,8 @@ MonoBehaviour:
   - Quest started!
   - Collect all the boxes before you can receive your reward!
   - Great work! Here's your reward.
-  - Great work! Here's your reward.
+  - (Looks like there's no more quest available for you right now. Try checking somewhere
+    else!)
   endDialogueLines: 0000010101
   typingSpeed: 0.05
   voiceSound: {fileID: 8300000, guid: c0071e59fa308884d815b596e8000d95, type: 3}
