@@ -14,8 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
   npcName: Girl
   dialogueLines:
-  - Hi, I was looking around for my brother but couldn't find him. Can you go look
-    for him?
+  - Hi, my brother is missing, again. Can you help me go look for him?
   - Thanks!
   - Have you found him yet?
   - Thanks! Here's your reward.

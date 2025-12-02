@@ -275,6 +275,7 @@ public bool playerInRange = false;
             StopAllCoroutines();
             dialogueUI.SetDialogueText(dialogueData.dialogueLines[dialogueIndex]);
             isTyping = false;
+            return;
             
         }
         dialogueUI.ClearChoices();
@@ -291,11 +292,11 @@ public bool playerInRange = false;
             EndDialogue();
             return;
         }
-
-        if (++dialogueIndex < dialogueData.dialogueLines.Length)
-        {
-            DisplayCurrentLine();
-        }
+        dialogueIndex++;
+        if (dialogueIndex < dialogueData.dialogueLines.Length)
+    {
+        DisplayCurrentLine();
+    }
         else
         {
             EndDialogue();

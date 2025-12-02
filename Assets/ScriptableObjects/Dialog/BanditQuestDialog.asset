@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8768da70380e2ae4ea55b0de80a596b3, type: 3}
-  m_Name: MonsterQuestDialog
+  m_Name: BanditQuestDialog
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
   npcName: Old Guy
   dialogueLines:
-  - Hey there kiddo. I need some help defeating the enemies in this dungeon. Wanna
-    help out?
-  - Great! Defeat 10 of them and I'll give you a reward.
+  - Hey there. I need some help defeating the bandits in this dungeon. Wanna help
+    out?
+  - Great! Defeat 10 of them and you'll earn a reward
   - Come back when you're done with your quest. I'll be waiting.
   - Nice work! Here's your reward.
   - Wanna get stronger? Check out the gun store to get some upgrades.

@@ -14,25 +14,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
   npcName: Bounty Board
   dialogueLines:
-  - Collect all the boxes scattered around the town!
-  - Accept the quest?
+  - Collect all the supply boxes scattered around the town! Accept the quest?
   - Quest started!
   - Collect all the boxes before you can receive your reward!
   - Great work! Here's your reward.
   - (Looks like there's no more quest available for you right now. Try checking somewhere
     else!)
-  endDialogueLines: 0000010101
+  endDialogueLines: 0001010101
   typingSpeed: 0.05
   voiceSound: {fileID: 8300000, guid: c0071e59fa308884d815b596e8000d95, type: 3}
   voicePitch: 1
   choices:
-  - dialogueIndex: 1
+  - dialogueIndex: 0
     choices:
     - 
-    nextDialogueIndexes: 02000000
+    nextDialogueIndexes: 01000000
     givesQuest: 01
-  questInProgressIndex: 3
-  questStartDialogueIndex: 1
-  questCompletedIndex: 4
-  questPostCompletedIndex: 5
+  questInProgressIndex: 2
+  questStartDialogueIndex: 0
+  questCompletedIndex: 3
+  questPostCompletedIndex: 4
   quest: {fileID: 11400000, guid: f9e3ec53421d16e4a81866b9dcc677ec, type: 2}
