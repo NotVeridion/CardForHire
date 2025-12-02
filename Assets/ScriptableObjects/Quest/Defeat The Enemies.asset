@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed729716c04c8de4185a80104701fdbd, type: 3}
   m_Name: Defeat The Enemies
   m_EditorClassIdentifier: Assembly-CSharp::Quest
-  questID: 3
+  questID: 4
   questName: 
   description: 
   questGiverID: 4
