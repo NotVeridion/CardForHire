@@ -6,6 +6,8 @@ using Unity.VisualScripting.Dependencies.NCalc;
 
 public class NPCScript : MonoBehaviour, IInteractable
 {
+    [HideInInspector] 
+public bool playerInRange = false;
     public NPCDialogue dialogueData;
     
     [Header("NPC Identifier")]
@@ -19,8 +21,10 @@ public class NPCScript : MonoBehaviour, IInteractable
     private bool isTyping, isDialogueActive;
     private enum QuestState { NotStarted, InProgress, Completed, PostCompleted }
     private QuestState questState = QuestState.NotStarted;
+    private PlayerScript player;
     private void Start()
     {
+        player = GameObject.FindWithTag("Player").GetComponent<PlayerScript>();
         dialogueUI = DialogueController.Instance;
         marker = GetComponentInChildren<QuestMarkerController>();
         UpdateMarker();
@@ -86,6 +90,17 @@ public class NPCScript : MonoBehaviour, IInteractable
     }
     void StartDialogue()
     {
+        if (IsBlockedByActiveQuest())
+{
+    dialogueUI.SetNPCInfo(dialogueData.npcName);
+    dialogueUI.ShowDialogueUI(true);
+    player.isMovementLocked = true;
+    isDialogueActive = true;
+
+    dialogueUI.SetDialogueText("(Complete your current quest first before you can accept another!)");
+    return;
+}
+        player.isMovementLocked = true;
         SyncQuestState();
         dialogueUI.ClearChoices();
         CheckTalkNPCObjectives();
@@ -142,17 +157,15 @@ public class NPCScript : MonoBehaviour, IInteractable
 
     string questID = dialogueData.quest.questID;
 
-    // If quest has been handed-in (turned in already)
     if (QuestController.Instance.IsQuestHandedIn(questID))
     {
-        questState = QuestState.Completed;
+        questState = QuestState.PostCompleted;
         return;
     }
 
-    // If quest is active but not completed
+    //Quest is active
     if (QuestController.Instance.IsQuestActive(questID))
     {
-        // If the quest is fully completed, move to Completed state
         if (QuestController.Instance.IsQuestCompleted(questID))
         {
             questState = QuestState.Completed;
@@ -165,7 +178,7 @@ public class NPCScript : MonoBehaviour, IInteractable
         return;
     }
 
-    // No quest active yet
+    //Quest not started
     questState = QuestState.NotStarted;
     }
 
@@ -175,7 +188,7 @@ public class NPCScript : MonoBehaviour, IInteractable
 
     if (!isQuestGiver)
     {
-        // No choices should appear on non-quest-givers
+
         return;
     }
 
@@ -204,10 +217,8 @@ public class NPCScript : MonoBehaviour, IInteractable
     }
     void ChooseOption(int nextIndex, bool givesQuest)
     {
-         // If giving quest but player already has one
     if (givesQuest && QuestController.Instance.HasQuestInProgress)
     {
-        Debug.Log("Player already has a quest in progress — cannot take another.");
         dialogueUI.SetDialogueText("You must finish your current quest first!");
         return;
     }
@@ -237,7 +248,7 @@ public class NPCScript : MonoBehaviour, IInteractable
         isDialogueActive = false;
         dialogueUI.SetDialogueText("");
         dialogueUI.ShowDialogueUI(false);
-        //PauseController.SetPause(false);
+        player.isMovementLocked = false;
     }
 
     IEnumerator TypeLine()
@@ -250,7 +261,6 @@ public class NPCScript : MonoBehaviour, IInteractable
             yield return new WaitForSeconds(dialogueData.typingSpeed);
         }
         isTyping = false;
-        Debug.Log("done typing");
     }
     public void NextLine()
     {
@@ -259,7 +269,6 @@ public class NPCScript : MonoBehaviour, IInteractable
             StopAllCoroutines();
             dialogueUI.SetDialogueText(dialogueData.dialogueLines[dialogueIndex]);
             isTyping = false;
-            Debug.Log("skip typing");
             
         }
         dialogueUI.ClearChoices();
@@ -331,7 +340,6 @@ public class NPCScript : MonoBehaviour, IInteractable
 
     private void OnQuestProgressUpdated(string updatedQuestID)
 {
-    // Only update this NPC if the update was for their quest
     if (dialogueData == null || dialogueData.quest == null) return;
     if (dialogueData.quest.questID == updatedQuestID)
     {
@@ -379,7 +387,7 @@ private void CheckTalkNPCObjectives()
             
             QuestController.Instance.NotifyQuestProgressUpdated(questID);
 
-            return; // Only update one objective per talk
+            return;
         }
     }
 }
@@ -387,5 +395,16 @@ private void CheckTalkNPCObjectives()
 {
     isDialogueActive = false;
     isTyping = false;
+}
+
+private bool IsBlockedByActiveQuest()
+{
+     if (!QuestController.Instance.HasQuestInProgress)
+        return false;
+    if (!isQuestGiver)
+        return false;
+    if (QuestController.Instance.activeQuestGiverID != npcID)
+        return true;
+    return false;
 }
 }

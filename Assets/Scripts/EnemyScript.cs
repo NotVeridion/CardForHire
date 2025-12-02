@@ -33,6 +33,7 @@ public class EnemyScript : MonoBehaviour
         if (enemyHP <= 0)
         {
             Destroy(gameObject);
+            EnemyDefeatTracker.Instance.NotifyEnemyDefeated("Enemy");
         }
         if (currentState == EnemyState.Idle)
         {
