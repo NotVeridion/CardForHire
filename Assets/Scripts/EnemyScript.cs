@@ -40,6 +40,11 @@ public class EnemyScript : MonoBehaviour
         if (enemyHP <= 0)
         {
             Destroy(gameObject);
+            EnemyDefeatTracker.Instance.NotifyEnemyDefeated("Enemy");
+        }
+        if (currentState == EnemyState.Idle)
+        {
+            currentState = EnemyState.ShotByPlayer;
         }
         if (currentState == EnemyState.Idle)
         {
@@ -165,6 +170,20 @@ public class EnemyScript : MonoBehaviour
             }
             GetComponent<Animator>().SetBool("isMoving", true);
             isCurrentlyRoaming = false;
+        }
+        else if (currentState == EnemyState.ShotByPlayer)
+        {
+            gun.isPointingAtPlayer = false;
+            gun.isShooting = false;
+            
+            transform.position = Vector2.MoveTowards(transform.position, player.transform.position, enemyMoveSpeed * Time.deltaTime);
+
+            float distanceToPlayer = Vector2.Distance(transform.position, player.transform.position);
+            if (distanceToPlayer <= attackPlayerRange)
+            {
+                currentState = EnemyState.ShootingFromRange;
+            }
+            GetComponent<Animator>().SetBool("isMoving", true);
         }
         else if (currentState == EnemyState.ShootingFromRange)
         {

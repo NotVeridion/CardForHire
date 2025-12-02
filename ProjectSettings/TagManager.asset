@@ -24,6 +24,7 @@ TagManager:
   - SheriffLocation
   - CasinoLocation
   - NPCHouseLocation
+  - NPCInteraction
   layers:
   - Default
   - TransparentFX
@@ -31,8 +32,8 @@ TagManager:
   - 
   - Water
   - UI
-  - Wall
-  - Enemy
+  - 
+  - 
   - 
   - 
   - 

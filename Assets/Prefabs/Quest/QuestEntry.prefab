@@ -104,8 +104,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4a1e222e18868114282e83bd4d8702e7, type: 2}
-  m_sharedMaterial: {fileID: -4037453134219765455, guid: 4a1e222e18868114282e83bd4d8702e7, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 705025115aa78f94a936d4baf2ba275a, type: 2}
+  m_sharedMaterial: {fileID: 3124064862101432850, guid: 705025115aa78f94a936d4baf2ba275a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -132,11 +132,11 @@ MonoBehaviour:
   m_fontSize: 30
   m_fontSizeBase: 30
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -262,6 +262,10 @@ PrefabInstance:
       value: ObjectiveText
       objectReference: {fileID: 0}
     - target: {fileID: 5666561236309247347, guid: 81b998235b353884ca6cf0799478250f, type: 3}
+      propertyPath: m_fontSize
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 5666561236309247347, guid: 81b998235b353884ca6cf0799478250f, type: 3}
       propertyPath: m_fontColor.b
       value: 1
       objectReference: {fileID: 0}
@@ -276,7 +280,11 @@ PrefabInstance:
     - target: {fileID: 5666561236309247347, guid: 81b998235b353884ca6cf0799478250f, type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: -2913085999273585016, guid: e0b4314da88462840bbfcfdceddfda50, type: 2}
+      objectReference: {fileID: 3124064862101432850, guid: 705025115aa78f94a936d4baf2ba275a, type: 2}
+    - target: {fileID: 5666561236309247347, guid: 81b998235b353884ca6cf0799478250f, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5666561236309247347, guid: 81b998235b353884ca6cf0799478250f, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 0

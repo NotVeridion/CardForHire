@@ -1,14 +1,22 @@
 using System;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-[CreateAssetMenu(fileName = "Quest", menuName = "Quests")]
 
+[CreateAssetMenu(fileName = "Quest", menuName = "Quests")]
 public class Quest : ScriptableObject
 {
     public string questID;
     public string questName;
     public string description;
+
+    [Header("Quest Giver")]
+    public string questGiverID;   
+
+    [Header("Rewards")] 
+    public int cashReward = 0; 
+    [Header("Reward Audio")] 
+    public AudioClip rewardSFX;
+
     public List<QuestObjective> objectives;
 
     private void OnValidate()
@@ -27,15 +35,15 @@ public class Quest : ScriptableObject
         public int currentAmount;
         public bool isCompleted => currentAmount >= requiredAmount;
     }
+
     public enum ObjectiveType { CollectItem, DefeatEnemy, ReachLocation, TalkNPC, Custom }
 
     [System.Serializable]
-
     public class QuestProgress
     {
-
         public Quest quest;
         public List<QuestObjective> objectives;
+
         public QuestProgress(Quest quest)
         {
             this.quest = quest;
@@ -52,8 +60,8 @@ public class Quest : ScriptableObject
                 });
             }
         }
+
         public bool isCompleted => objectives.TrueForAll(o => o.isCompleted);
         public string QuestID => quest.questID;
-    
     }
-}    
+}
