@@ -4,6 +4,8 @@ public class QuestItem : MonoBehaviour
 {
     [Header("Quest this item belongs to")]
     public string questID;
+    [Header("Pickup Audio")]
+    public AudioClip pickupSFX;
 
     [Header("Objective this item progresses")]
     public string objectiveID;
@@ -46,6 +48,11 @@ public class QuestItem : MonoBehaviour
     private void OnCollisionEnter2D()
     {
         QuestController.Instance.AddProgressToObjective(objectiveID, amountToAdd);
+         if (pickupSFX != null)
+    {
+
+        AudioSource.PlayClipAtPoint(pickupSFX, transform.position);
+    }
         Destroy(gameObject);
     }
 }
