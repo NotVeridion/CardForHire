@@ -137,52 +137,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 09cb60845848e966baa0a4bac4c12260
-      internalID: -185949442
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bandit5 run_strip4_2
-      rect:
-        serializedVersion: 2
-        x: 40
-        y: 0
-        width: 20
-        height: 21
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 422cdbb7a7bd599e1bf85721f4133a40
-      internalID: -2114097420
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bandit5 run_strip4_3
-      rect:
-        serializedVersion: 2
-        x: 60
-        y: 0
-        width: 20
-        height: 21
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d1f7a919f582396dbb9312869b455157
-      internalID: 217116648
+      spriteID: 9e272510c87bcbbb0800000000000000
+      internalID: -4918854881049939223
       vertices: []
       indices: 
       edges: []
@@ -191,7 +147,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 6463f62c856c5bebcb9b472c4c7bcf75
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -199,14 +155,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":1.0},"gridSpriteSize":{"x":20.0,"y":21.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
       bandit5 run_strip4_0: 6834898705047091172
-      bandit5 run_strip4_1: -185949442
-      bandit5 run_strip4_2: -2114097420
-      bandit5 run_strip4_3: 217116648
+      bandit5 run_strip4_1: -4918854881049939223
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -24,6 +24,7 @@ TagManager:
   - SheriffLocation
   - CasinoLocation
   - NPCHouseLocation
+  - BossGun
   - NPCInteraction
   layers:
   - Default

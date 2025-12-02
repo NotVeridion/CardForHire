@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class DeckManagerScript : MonoBehaviour
 {
@@ -8,9 +9,10 @@ public class DeckManagerScript : MonoBehaviour
     public int numShuffles;
     public Card currentCard;
     public List<Card> storedDeck;
+    public Slider cardDurationSlider;
     private List<Card> workingDeck;
     private float currentTime;
-    public int currentIdx;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -21,32 +23,14 @@ public class DeckManagerScript : MonoBehaviour
     void Update()
     {
         currentTime += Time.deltaTime;
+        cardDurationSlider.value = 1 - (currentTime / cardDuration);
 
-        // if (currentTime >= cardDuration)
-        // {
-        //     // Draw new card after current card runs out
-        //     // DrawCard() also refills working deck if empty
-        //     currentCard = DrawCard();
-        //     currentTime = 0;
-        // }
-
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if (currentTime >= cardDuration)
         {
-            currentIdx -= 1;
-            if (currentIdx < 0)
-            {
-                currentIdx = 0;
-            }
-            currentCard = storedDeck[currentIdx];
-        }
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            currentIdx += 1;
-            if (currentIdx > storedDeck.Count-1)
-            {
-                currentIdx = storedDeck.Count-1;
-            }
-            currentCard = storedDeck[currentIdx];
+            // Draw new card after current card runs out
+            // DrawCard() also refills working deck if empty
+            currentCard = DrawCard();
+            currentTime = 0;
         }
     }
 

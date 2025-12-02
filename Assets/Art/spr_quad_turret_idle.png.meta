@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f08fea99fd5f22048a612864cfe61c69
+guid: 1c0df14e2f3d6de46a66d09ae81c4330
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8178653821071148274
-    second: bandit6 bow_0
+      213: -1063730109763269174
+    second: spr_quad_turret_idle_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -100,12 +100,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bandit6 bow_0
+      name: spr_quad_turret_idle_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 9
+        x: 17
+        y: 17
+        width: 14
         height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e0bb92e9ea59f7e80800000000000000
-      internalID: -8178653821071148274
+      spriteID: acd4caed91fdc31f0800000000000000
+      internalID: -1063730109763269174
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      bandit6 bow_0: -8178653821071148274
+      spr_quad_turret_idle_0: -1063730109763269174
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

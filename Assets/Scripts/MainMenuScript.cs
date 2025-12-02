@@ -13,10 +13,7 @@ public class MainMenuScript : MonoBehaviour
     public void PlayGame()
     {
         audioManagerScript.PlayOneShotSFX(audioManagerScript.Button);
-        audioManagerScript.musicSource.Stop();
-        
-        audioManagerScript.musicSource.clip = audioManagerScript.TownMusic;
-        audioManagerScript.musicSource.Play();
+        audioManagerScript.ChangeMusic(audioManagerScript.TownMusic);
 
         SceneManager.LoadScene("Level");
     }
