@@ -19,7 +19,7 @@ MonoBehaviour:
   cashReward: 500
   rewardSFX: {fileID: 0}
   objectives:
-  - objectiveID: 3
+  - objectiveID: Enemy
     description: Defeat the enemies
     type: 1
     requiredAmount: 10
