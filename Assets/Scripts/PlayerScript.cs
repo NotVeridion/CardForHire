@@ -26,6 +26,8 @@ public class PlayerScript : MonoBehaviour
     private SpriteRenderer playerSpriteRenderer;
     private SpriteRenderer gunSpriteRenderer;
     private AudioManagerScript audioManagerScript;
+    private NPCScript npcInRange;
+    public bool isMovementLocked = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -45,11 +47,24 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        vertical = Input.GetAxisRaw("Vertical");
-        horizontal = Input.GetAxisRaw("Horizontal");
+        if (!isMovementLocked)
+        {
+            vertical = Input.GetAxisRaw("Vertical");
+            horizontal = Input.GetAxisRaw("Horizontal");
+        }
+        else
+        {
+            vertical = 0;
+            horizontal = 0;
+        }
+
         movementVector = new Vector3(horizontal, vertical, 0).normalized;
 
         Vector3 cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        if (Input.GetKeyDown(KeyCode.E) && npcInRange != null)
+        {
+            npcInRange.Interact(); // Start dialogue
+        }
         if (transform.position.x <= cursorPos.x) // Cursor on right of player
         {
             playerSpriteRenderer.flipX = false;
@@ -149,8 +164,18 @@ public class PlayerScript : MonoBehaviour
 
             Destroy(other.gameObject);
         }
+        if (other.CompareTag("NPCInteraction"))
+        {
+            npcInRange = other.GetComponentInParent<NPCScript>();
+        }
     }
-
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("NPCInteraction"))
+        {
+            npcInRange = null;
+        }
+    }
     void Move()
     {
         rb.linearVelocity = new Vector3(movementVector.x * playerMoveSpeed, movementVector.y * playerMoveSpeed, 0);

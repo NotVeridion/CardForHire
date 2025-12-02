@@ -10,14 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ed729716c04c8de4185a80104701fdbd, type: 3}
-  m_Name: Talk To This Guy!
+  m_Name: Defeat The Enemies
   m_EditorClassIdentifier: Assembly-CSharp::Quest
-  questID: 2
-  questName: TalkTONPC
-  description: Talk to this guy
+  questID: 4
+  questName: 
+  description: 
+  questGiverID: 4
+  cashReward: 500
+  rewardSFX: {fileID: 0}
   objectives:
-  - objectiveID: 3
-    description: The NPC should be close by the lake
-    type: 3
-    requiredAmount: 1
+  - objectiveID: Enemy
+    description: Defeat the enemies
+    type: 1
+    requiredAmount: 10
     currentAmount: 0

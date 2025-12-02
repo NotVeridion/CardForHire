@@ -16332,7 +16332,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NPCScript
   dialogueData: {fileID: 11400000, guid: f156c61dc97467d40a2e62369ed55b01, type: 2}
-  npcID: 
+  npcID: 3
   isQuestGiver: 0
 --- !u!212 &657679097
 SpriteRenderer:

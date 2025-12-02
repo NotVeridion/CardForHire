@@ -25,6 +25,7 @@ TagManager:
   - CasinoLocation
   - NPCHouseLocation
   - BossGun
+  - NPCInteraction
   layers:
   - Default
   - TransparentFX

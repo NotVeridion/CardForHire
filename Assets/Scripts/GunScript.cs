@@ -29,6 +29,11 @@ public class GunScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        PlayerScript player = GameObject.FindWithTag("Player").GetComponent<PlayerScript>();
+        if (player != null && player.isMovementLocked)
+        {
+            return;
+        }
         currentCard = deckManagerScript.currentCard;
 
         currentTime += Time.deltaTime;

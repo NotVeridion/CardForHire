@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8768da70380e2ae4ea55b0de80a596b3, type: 3}
-  m_Name: NPCTalkQuest
+  m_Name: MonsterQuestDialog
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
-  npcName: Girl
+  npcName: Old Guy
   dialogueLines:
-  - Hi, I was looking around for my brother but couldn't find him. Can you go look
-    for him?
-  - Thanks!
-  - Have you found him yet?
-  - Thanks! Here's your reward.
-  - Go the shopkeeper nearby and get some upgrades!!
+  - Hey there kiddo. I need some help defeating the enemies in this dungeon. Wanna
+    help out?
+  - Great! Defeat 10 of them and I'll give you a reward.
+  - Come back when you're done with your quest. I'll be waiting.
+  - Nice work! Here's your reward.
+  - Wanna get stronger? Check out the gun store to get some upgrades.
   endDialogueLines: 0001010101
   typingSpeed: 0.05
   voiceSound: {fileID: 0}
@@ -34,4 +34,4 @@ MonoBehaviour:
   questStartDialogueIndex: 0
   questCompletedIndex: 3
   questPostCompletedIndex: 4
-  quest: {fileID: 11400000, guid: ea5f07f5fc1c32e46aebeceb38c1b919, type: 2}
+  quest: {fileID: 11400000, guid: 03e851f5318213f42bb15333f8ca8808, type: 2}
