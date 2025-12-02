@@ -35,7 +35,7 @@ public bool playerInRange = false;
     }
     void Update()
 {
-    if (Input.GetKeyDown(KeyCode.Space) && isDialogueActive)
+    if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return)) && isDialogueActive)
         {
             if (isTyping)
         {
@@ -50,28 +50,7 @@ public bool playerInRange = false;
         }
 
 }
-   private void OnMouseDown() // For testing, should be changed to button interact using player
-{
-    // If player clicks the NPC while dialogue is active
-    if (isDialogueActive)
-    {
-        if (isTyping)
-        {
-            StopAllCoroutines();
-            dialogueUI.SetDialogueText(dialogueData.dialogueLines[dialogueIndex]);
-            isTyping = false;
-        }
-        else
-        {
-            NextLine();
-        }
-    }
-    else
-    {
-        // Start dialogue if clicked and not in dialogue mode
-        StartDialogue();
-    }
-}
+
     public bool CanInteract()
     {
         return !isDialogueActive;

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8768da70380e2ae4ea55b0de80a596b3, type: 3}
-  m_Name: NPCTalkDialog
+  m_Name: KidNPCDialog
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
   npcName: Guy
   dialogueLines:

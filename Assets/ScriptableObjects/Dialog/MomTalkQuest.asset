@@ -10,19 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8768da70380e2ae4ea55b0de80a596b3, type: 3}
-  m_Name: QuestGiverDIalog
+  m_Name: MomTalkQuest
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
-  npcName: Bounty Board
+  npcName: Girl
   dialogueLines:
-  - Collect all the supply boxes scattered around the town! Accept the quest?
-  - Quest started!
-  - Collect all the boxes before you can receive your reward!
-  - Great work! Here's your reward.
-  - (Looks like there's no more quest available for you right now. Try checking somewhere
-    else!)
+  - Hi, my brother is missing, again. Can you help me go look for him?
+  - Thanks!
+  - Have you found him yet?
+  - Thanks! Here's your reward.
+  - Go the shopkeeper nearby and get some upgrades!!
   endDialogueLines: 0001010101
   typingSpeed: 0.05
-  voiceSound: {fileID: 8300000, guid: c0071e59fa308884d815b596e8000d95, type: 3}
+  voiceSound: {fileID: 0}
   voicePitch: 1
   choices:
   - dialogueIndex: 0
@@ -34,4 +33,4 @@ MonoBehaviour:
   questStartDialogueIndex: 0
   questCompletedIndex: 3
   questPostCompletedIndex: 4
-  quest: {fileID: 11400000, guid: f9e3ec53421d16e4a81866b9dcc677ec, type: 2}
+  quest: {fileID: 11400000, guid: ea5f07f5fc1c32e46aebeceb38c1b919, type: 2}

@@ -10,15 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8768da70380e2ae4ea55b0de80a596b3, type: 3}
-  m_Name: NPCTalkQuest
+  m_Name: GuyQuestDialog
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
-  npcName: Girl
+  npcName: Young Man
   dialogueLines:
-  - Hi, my brother is missing, again. Can you help me go look for him?
-  - Thanks!
-  - Have you found him yet?
-  - Thanks! Here's your reward.
-  - Go the shopkeeper nearby and get some upgrades!!
+  - Heya, I need some help! The bandits robbed me of my chips and I need to get them
+    back!
+  - Thank you! The cave is to the right of my house.
+  - Have you found all of my chips yet?
+  - Thank you! Have a reward for your trouble!
+  - Check out the gunstore nearby if you haven't already!
   endDialogueLines: 0001010101
   typingSpeed: 0.05
   voiceSound: {fileID: 0}
@@ -33,4 +34,4 @@ MonoBehaviour:
   questStartDialogueIndex: 0
   questCompletedIndex: 3
   questPostCompletedIndex: 4
-  quest: {fileID: 11400000, guid: ea5f07f5fc1c32e46aebeceb38c1b919, type: 2}
+  quest: {fileID: 0}
