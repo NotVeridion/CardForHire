@@ -136,13 +136,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerScript
   playerMoveSpeed: 10
-  playerHealth: 50
+  playerHealth: 100
   playerCash: 0
   dashPower: 20
   dashDuration: 0.2
-  dashCooldown: 5
+  dashCooldown: 1.5
   currentDashCooldown: 0
   location: 
+  isMovementLocked: 0
 --- !u!95 &6350790018337633087
 Animator:
   serializedVersion: 7

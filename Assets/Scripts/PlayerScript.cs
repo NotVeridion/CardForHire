@@ -160,7 +160,6 @@ public class PlayerScript : MonoBehaviour
         {
             EnemyBulletScript enemyBullet = other.gameObject.GetComponent<EnemyBulletScript>();
             TakeDamage(enemyBullet.bulletDamage);
-            audioManagerScript.PlayOneShotSFX(audioManagerScript.Hit);
 
             Destroy(other.gameObject);
         }
@@ -185,7 +184,14 @@ public class PlayerScript : MonoBehaviour
             playerAnimator.SetBool("isMoving", true);
 
             if (!audioManagerScript.SFXSource.isPlaying){
-                audioManagerScript.PlayRandomSFX(audioManagerScript.WalkingGrass);
+                if (location == "Cave" || location == "Casino")
+                {
+                    audioManagerScript.PlayRandomSFX(audioManagerScript.WalkingStone);
+                }
+                else
+                {
+                    audioManagerScript.PlayRandomSFX(audioManagerScript.WalkingGrass);
+                }
             }
         }
         else
@@ -201,6 +207,7 @@ public class PlayerScript : MonoBehaviour
             return;
         }
 
+        audioManagerScript.PlayOneShotSFX(audioManagerScript.Hit);
         playerHealth -= dmg;
         if (playerHealth < 0)
         {

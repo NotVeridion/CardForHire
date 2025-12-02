@@ -17,7 +17,6 @@ public class CameraScript : MonoBehaviour
         if(playerObject != null && !inFinalBoss){
             transform.position = new Vector3(playerObject.transform.position.x, playerObject.transform.position.y, -10);
             transform.rotation = Quaternion.identity;
-
             Camera.main.orthographicSize = zoom;
         }
     }

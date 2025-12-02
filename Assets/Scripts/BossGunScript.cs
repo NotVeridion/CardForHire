@@ -3,6 +3,7 @@ using System.Collections;
 
 public class BossGunScript : MonoBehaviour
 {
+    public BossScript boss;
     public Gun bossShotgun;
     public Gun bossPistol;
     [SerializeField] GameObject regularBullet;
@@ -15,7 +16,6 @@ public class BossGunScript : MonoBehaviour
     public Gun currentGun;
     public GameObject indicatorPrefab;
     public float indicatorDuration;
-    public bool inFinalState;
     private GameObject currentIndicator;
     private GameObject player;
     private bool isIndicating;
@@ -33,7 +33,7 @@ public class BossGunScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!isIndicating && !inFinalState)
+        if (!isIndicating && (boss.StateMachine.CurrentState != boss.FinalState || boss.StateMachine.CurrentState != boss.IdleState))
         {
             Vector2 dirToPlayer = (player.transform.position - transform.position).normalized;
             float angleToPlayer = Mathf.Atan2(dirToPlayer.y, dirToPlayer.x) * Mathf.Rad2Deg;

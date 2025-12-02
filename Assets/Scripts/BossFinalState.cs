@@ -13,13 +13,13 @@ public class BossFinalState : BossState
         boss.gun.currentGun = boss.gun.bossShotgun;
         bossGun = GameObject.FindWithTag("BossGun");
         boss.gun.canFire = true;
-        boss.gun.inFinalState = true;
-        boss.gun.currentGun.fireRate += 3;
+        boss.gun.currentGun.fireRate += 2;
     }
 
     public override void Exit()
     {
         boss.gun.canFire = false;
+        boss.gun.currentGun.fireRate -= 2;
     }
 
     public override void Tick()

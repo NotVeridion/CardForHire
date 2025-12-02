@@ -79,7 +79,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -269214641
   m_SortingLayer: 1
-  m_SortingOrder: 1
+  m_SortingOrder: -1
   m_Sprite: {fileID: -1063730109763269174, guid: 1c0df14e2f3d6de46a66d09ae81c4330, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -107,5 +107,5 @@ MonoBehaviour:
   bullet: {fileID: 5843007583955890467, guid: 7562b81246adf0694922dcc8afe0c28b, type: 3}
   turretDamage: 5
   turretMoveSpeed: 5
-  turretFireRate: 1
+  turretFireRate: 0.5
   turretDuration: 10

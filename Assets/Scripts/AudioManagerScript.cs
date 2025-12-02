@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AudioManagerScript : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class AudioManagerScript : MonoBehaviour
     public AudioClip ShopMusic;
     public AudioClip DungeonMusic;
     public AudioClip BossMusic;
+    public AudioClip EndMusic;
 
     [Header("   Sound Effects  ")]
     public AudioClip Pickup;
@@ -54,6 +56,7 @@ public class AudioManagerScript : MonoBehaviour
 
     public void ChangeMusic(AudioClip music)
     {
+        musicSource.Stop();
         musicSource.clip = music;
         musicSource.Play();
     }

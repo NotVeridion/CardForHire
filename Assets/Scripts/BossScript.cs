@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Timeline;
 using UnityEngine.UI;
 
@@ -27,12 +28,10 @@ public class BossScript : MonoBehaviour
     public BossSpecialAttackState SpecialAttackState { get; private set; }
     public BossFinalState FinalState { get; private set; }
 
-    private bool wasAttackState;
-    private bool wasSpecialState;
-    private bool wasFinalState;
-
+    // Positions
     public GameObject[] positionObjects;
     public GameObject positionCenter;
+    public GameObject positionStart;
 
     private Slider healthSlider;
 
@@ -54,7 +53,7 @@ public class BossScript : MonoBehaviour
         healthSlider = sliderObj.GetComponent<Slider>();
         healthSlider.maxValue = maxHealth;
 
-        StateMachine.Initialize(AttackState);
+        StateMachine.Initialize(IdleState);
     }
 
     // Update is called once per frame
@@ -77,7 +76,7 @@ public class BossScript : MonoBehaviour
 
         StateMachine.Update();
 
-        if (currentHealth <= (maxHealth - maxHealth/2) && !wasFinalState)
+        if (currentHealth <= (maxHealth - maxHealth/2) && StateMachine.CurrentState == SpecialAttackState)
         {
             // Destroy all bullets currently on screen
             foreach (GameObject bullet in GameObject.FindGameObjectsWithTag("EnemyBullet"))
@@ -87,13 +86,11 @@ public class BossScript : MonoBehaviour
 
             StateMachine.ChangeState(FinalState);
             gun.GetComponent<SpriteRenderer>().sprite = null;
-            wasFinalState = true;
         }
-        else if (currentHealth <= (maxHealth - maxHealth/3) && !wasSpecialState)
+        else if (currentHealth <= (maxHealth - maxHealth/3) && StateMachine.CurrentState == AttackState)
         {
             StateMachine.ChangeState(SpecialAttackState);
             gun.GetComponent<SpriteRenderer>().sprite = gun.currentGun.gunSprite;
-            wasSpecialState = true;
         }
     }
 
@@ -101,6 +98,11 @@ public class BossScript : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Bullet"))
         {
+            if (StateMachine.CurrentState == IdleState)
+            {
+                StateMachine.ChangeState(AttackState);
+            }
+            
             BulletScript playerBullet = collision.gameObject.GetComponent<BulletScript>();
             TakeDamage(playerBullet.bulletDamage);
 
@@ -114,14 +116,11 @@ public class BossScript : MonoBehaviour
     void TakeDamage(float dmg)
     {
         currentHealth -= dmg;
-        if (currentHealth <= dmg)
+        if (currentHealth <= 0)
         {
-            currentHealth = maxHealth;
+            AudioManagerScript musicScript = GameObject.FindWithTag("AudioManager").GetComponent<AudioManagerScript>();
+            musicScript.ChangeMusic(musicScript.EndMusic);
+            SceneManager.LoadScene("End");
         }
-    }
-
-    void Death()
-    {
-        
     }
 }
