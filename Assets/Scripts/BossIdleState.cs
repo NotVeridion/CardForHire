@@ -9,7 +9,10 @@ public class BossIdleState : BossState
         Vector3 direction = (boss.positionStart.transform.position - boss.transform.position).normalized;
         boss.rb.linearVelocity = direction * boss.bossMoveSpeed;
         boss.gun.canFire = false;
+        boss.gun.currentGun = boss.gun.bossShotgun;
+        boss.gun.GetComponent<SpriteRenderer>().sprite = boss.gun.currentGun.gunSprite;
         boss.currentHealth = boss.maxHealth;
+        boss.sliderObj.SetActive(false);
     }
 
     public override void Exit()

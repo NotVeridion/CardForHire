@@ -34,6 +34,7 @@ public class BossScript : MonoBehaviour
     public GameObject positionStart;
 
     private Slider healthSlider;
+    private AudioManagerScript audioManagerScript;
 
     void Awake()
     {
@@ -50,6 +51,7 @@ public class BossScript : MonoBehaviour
         player = GameObject.FindWithTag("Player");
         rb = GetComponent<Rigidbody2D>();
         gun = GetComponentInChildren<BossGunScript>();
+        audioManagerScript = FindAnyObjectByType<AudioManagerScript>();
         healthSlider = sliderObj.GetComponent<Slider>();
         healthSlider.maxValue = maxHealth;
 
@@ -100,6 +102,7 @@ public class BossScript : MonoBehaviour
         {
             if (StateMachine.CurrentState == IdleState)
             {
+                audioManagerScript.ChangeMusic(audioManagerScript.BossMusic);
                 StateMachine.ChangeState(AttackState);
             }
             
@@ -118,6 +121,7 @@ public class BossScript : MonoBehaviour
         currentHealth -= dmg;
         if (currentHealth <= 0)
         {
+            StateMachine.ChangeState(IdleState);
             AudioManagerScript musicScript = GameObject.FindWithTag("AudioManager").GetComponent<AudioManagerScript>();
             musicScript.ChangeMusic(musicScript.EndMusic);
             SceneManager.LoadScene("End");
