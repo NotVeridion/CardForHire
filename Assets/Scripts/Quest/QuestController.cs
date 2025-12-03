@@ -89,10 +89,12 @@ public class QuestController : MonoBehaviour
         {
             AudioSource.PlayClipAtPoint(quest.quest.rewardSFX, player.transform.position);
         }
+        PlayerScript playerObj = GameObject.FindWithTag("Player").GetComponent<PlayerScript>();
+        RewardPopupManager.Instance.ShowRewardPopup(playerObj.transform.position + (Vector3.up * 1.5f), rewardAmount);
+
     }
     totalQuestsCompleted++;
     Debug.Log($"[QUEST] Total quests completed so far: {totalQuestsCompleted}");
-    SpawnRewardPopup(questID, rewardAmount);
     handinQuestIDs.Add(questID);
     activateQuests.Remove(quest);
     questUI.UpdateQuestUI();
@@ -178,41 +180,7 @@ public class QuestController : MonoBehaviour
     }
 }
 
-private void SpawnRewardPopup(string questID, int amount)
-{
-    if (rewardPopupPrefab == null)
-    {
-        return;
-    }
 
-    NPCScript[] allNPCs = FindObjectsOfType<NPCScript>();
-
-    NPCScript giver = null;
-    foreach (var npc in allNPCs)
-    {
-        if (npc.dialogueData != null &&
-            npc.dialogueData.quest != null &&
-            npc.dialogueData.quest.questID == questID)
-        {
-            giver = npc;
-            break;
-        }
-    }
-
-    if (giver == null)
-    {
-        return;
-    }
-
-    Vector3 popupPos = giver.transform.position + new Vector3(0, 1.5f, 0);
-
-    GameObject popup = Instantiate(rewardPopupPrefab, popupPos, Quaternion.identity);
-
-    TMP_Text text = popup.GetComponentInChildren<TMP_Text>();
-    text.text = $"+${amount}";
-
-    popup.AddComponent<RewardPopupAnimator>();
-}
 
 private void TrySubscribeToEnemyTracker()
 {

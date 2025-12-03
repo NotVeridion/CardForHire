@@ -54898,6 +54898,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 573044945}
     m_Modifications:
+    - target: {fileID: 1483419098684720702, guid: cf7f3ac08bf5ac14081a4ecb2b986fc1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -4216310443538080837, guid: 0d367de2c54b97045bf1c3d305081a32, type: 3}
+    - target: {fileID: 3844682953968995244, guid: cf7f3ac08bf5ac14081a4ecb2b986fc1, type: 3}
+      propertyPath: questID
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3844682953968995244, guid: cf7f3ac08bf5ac14081a4ecb2b986fc1, type: 3}
       propertyPath: objectiveID
       value: 1
@@ -54905,6 +54913,18 @@ PrefabInstance:
     - target: {fileID: 5568032318367536112, guid: cf7f3ac08bf5ac14081a4ecb2b986fc1, type: 3}
       propertyPath: m_Name
       value: Supply Box
+      objectReference: {fileID: 0}
+    - target: {fileID: 7367786845147308589, guid: cf7f3ac08bf5ac14081a4ecb2b986fc1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7367786845147308589, guid: cf7f3ac08bf5ac14081a4ecb2b986fc1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7367786845147308589, guid: cf7f3ac08bf5ac14081a4ecb2b986fc1, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7367786845147308589, guid: cf7f3ac08bf5ac14081a4ecb2b986fc1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -273243,6 +273263,7 @@ GameObject:
   - component: {fileID: 1036612079}
   - component: {fileID: 1036612078}
   - component: {fileID: 1036612080}
+  - component: {fileID: 1036612081}
   m_Layer: 0
   m_Name: QuestController
   m_TagString: Untagged
@@ -273266,7 +273287,7 @@ MonoBehaviour:
   questUI: {fileID: 0}
   handinQuestIDs: []
   activeQuestGiverID: 
-  rewardPopupPrefab: {fileID: 0}
+  rewardPopupPrefab: {fileID: 4461583019597279385, guid: a1d9a00d622d2f24d8522c9e54d1c15c, type: 3}
   totalQuestsCompleted: 0
 --- !u!4 &1036612079
 Transform:
@@ -273295,6 +273316,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf14dd701c844554aa2ced4fb223a615, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDefeatTracker
+--- !u!114 &1036612081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1036612077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e6c6609e24850e48820a577e1c8b530, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RewardPopupManager
+  popupPrefab: {fileID: 5930758765274406231, guid: 157d99243a2d1ea44812527eb32d81d5, type: 3}
+  popupCanvas: {fileID: 978189651}
+  riseDistance: 40
+  lifetime: 3
 --- !u!1 &1038141471
 GameObject:
   m_ObjectHideFlags: 0
@@ -275936,8 +275973,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Name
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 705025115aa78f94a936d4baf2ba275a, type: 2}
+  m_sharedMaterial: {fileID: 3124064862101432850, guid: 705025115aa78f94a936d4baf2ba275a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -275961,8 +275998,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 15
-  m_fontSizeBase: 15
+  m_fontSize: 25
+  m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -291343,9 +291380,33 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 573044945}
     m_Modifications:
+    - target: {fileID: 1483419098684720702, guid: cf7f3ac08bf5ac14081a4ecb2b986fc1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -4216310443538080837, guid: 0d367de2c54b97045bf1c3d305081a32, type: 3}
+    - target: {fileID: 3844682953968995244, guid: cf7f3ac08bf5ac14081a4ecb2b986fc1, type: 3}
+      propertyPath: questID
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3844682953968995244, guid: cf7f3ac08bf5ac14081a4ecb2b986fc1, type: 3}
+      propertyPath: objectiveID
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5568032318367536112, guid: cf7f3ac08bf5ac14081a4ecb2b986fc1, type: 3}
       propertyPath: m_Name
       value: Supply Box
+      objectReference: {fileID: 0}
+    - target: {fileID: 7367786845147308589, guid: cf7f3ac08bf5ac14081a4ecb2b986fc1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7367786845147308589, guid: cf7f3ac08bf5ac14081a4ecb2b986fc1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7367786845147308589, guid: cf7f3ac08bf5ac14081a4ecb2b986fc1, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7367786845147308589, guid: cf7f3ac08bf5ac14081a4ecb2b986fc1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -303586,8 +303647,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -10.57, y: -2.58}
-  m_SizeDelta: {x: 736.85, y: 50}
+  m_AnchoredPosition: {x: -28.8064, y: -15.175}
+  m_SizeDelta: {x: 700.3772, y: 64.35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1413878144
 MonoBehaviour:
@@ -303636,8 +303697,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 15
-  m_fontSizeBase: 15
+  m_fontSize: 25
+  m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -309308,9 +309369,33 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 573044945}
     m_Modifications:
+    - target: {fileID: 1483419098684720702, guid: cf7f3ac08bf5ac14081a4ecb2b986fc1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -4216310443538080837, guid: 0d367de2c54b97045bf1c3d305081a32, type: 3}
+    - target: {fileID: 3844682953968995244, guid: cf7f3ac08bf5ac14081a4ecb2b986fc1, type: 3}
+      propertyPath: questID
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3844682953968995244, guid: cf7f3ac08bf5ac14081a4ecb2b986fc1, type: 3}
+      propertyPath: objectiveID
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5568032318367536112, guid: cf7f3ac08bf5ac14081a4ecb2b986fc1, type: 3}
       propertyPath: m_Name
       value: Supply Box
+      objectReference: {fileID: 0}
+    - target: {fileID: 7367786845147308589, guid: cf7f3ac08bf5ac14081a4ecb2b986fc1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7367786845147308589, guid: cf7f3ac08bf5ac14081a4ecb2b986fc1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7367786845147308589, guid: cf7f3ac08bf5ac14081a4ecb2b986fc1, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7367786845147308589, guid: cf7f3ac08bf5ac14081a4ecb2b986fc1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -375960,9 +376045,33 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 573044945}
     m_Modifications:
+    - target: {fileID: 1483419098684720702, guid: cf7f3ac08bf5ac14081a4ecb2b986fc1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -4216310443538080837, guid: 0d367de2c54b97045bf1c3d305081a32, type: 3}
+    - target: {fileID: 3844682953968995244, guid: cf7f3ac08bf5ac14081a4ecb2b986fc1, type: 3}
+      propertyPath: questID
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3844682953968995244, guid: cf7f3ac08bf5ac14081a4ecb2b986fc1, type: 3}
+      propertyPath: objectiveID
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5568032318367536112, guid: cf7f3ac08bf5ac14081a4ecb2b986fc1, type: 3}
       propertyPath: m_Name
       value: Supply Box
+      objectReference: {fileID: 0}
+    - target: {fileID: 7367786845147308589, guid: cf7f3ac08bf5ac14081a4ecb2b986fc1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7367786845147308589, guid: cf7f3ac08bf5ac14081a4ecb2b986fc1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7367786845147308589, guid: cf7f3ac08bf5ac14081a4ecb2b986fc1, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7367786845147308589, guid: cf7f3ac08bf5ac14081a4ecb2b986fc1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -385986,9 +386095,33 @@ PrefabInstance:
       propertyPath: questProgress.objectives.Array.data[0].requiredAmount
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1483419098684720702, guid: cf7f3ac08bf5ac14081a4ecb2b986fc1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -4216310443538080837, guid: 0d367de2c54b97045bf1c3d305081a32, type: 3}
+    - target: {fileID: 3844682953968995244, guid: cf7f3ac08bf5ac14081a4ecb2b986fc1, type: 3}
+      propertyPath: questID
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3844682953968995244, guid: cf7f3ac08bf5ac14081a4ecb2b986fc1, type: 3}
+      propertyPath: objectiveID
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5568032318367536112, guid: cf7f3ac08bf5ac14081a4ecb2b986fc1, type: 3}
       propertyPath: m_Name
       value: Supply Box
+      objectReference: {fileID: 0}
+    - target: {fileID: 7367786845147308589, guid: cf7f3ac08bf5ac14081a4ecb2b986fc1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7367786845147308589, guid: cf7f3ac08bf5ac14081a4ecb2b986fc1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7367786845147308589, guid: cf7f3ac08bf5ac14081a4ecb2b986fc1, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7367786845147308589, guid: cf7f3ac08bf5ac14081a4ecb2b986fc1, type: 3}
       propertyPath: m_LocalPosition.x
