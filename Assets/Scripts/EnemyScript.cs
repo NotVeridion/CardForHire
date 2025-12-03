@@ -9,16 +9,18 @@ public class EnemyScript : MonoBehaviour
     public float detectPlayerRange;
     public float attackPlayerRange;
     public float bulletDuration;
-    public float idleStopWalingTime = 5f;
+    public float idleStopWalkingTime = 5f;
     
-    public PlayerScript player;
+    
     public EnemyGunScript gun;
-    public GameObject enemySpawner;
     
     public bool isStunned;
     public bool doesRoamAround = true;
     
+    private GameObject player;
+
     private float idleStopWalkingTimer = 0f;
+    private float chaseWhenShotTimer = 0f;
     private float radius = 1f;
     
     private bool isCurrentlyRoaming = false;
@@ -46,10 +48,6 @@ public class EnemyScript : MonoBehaviour
         {
             currentState = EnemyState.ShotByPlayer;
         }
-        if (currentState == EnemyState.Idle)
-        {
-            currentState = EnemyState.ShotByPlayer;
-        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -69,6 +67,7 @@ public class EnemyScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        player = GameObject.FindWithTag("Player");
         currentState = EnemyState.Idle;
     }
 
@@ -100,12 +99,14 @@ public class EnemyScript : MonoBehaviour
             if (doesRoamAround)
             {
                 idleStopWalkingTimer += Time.deltaTime;
-                if (idleStopWalkingTimer >= idleStopWalingTime)
+                if (idleStopWalkingTimer >= idleStopWalkingTime)
                 {
                     if (!isCurrentlyRoaming)
                     {
-                        nextIdlePosition = Random.insideUnitCircle * radius;
-                        RaycastHit2D hit = Physics2D.Raycast(transform.position, nextIdlePosition, Vector2.Distance(transform.position, nextIdlePosition), LayerMask.GetMask("Wall"));
+                        nextIdlePosition = (Random.insideUnitCircle * radius) + (Vector2)transform.position;
+                        Vector3 checkDirection = (nextIdlePosition - transform.position).normalized;
+                        RaycastHit2D hit = Physics2D.Raycast(transform.position, checkDirection, Vector2.Distance(transform.position, nextIdlePosition) + 1.4f, LayerMask.GetMask("Wall"));
+                        
                         if (hit)
                         {
                             nextIdlePosition = transform.position;
@@ -119,7 +120,7 @@ public class EnemyScript : MonoBehaviour
 
                     if (distanceToNextPoint.magnitude >= 0.1f)
                     {
-                        transform.position += direction * (enemyMoveSpeed / 2.0f) * Time.deltaTime;
+                        transform.position += direction * (enemyMoveSpeed / 2.5f) * Time.deltaTime;
                         GetComponent<Animator>().SetBool("isMoving", true);
                     }
                     else
@@ -170,6 +171,12 @@ public class EnemyScript : MonoBehaviour
             }
             GetComponent<Animator>().SetBool("isMoving", true);
             isCurrentlyRoaming = false;
+            chaseWhenShotTimer += Time.deltaTime;
+            if ((chaseWhenShotTimer >= 6f) && (distanceToPlayer > detectPlayerRange))
+            {
+                currentState = EnemyState.Idle;
+                chaseWhenShotTimer = 0f;
+            }
         }
         else if (currentState == EnemyState.ShotByPlayer)
         {

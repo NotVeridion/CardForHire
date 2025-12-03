@@ -3,6 +3,12 @@ using UnityEngine.SceneManagement;
 
 public class UIEndScript : MonoBehaviour
 {
+    private AudioManagerScript audioManagerScript;
+
+    public void Start()
+    {
+        audioManagerScript = FindAnyObjectByType<AudioManagerScript>();
+    }
     public void Quit()
     {
         Application.Quit();
@@ -10,6 +16,7 @@ public class UIEndScript : MonoBehaviour
 
     public void MainMenu()
     {
+        audioManagerScript.ChangeMusic(audioManagerScript.MainMenuMusic);
         SceneManager.LoadScene("MainMenu");
     }
 }

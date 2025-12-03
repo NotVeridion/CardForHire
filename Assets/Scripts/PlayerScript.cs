@@ -27,6 +27,7 @@ public class PlayerScript : MonoBehaviour
     private SpriteRenderer gunSpriteRenderer;
     private AudioManagerScript audioManagerScript;
     private NPCScript npcInRange;
+    private GunScript gun;
     public bool isMovementLocked = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -39,6 +40,7 @@ public class PlayerScript : MonoBehaviour
         audioManagerScript = GameObject.FindWithTag("AudioManager").GetComponent<AudioManagerScript>();
         gunScript = GetComponentInChildren<GunScript>();
         dashTrail = GetComponent<TrailRenderer>();
+        gun = FindAnyObjectByType<GunScript>();
         canDash = true;
         currentDashDuration = dashDuration;
         currentDashCooldown = 0;
@@ -211,6 +213,7 @@ public class PlayerScript : MonoBehaviour
         playerHealth -= dmg;
         if (playerHealth < 0)
         {
+            isMovementLocked = true;
             playerHealth = 0;
         }
     }

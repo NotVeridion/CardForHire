@@ -8,6 +8,7 @@ public class GameUISccript : MonoBehaviour
 {
     [SerializeField] PlayerScript playerScript;
     [SerializeField] AudioManagerScript audioManagerScript;
+    [SerializeField] BossScript bossScript;
 
     [SerializeField] Slider health;
     [SerializeField] Slider dashCoolDown;
@@ -43,18 +44,16 @@ public class GameUISccript : MonoBehaviour
     [SerializeField] GameObject respawnPosition;
 
     //Settings
-    [SerializeField] AudioMixer audioMixer;
     [SerializeField] GameObject settingsPanel;
     [SerializeField] Slider musicSlider;
     [SerializeField] Slider SFXSlider;
+    [SerializeField] Settings settings;
 
 
     //Deck Selection
     [SerializeField] Deck standard;
     [SerializeField] Deck red;
     [SerializeField] Deck black;
-
-
 
     float currentDamage;
     float startDamage;
@@ -71,16 +70,22 @@ public class GameUISccript : MonoBehaviour
         deckManager = FindAnyObjectByType<DeckManagerScript>();
         playerScript = FindAnyObjectByType<PlayerScript>();
         audioManagerScript = FindAnyObjectByType<AudioManagerScript>();
+        bossScript = FindAnyObjectByType<BossScript>();
 
         playerScript.gameObject.SetActive(false);
-        
-        audioMixer.SetFloat("MusicVolume", Mathf.Log(musicSlider.value) * 20);
-        audioMixer.SetFloat("SFXVolume", Mathf.Log(SFXSlider.value) * 20);
+
+        musicSlider.value = settings.musicSliderValue;
+        SFXSlider.value = settings.SFXSliderValue;
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        // Update settings
+        settings.musicSliderValue = musicSlider.value;
+        settings.SFXSliderValue = SFXSlider.value;
+
         cardImage.sprite = deckManager.getCurrentCard().sprite;
         if(deckManager.getCurrentCard().bleed)
         {
@@ -181,10 +186,6 @@ public class GameUISccript : MonoBehaviour
         {
             GameOver();
         }
-
-        // Update Audio
-        audioMixer.SetFloat("MusicVolume", Mathf.Log(musicSlider.value) * 20);
-        audioMixer.SetFloat("SFXVolume", Mathf.Log(SFXSlider.value) * 20);
     }
 
     public void Pause()
@@ -266,7 +267,6 @@ public class GameUISccript : MonoBehaviour
 
     public void GameOver()
     {
-        playerScript.gameObject.SetActive(false);
         gameoverPanel.SetActive(true);
     }
 
@@ -278,13 +278,17 @@ public class GameUISccript : MonoBehaviour
 
     public void RespawnPlayer()
     {
-        audioManagerScript.PlayOneShotSFX(audioManagerScript.Button);
         playerScript.gameObject.transform.position = respawnPosition.transform.position;
-        audioManagerScript.ChangeMusic(audioManagerScript.TownMusic);
-        playerScript.location = "Sheriff";
 
+        audioManagerScript.PlayOneShotSFX(audioManagerScript.Button);
+        audioManagerScript.ChangeMusic(audioManagerScript.TownMusic);
+        bossScript.StateMachine.ChangeState(bossScript.IdleState);
+        Camera.main.GetComponent<CameraScript>().inFinalBoss = false;
+
+        playerScript.location = "Sheriff";
         playerScript.Heal(1000);
-        playerScript.gameObject.SetActive(true);
+        playerScript.isMovementLocked = false;
+
         gameoverPanel.SetActive(false);
         GameObject.FindWithTag("Gun").GetComponent<GunScript>().RestoreFire();
     }

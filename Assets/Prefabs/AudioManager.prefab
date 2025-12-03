@@ -175,6 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a9ba9a6614f802478e7ef5789c2709a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  audioMixer: {fileID: 24100000, guid: 40dcd1ed6380b144fafe3090713420ab, type: 2}
   musicSource: {fileID: 3472772864648349788}
   SFXSource: {fileID: 8633828871744686621}
   MainMenuMusic: {fileID: 8300000, guid: 7750efe157cb9fc4ea41085c5182e765, type: 3}
@@ -183,6 +184,7 @@ MonoBehaviour:
   ShopMusic: {fileID: 8300000, guid: 88b98996579344442a72f3837bb5daa7, type: 3}
   DungeonMusic: {fileID: 8300000, guid: f662bf185132c204eaf96d2ad81906cb, type: 3}
   BossMusic: {fileID: 8300000, guid: 8ffd3ceafe1512c4e8d80e90ff8dbd48, type: 3}
+  EndMusic: {fileID: 8300000, guid: ec0f6aca09de26f4b9da2d86d7a3c111, type: 3}
   Pickup: {fileID: 8300000, guid: 5384efb2eb4bcc0498bb08d5451688c6, type: 3}
   Hit: {fileID: 8300000, guid: ee4b567fa874a814cb335d469e9c06f2, type: 3}
   Dash: {fileID: 8300000, guid: 3f497fa408349864785e8adb5956179b, type: 3}
@@ -210,6 +212,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 385de9594c88f5843a2e51d1745aa9b4, type: 3}
   - {fileID: 8300000, guid: 9249c8f1a3f9cb042b6afd9c36ac7c7e, type: 3}
   - {fileID: 8300000, guid: ddb76b006039adf4b901ce01c3d20cf0, type: 3}
+  settings: {fileID: 11400000, guid: 15cba583228ab2c48aab53ed9e379c08, type: 2}
 --- !u!1 &7655586129359257129
 GameObject:
   m_ObjectHideFlags: 0

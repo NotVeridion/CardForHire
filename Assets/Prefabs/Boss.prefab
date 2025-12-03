@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7333332995870701823}
   m_Layer: 0
   m_Name: Boss
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -178,12 +178,14 @@ MonoBehaviour:
   rb: {fileID: 0}
   detectionRange: 14
   sliderObj: {fileID: 0}
+  finalSpinSpeed: 3
   positionObjects:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   positionCenter: {fileID: 0}
+  positionStart: {fileID: 0}
 --- !u!1 &2263084719916058551
 GameObject:
   m_ObjectHideFlags: 0
@@ -319,8 +321,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b305cc7e6f779844ba3bd8ba116165dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BossGunScript
+  boss: {fileID: 0}
   bossShotgun: {fileID: 11400000, guid: 08f31243e05d7364a87254b6aca60c7c, type: 2}
   bossPistol: {fileID: 11400000, guid: f0ae3cd6dae8fc04c8d707d825b1f698, type: 2}
+  bossFinalGun: {fileID: 11400000, guid: 0c4a19a3c866e0d4c9eac54a9a06e2bd, type: 2}
   regularBullet: {fileID: 2934266706424601839, guid: d6d660a5f028eef48aa22562ca9a74e6, type: 3}
   specialBullet: {fileID: 3261818217900987207, guid: 06edccfe32b6bb049ad767cdebc75e79, type: 3}
   bulletSpawner: {fileID: 2263084719916058551}
@@ -328,4 +332,3 @@ MonoBehaviour:
   currentGun: {fileID: 0}
   indicatorPrefab: {fileID: 412542391502756599, guid: d57d2922b3c0a0846904cf57e8464fa8, type: 3}
   indicatorDuration: 0.4
-  inFinalState: 0

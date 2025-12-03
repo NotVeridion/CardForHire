@@ -17,6 +17,7 @@ public class GunScript : MonoBehaviour
     private AudioManagerScript audioManagerScript;
     private SpriteRenderer gunSprite;
     private SpriteRenderer playerSprite;
+    private PlayerScript playerScript;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -24,6 +25,7 @@ public class GunScript : MonoBehaviour
         canFire = true;
         gunSprite = GetComponent<SpriteRenderer>();
         playerSprite = GetComponentInParent<SpriteRenderer>();
+        playerScript = GetComponentInParent<PlayerScript>();
 
         gunSprite.sprite = currentGun.gunSprite;
         currentGun = Instantiate(currentGun);
@@ -101,7 +103,7 @@ public class GunScript : MonoBehaviour
             if (canFire)
             {
                 Shoot();
-                StartCoroutine(nameof(fireRateHandler));
+                StartCoroutine(fireRateHandler());
             }
         }
         else if (Input.GetKey(KeyCode.DownArrow))
@@ -110,8 +112,14 @@ public class GunScript : MonoBehaviour
             if (canFire)
             {
                 Shoot();
-                StartCoroutine(nameof(fireRateHandler));
+                StartCoroutine(fireRateHandler());
             }
+        }
+
+        if (playerScript.playerHealth <= 0)
+        {
+            StopCoroutine(fireRateHandler());
+            canFire = false;
         }
     }
 
