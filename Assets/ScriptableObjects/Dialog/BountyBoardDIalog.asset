@@ -17,7 +17,7 @@ MonoBehaviour:
   - Collect all the supply boxes scattered around the town! Accept the quest?
   - Quest started!
   - Collect all the boxes before you can receive your reward!
-  - Great work! Here's your reward.
+  - Great work! You've earn a reward.
   - (Looks like there's no more quest available for you right now. Try checking somewhere
     else!)
   endDialogueLines: 0001010101
