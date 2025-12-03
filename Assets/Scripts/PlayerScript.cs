@@ -10,7 +10,10 @@ public class PlayerScript : MonoBehaviour
     public float dashDuration;
     private float currentDashDuration;
     public float dashCooldown;
+    [HideInInspector]
     public float currentDashCooldown;
+    [HideInInspector]
+    public string location;
     private GunScript gunScript;
     private TrailRenderer dashTrail;
     private Rigidbody2D rb;
@@ -22,6 +25,9 @@ public class PlayerScript : MonoBehaviour
     private Animator playerAnimator;
     private SpriteRenderer playerSpriteRenderer;
     private SpriteRenderer gunSpriteRenderer;
+    private AudioManagerScript audioManagerScript;
+    private NPCScript npcInRange;
+    public bool isMovementLocked = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -30,6 +36,7 @@ public class PlayerScript : MonoBehaviour
         playerAnimator = GetComponent<Animator>();
         playerSpriteRenderer = GetComponent<SpriteRenderer>();
         gunSpriteRenderer = GameObject.FindWithTag("Gun").GetComponent<SpriteRenderer>();
+        audioManagerScript = GameObject.FindWithTag("AudioManager").GetComponent<AudioManagerScript>();
         gunScript = GetComponentInChildren<GunScript>();
         dashTrail = GetComponent<TrailRenderer>();
         canDash = true;
@@ -40,11 +47,24 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        vertical = Input.GetAxisRaw("Vertical");
-        horizontal = Input.GetAxisRaw("Horizontal");
+        if (!isMovementLocked)
+        {
+            vertical = Input.GetAxisRaw("Vertical");
+            horizontal = Input.GetAxisRaw("Horizontal");
+        }
+        else
+        {
+            vertical = 0;
+            horizontal = 0;
+        }
+
         movementVector = new Vector3(horizontal, vertical, 0).normalized;
 
         Vector3 cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        if (Input.GetKeyDown(KeyCode.E) && npcInRange != null)
+        {
+            npcInRange.Interact(); // Start dialogue
+        }
         if (transform.position.x <= cursorPos.x) // Cursor on right of player
         {
             playerSpriteRenderer.flipX = false;
@@ -71,6 +91,8 @@ public class PlayerScript : MonoBehaviour
             currentDashCooldown = dashCooldown;
             rb.linearVelocity = new Vector3(movementVector.x * dashPower, movementVector.y * dashPower, 0);
             dashTrail.emitting = true;
+
+            audioManagerScript.PlayOneShotSFX(audioManagerScript.Dash);
         }
 
         if (!isDashing)
@@ -107,26 +129,28 @@ public class PlayerScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
+        if (other.gameObject.CompareTag("AttackSpeedPickup") || other.gameObject.CompareTag("DamagePickup")
+            || other.gameObject.CompareTag("DashDistancePickup") || other.gameObject.CompareTag("MovementSpeedPickup"))
+        {
+            PickupScript script = other.gameObject.GetComponent<PickupScript>();
+            if (other.gameObject.CompareTag("AttackSpeedPickup"))
+            {
+                StartCoroutine(applyAttackSpeedBuff(script.value, script.duration));
+            }
+            if (other.gameObject.CompareTag("DamagePickup"))
+            {
+                StartCoroutine(applyDamageBuff(script.value, script.duration));
+            }
+            if (other.gameObject.CompareTag("DashDistancePickup"))
+            {
+                StartCoroutine(applyDashDistanceBuff(script.value, script.duration));
+            }
+            if (other.gameObject.CompareTag("MovementSpeedPickup"))
+            {
+                StartCoroutine(applyMovementSpeedBuff(script.value, script.duration));
+            }
 
-        if (other.gameObject.CompareTag("AttackSpeedPickup"))
-        {
-            PickupScript script = other.gameObject.GetComponent<PickupScript>();
-            StartCoroutine(applyAttackSpeedBuff(script.value, script.duration));
-        }
-        if (other.gameObject.CompareTag("DamagePickup"))
-        {
-            PickupScript script = other.gameObject.GetComponent<PickupScript>();
-            StartCoroutine(applyDamageBuff(script.value, script.duration));
-        }
-        if (other.gameObject.CompareTag("DashDistancePickup"))
-        {
-            PickupScript script = other.gameObject.GetComponent<PickupScript>();
-            StartCoroutine(applyDashDistanceBuff(script.value, script.duration));
-        }
-        if (other.gameObject.CompareTag("MovementSpeedPickup"))
-        {
-            PickupScript script = other.gameObject.GetComponent<PickupScript>();
-            StartCoroutine(applyMovementSpeedBuff(script.value, script.duration));
+            audioManagerScript.PlayOneShotSFX(audioManagerScript.Pickup);
         }
     }
 
@@ -139,8 +163,18 @@ public class PlayerScript : MonoBehaviour
 
             Destroy(other.gameObject);
         }
+        if (other.CompareTag("NPCInteraction"))
+        {
+            npcInRange = other.GetComponentInParent<NPCScript>();
+        }
     }
-
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("NPCInteraction"))
+        {
+            npcInRange = null;
+        }
+    }
     void Move()
     {
         rb.linearVelocity = new Vector3(movementVector.x * playerMoveSpeed, movementVector.y * playerMoveSpeed, 0);
@@ -148,6 +182,17 @@ public class PlayerScript : MonoBehaviour
         if (vertical != 0 || horizontal != 0)
         {
             playerAnimator.SetBool("isMoving", true);
+
+            if (!audioManagerScript.SFXSource.isPlaying){
+                if (location == "Cave" || location == "Casino")
+                {
+                    audioManagerScript.PlayRandomSFX(audioManagerScript.WalkingStone);
+                }
+                else
+                {
+                    audioManagerScript.PlayRandomSFX(audioManagerScript.WalkingGrass);
+                }
+            }
         }
         else
         {
@@ -157,6 +202,12 @@ public class PlayerScript : MonoBehaviour
 
     public void TakeDamage(float dmg)
     {
+        if (isDashing)
+        {
+            return;
+        }
+
+        audioManagerScript.PlayOneShotSFX(audioManagerScript.Hit);
         playerHealth -= dmg;
         if (playerHealth < 0)
         {

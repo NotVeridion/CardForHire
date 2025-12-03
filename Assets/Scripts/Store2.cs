@@ -27,12 +27,15 @@ public class Store2 : MonoBehaviour
     [SerializeField] float fireRateIncrease;
     [SerializeField] float rangeIncrease;
 
+    [SerializeField] AudioManagerScript audioManagerScript;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         player = GameObject.FindWithTag("Player");
         gun = FindAnyObjectByType<GunScript>();
+        audioManagerScript = FindAnyObjectByType<AudioManagerScript>();
         playerInfo = player.GetComponent<PlayerScript>();
 
         fireRateCostText.text = "Cost " + fireRateCost.ToString();
@@ -79,16 +82,19 @@ public class Store2 : MonoBehaviour
 
     public void BuyDamage()
     {
+        audioManagerScript.PlayOneShotSFX(audioManagerScript.Button);
         gun.currentGun.damage += damageIncrease;
     }
 
     public void BuyFireRate()
     {
+        audioManagerScript.PlayOneShotSFX(audioManagerScript.Button);
         gun.currentGun.fireRate += fireRateIncrease;
     }
 
     public void BuyBulletCount()
     {
+        audioManagerScript.PlayOneShotSFX(audioManagerScript.Button);
         if (gun.currentGun.isSingleShot)
         {
             gun.currentGun.isSingleShot = false;

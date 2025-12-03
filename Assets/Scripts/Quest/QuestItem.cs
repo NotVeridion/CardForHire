@@ -4,6 +4,8 @@ public class QuestItem : MonoBehaviour
 {
     [Header("Quest this item belongs to")]
     public string questID;
+    [Header("Pickup Audio")]
+    public AudioClip pickupSFX;
 
     [Header("Objective this item progresses")]
     public string objectiveID;
@@ -17,41 +19,40 @@ public class QuestItem : MonoBehaviour
 
     private void Start()
     {
-        // Hide until the quest is actually active
         if (!QuestController.Instance.IsQuestActive(questID))
             gameObject.SetActive(false);
 
-        // Listen for when quests are accepted
         QuestController.Instance.OnQuestAccepted += HandleQuestAccepted;
 
         startPos = transform.localPosition; 
     }
     private void Update()
     {
-    // Bounce movement
         float offset = Mathf.Sin(Time.time * bounceSpeed) * bounceHeight;
         transform.localPosition = startPos + new Vector3(0, offset, 0);
     }
     private void OnDestroy()
     {
-        // Always clean up event subscriptions
         if (QuestController.Instance != null)
             QuestController.Instance.OnQuestAccepted -= HandleQuestAccepted;
     }
 
-    // 🔥 Called when ANY quest is accepted
     private void HandleQuestAccepted(string acceptedQuestID)
     {
         if (acceptedQuestID == questID)
         {
-            // This item's quest was just accepted → activate the item
             gameObject.SetActive(true);
         }
     }
 
-    private void OnMouseDown()
+    private void OnCollisionEnter2D()
     {
         QuestController.Instance.AddProgressToObjective(objectiveID, amountToAdd);
+         if (pickupSFX != null)
+    {
+
+        AudioSource.PlayClipAtPoint(pickupSFX, transform.position);
+    }
         Destroy(gameObject);
     }
 }

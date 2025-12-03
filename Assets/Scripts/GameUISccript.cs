@@ -1,11 +1,13 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameUISccript : MonoBehaviour
 {
     [SerializeField] PlayerScript playerScript;
+    [SerializeField] AudioManagerScript audioManagerScript;
 
     [SerializeField] Slider health;
     [SerializeField] Slider dashCoolDown;
@@ -40,6 +42,12 @@ public class GameUISccript : MonoBehaviour
 
     [SerializeField] GameObject respawnPosition;
 
+    //Settings
+    [SerializeField] AudioMixer audioMixer;
+    [SerializeField] GameObject settingsPanel;
+    [SerializeField] Slider musicSlider;
+    [SerializeField] Slider SFXSlider;
+
 
     //Deck Selection
     [SerializeField] Deck standard;
@@ -62,8 +70,12 @@ public class GameUISccript : MonoBehaviour
     {
         deckManager = FindAnyObjectByType<DeckManagerScript>();
         playerScript = FindAnyObjectByType<PlayerScript>();
+        audioManagerScript = FindAnyObjectByType<AudioManagerScript>();
 
         playerScript.gameObject.SetActive(false);
+        
+        audioMixer.SetFloat("MusicVolume", Mathf.Log(musicSlider.value) * 20);
+        audioMixer.SetFloat("SFXVolume", Mathf.Log(SFXSlider.value) * 20);
     }
 
     // Update is called once per frame
@@ -170,11 +182,15 @@ public class GameUISccript : MonoBehaviour
             GameOver();
         }
 
-
+        // Update Audio
+        audioMixer.SetFloat("MusicVolume", Mathf.Log(musicSlider.value) * 20);
+        audioMixer.SetFloat("SFXVolume", Mathf.Log(SFXSlider.value) * 20);
     }
 
     public void Pause()
     {
+        audioManagerScript.PlayOneShotSFX(audioManagerScript.Button);
+
         if (gameoverPanel.activeSelf)
         {
             return;
@@ -183,27 +199,55 @@ public class GameUISccript : MonoBehaviour
         if (pausePanel.activeSelf)
         {
             pausePanel.SetActive(false);
-            playerScript.gameObject.SetActive(true);
-            storeUI.SetActive(true);
-            storeUI2.SetActive(true);
-            GameObject.FindWithTag("Gun").GetComponent<GunScript>().RestoreFire();
+
+            // Avoid reenabling the player if they were previously in a store before pausing
+            // Fixes bug
+            if (storeUI.activeSelf || storeUI2.activeSelf)
+            {
+                playerScript.gameObject.SetActive(false);
+            }
+            else
+            {
+                playerScript.gameObject.SetActive(true);
+                GameObject.FindWithTag("Gun").GetComponent<GunScript>().RestoreFire();
+            }
+
         }
         else
         {
+            if (settingsPanel.activeSelf)
+            {
+                settingsPanel.SetActive(false);
+            }
+
             pausePanel.SetActive(true);
             playerScript.gameObject.SetActive(false);
-            storeUI.SetActive(false );
-            storeUI2.SetActive(false);
         }
+    }
+
+    public void Settings()
+    {
+        audioManagerScript.PlayOneShotSFX(audioManagerScript.Button);
+        settingsPanel.SetActive(true);
+        pausePanel.SetActive(false);
+    }
+
+    public void SettingsBack()
+    {
+        audioManagerScript.PlayOneShotSFX(audioManagerScript.Button);
+        settingsPanel.SetActive(false);
+        pausePanel.SetActive(true);
     }
 
     public void Quit()
     {
+        audioManagerScript.PlayOneShotSFX(audioManagerScript.Button);
         Application.Quit();
     }
 
     public void SelectDeck(string deckName)
     {
+        audioManagerScript.PlayOneShotSFX(audioManagerScript.Button);
         if(deckName == "Red")
         {
             deckManager.chosenDeck = red;
@@ -228,17 +272,21 @@ public class GameUISccript : MonoBehaviour
 
     public void MainMenu()
     {
+        audioManagerScript.PlayOneShotSFX(audioManagerScript.Button);
         SceneManager.LoadScene("MainMenu");
     }
 
     public void RespawnPlayer()
     {
+        audioManagerScript.PlayOneShotSFX(audioManagerScript.Button);
         playerScript.gameObject.transform.position = respawnPosition.transform.position;
+        audioManagerScript.ChangeMusic(audioManagerScript.TownMusic);
+        playerScript.location = "Sheriff";
+
         playerScript.Heal(1000);
         playerScript.gameObject.SetActive(true);
         gameoverPanel.SetActive(false);
         GameObject.FindWithTag("Gun").GetComponent<GunScript>().RestoreFire();
-
     }
     
     public void AttackSpeedDuration(float duration)
@@ -269,6 +317,4 @@ public class GameUISccript : MonoBehaviour
         currentDash = duration;
         dashDistanceAbility.SetActive(true);
     }
-
-
 }

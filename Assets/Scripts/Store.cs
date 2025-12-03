@@ -9,6 +9,8 @@ public class Store : MonoBehaviour
     [SerializeField] GameObject store;
     [SerializeField] GameObject player;
 
+    [SerializeField] AudioManagerScript audioManagerScript;
+
     public int cardIndex;
     public int abilityIndex;
 
@@ -49,6 +51,7 @@ public class Store : MonoBehaviour
     {
         player = GameObject.FindWithTag("Player");
         deckManager = FindAnyObjectByType<DeckManagerScript>();
+        audioManagerScript = FindAnyObjectByType<AudioManagerScript>();
         playerInfo = player.GetComponent<PlayerScript>();
 
         costText.text = "Cost " + cost.ToString();
@@ -96,12 +99,13 @@ public class Store : MonoBehaviour
             player.SetActive(true);
             buySpinGameObject.SetActive(true);
             selectUpgradeGameObject.SetActive(false);
-
         }
     }
 
     public void Spin()
     {
+        audioManagerScript.PlayOneShotSFX(audioManagerScript.Button);
+
         List<Sprite> newAbilitySprites = new List<Sprite>(abilitySprites);
 
         Random.InitState(System.DateTime.Now.Millisecond);

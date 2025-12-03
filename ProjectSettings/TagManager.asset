@@ -16,7 +16,16 @@ TagManager:
   - TestDummy
   - Enemy
   - Wall
-  - Bleed
+  - AudioManager
+  - CaveLocation
+  - TownLocation
+  - DungeonLocation
+  - ShopLocation
+  - SheriffLocation
+  - CasinoLocation
+  - NPCHouseLocation
+  - BossGun
+  - NPCInteraction
   layers:
   - Default
   - TransparentFX

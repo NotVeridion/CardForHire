@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.XR;
@@ -12,7 +13,11 @@ public class QuestController : MonoBehaviour
     public QuestUI questUI;
 
     public List<string> handinQuestIDs = new();
+    public string activeQuestGiverID = "";
+    public GameObject rewardPopupPrefab;
 
+    [Header("Global Quest Stats")]
+    public int totalQuestsCompleted = 0;
     public delegate void QuestAcceptedEvent(string questID);
     public event QuestAcceptedEvent OnQuestAccepted;
 
@@ -23,6 +28,10 @@ public class QuestController : MonoBehaviour
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
         questUI = FindObjectOfType<QuestUI>();
+        if (EnemyDefeatTracker.Instance != null)
+        {
+            EnemyDefeatTracker.Instance.OnEnemyDefeated += OnEnemyDefeated;
+        }
     }
     public void AcceptQuest(Quest quest)
     {
@@ -37,32 +46,11 @@ public class QuestController : MonoBehaviour
     activateQuests.Add(new QuestProgress(quest));
     questUI.UpdateQuestUI();
 
+    activeQuestGiverID = quest.questGiverID;
 
-
-    // 🔥 Notify listeners that a quest was accepted
     OnQuestAccepted?.Invoke(quest.questID);
     }
     public bool IsQuestActive(string questID) => activateQuests.Exists(q => q.QuestID == questID);
-    /*
-    public void CheckInventoryForQuests()
-    {
-        Dictionary<int,int> itemCounts = InventoryController.Instance.GetItemCounts();
-        foreach(QuestProgress quest in activateQuests)
-        {
-            foreach(QuestObjective questObjective in quest.objectives)
-            {
-                if(questObjective.type != ObjectiveType.CollectItem) continue;
-                if(!int.TryParse(questObjective.objectiveID,out int itemID)) continue;
-                int newAmount = itemCounts.TryGetValue(itemID, out int count) ? Mathf.Min(count, questObjective.requiredAmount) :0;
-                if(questObjective.currentAmount != newAmount)
-                {
-                    questObjective.currentAmount = newAmount;
-                }
-            }
-        }
-        questUI.UpdateQuestUI();
-    }
-    */
     public void LoadQuestProgress(List<QuestProgress> savedQuests)
     {
         activateQuests = savedQuests ?? new();
@@ -80,10 +68,36 @@ public class QuestController : MonoBehaviour
     {
     QuestProgress quest = activateQuests.Find(q => q.QuestID == questID);
 
-    if (quest != null)
+    if (quest == null)
     {
-        RemoveCompletedQuest(quest);
+        return;
     }
+
+    if (handinQuestIDs.Contains(questID))
+    {
+        return;
+    }
+
+    int rewardAmount = quest.quest.cashReward;
+    PlayerScript player = GameObject.FindWithTag("Player").GetComponent<PlayerScript>();
+    if (player != null)
+    {
+        player.playerCash += rewardAmount;
+        if (quest.quest.rewardSFX != null)
+        {
+            AudioSource.PlayClipAtPoint(quest.quest.rewardSFX, player.transform.position);
+        }
+    }
+    totalQuestsCompleted++;
+    Debug.Log($"[QUEST] Total quests completed so far: {totalQuestsCompleted}");
+    SpawnRewardPopup(questID, rewardAmount);
+    handinQuestIDs.Add(questID);
+    activateQuests.Remove(quest);
+    questUI.UpdateQuestUI();
+    OnQuestProgressUpdated?.Invoke(questID);
+
+    activeQuestGiverID = "";
+
 
 
 }
@@ -93,38 +107,7 @@ public class QuestController : MonoBehaviour
         return handinQuestIDs.Contains(questID);
     }
 
-    /*
-    public bool RemoveRequiredItemsFromInventory(string questID)
-    {
-        QuestProgress quest = activateQuests.Find(q => q.QuestID == questID);
-        if (quest == null) return false;
-        Dictionary<int,int> requiredItems = new();
-
-        foreach(QuestObjective objective in quest.objectives)
-        {
-            if(objective.type == ObjectiveType.CollectItem && int.TryParse(objective.objectiveID, out int itemID))
-            {
-                requiredItems[itemID] = objective.requiredAmount;
-            }
-        }
-
-        Dictionary<int, int> itemCounts = InventoryController.Instance.GetItemCounts();
-        foreach(var item in requiredItems)
-        {
-            if(itemCounts.GetValueOrDefault(item.Key) < item.Value)
-            {
-                return false;
-            }
-        }
-        foreach(var itemRequirement in requiredItems)
-        {
-            InventoryController.Instance.RemoveRequiredItemsFromInventory(itemRequirement.Key, itemRequirement.Value);
-        }
-
-        return true;
-        
-    }
-    */
+    
 
     public void AddProgressToObjective(string objectiveID, int amount)
     {
@@ -140,12 +123,8 @@ public class QuestController : MonoBehaviour
                 if (objective.currentAmount > objective.requiredAmount)
                     objective.currentAmount = objective.requiredAmount;
 
-                Debug.Log($"Quest Progress Updated: {objectiveID} → {objective.currentAmount}/{objective.requiredAmount}");
-
                 // Update UI after change
                 questUI.UpdateQuestUI();
-
-                // Notify listeners (NPCs, markers, etc.) that this quest's progress changed
                 OnQuestProgressUpdated?.Invoke(quest.QuestID);
 
                 return;
@@ -153,24 +132,84 @@ public class QuestController : MonoBehaviour
         }
     }
 
-    Debug.LogWarning($"No active quest objective found with ID: {objectiveID}");
-
 
     }
 
     public void RemoveCompletedQuest(QuestProgress quest)
-{
-    if (activateQuests.Contains(quest))
     {
-        handinQuestIDs.Add(quest.QuestID);
-        activateQuests.Remove(quest);
-        questUI.UpdateQuestUI();
+        if (activateQuests.Contains(quest))
+        {
+            handinQuestIDs.Add(quest.QuestID);
+            activateQuests.Remove(quest);
+            questUI.UpdateQuestUI();
+        }
+    }
+
+    public void NotifyQuestProgressUpdated(string questID)
+    {
+        OnQuestProgressUpdated?.Invoke(questID);
+    }
+    //Use this to get the number of quests completed so far
+    public int GetTotalCompletedQuests()
+    {
+        return totalQuestsCompleted;
+    }
+    private void OnEnemyDefeated(string enemyID)
+{
+    foreach (var quest in activateQuests)
+    {
+        foreach (var objective in quest.objectives)
+        {
+            if (objective.type == ObjectiveType.DefeatEnemy &&
+                objective.objectiveID == enemyID &&
+                objective.currentAmount < objective.requiredAmount)
+            {
+                objective.currentAmount++;
+
+                questUI.UpdateQuestUI();
+
+                OnQuestProgressUpdated?.Invoke(quest.QuestID);
+
+                return;
+            }
+        }
     }
 }
 
-    public void NotifyQuestProgressUpdated(string questID)
+private void SpawnRewardPopup(string questID, int amount)
 {
-    OnQuestProgressUpdated?.Invoke(questID);
+    if (rewardPopupPrefab == null)
+    {
+        return;
+    }
+
+    NPCScript[] allNPCs = FindObjectsOfType<NPCScript>();
+
+    NPCScript giver = null;
+    foreach (var npc in allNPCs)
+    {
+        if (npc.dialogueData != null &&
+            npc.dialogueData.quest != null &&
+            npc.dialogueData.quest.questID == questID)
+        {
+            giver = npc;
+            break;
+        }
+    }
+
+    if (giver == null)
+    {
+        return;
+    }
+
+    Vector3 popupPos = giver.transform.position + new Vector3(0, 1.5f, 0);
+
+    GameObject popup = Instantiate(rewardPopupPrefab, popupPos, Quaternion.identity);
+
+    TMP_Text text = popup.GetComponentInChildren<TMP_Text>();
+    text.text = $"+${amount}";
+
+    popup.AddComponent<RewardPopupAnimator>();
 }
 }
 

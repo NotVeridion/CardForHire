@@ -44,6 +44,37 @@ public class EnemyGunScript : MonoBehaviour
                 StartCoroutine(nameof(fireRateHandler));
             }
         }
+
+        if (player.transform.position.x < transform.position.x)
+        {
+            
+            if (isPointingAtPlayer)
+            {
+                GetComponent<SpriteRenderer>().flipX = false;
+                GetComponent<SpriteRenderer>().flipY = true;
+            }
+            else
+            {
+                transform.rotation = Quaternion.Euler(Vector3.forward * 180);
+                GetComponent<SpriteRenderer>().flipX = false;
+                GetComponent<SpriteRenderer>().flipY = true;
+            }
+        }
+        else
+        {
+            if (isPointingAtPlayer)
+            {
+                GetComponent<SpriteRenderer>().flipX = false;
+                GetComponent<SpriteRenderer>().flipY = false;
+            }
+            else
+            {
+                transform.rotation = Quaternion.Euler(Vector3.forward);
+                GetComponent<SpriteRenderer>().flipX = false;
+                GetComponent<SpriteRenderer>().flipY = false;
+            }
+        }
+        
     }
     
     void Shoot()
@@ -55,6 +86,7 @@ public class EnemyGunScript : MonoBehaviour
         }
         else if (currentGun.isSpreadShot)
         {
+            Debug.Log("SHOOT!");
             Quaternion[] equallySpreadRotations = new Quaternion[currentGun.numBulletsInSpread];
 
             for (int i = 0; i < currentGun.numBulletsInSpread; i++)

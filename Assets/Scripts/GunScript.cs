@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(SpriteRenderer))]
 public class GunScript : MonoBehaviour
@@ -13,36 +14,99 @@ public class GunScript : MonoBehaviour
     private float angleToCursor;
     private bool canFire;
     private float currentTime;
+    private AudioManagerScript audioManagerScript;
+    private SpriteRenderer gunSprite;
+    private SpriteRenderer playerSprite;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         canFire = true;
-        GetComponent<SpriteRenderer>().sprite = currentGun.gunSprite;
+        gunSprite = GetComponent<SpriteRenderer>();
+        playerSprite = GetComponentInParent<SpriteRenderer>();
 
+        gunSprite.sprite = currentGun.gunSprite;
         currentGun = Instantiate(currentGun);
-
         deckManagerScript = GameObject.FindWithTag("DeckManager").GetComponent<DeckManagerScript>();
+        audioManagerScript = GameObject.FindWithTag("AudioManager").GetComponent<AudioManagerScript>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        PlayerScript player = GameObject.FindWithTag("Player").GetComponent<PlayerScript>();
+        if (player != null && player.isMovementLocked)
+        {
+            return;
+        }
         currentCard = deckManagerScript.currentCard;
 
-        currentTime += Time.deltaTime;
-        if (currentTime >= 5f)
+        // Check if using mouse to aim or arrow keys
+        if (Input.GetAxis("Mouse X") != 0 || Input.GetAxis("Mouse Y") != 0)
         {
-            Debug.Log("Current card in gun: " + currentCard.number + " " + currentCard.suit);
-            currentTime = 0;
+            directionToCursor = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+            angleToCursor = Mathf.Atan2(directionToCursor.y, directionToCursor.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(Vector3.forward * angleToCursor);
         }
-
-        directionToCursor = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-        angleToCursor = Mathf.Atan2(directionToCursor.y, directionToCursor.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(Vector3.forward * angleToCursor);
 
         if (Input.GetButton("Fire1"))
         {
+            if (canFire)
+            {
+                Shoot();
+                StartCoroutine(nameof(fireRateHandler));
+            }
+        }
+
+
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            if (playerSprite.flipX)
+            {
+                playerSprite.flipX = true;
+            }
+            if (!gunSprite.flipY)
+            {
+                gunSprite.flipY = true;
+            }
+
+            transform.rotation = Quaternion.Euler(new Vector3(0, 0, 180));
+            if (canFire)
+            {
+                Shoot();
+                StartCoroutine(nameof(fireRateHandler));
+            }
+        }
+        else if (Input.GetKey(KeyCode.UpArrow))
+        {
+            transform.rotation = Quaternion.Euler(new Vector3(0, 0, 90));
+            if (canFire)
+            {
+                Shoot();
+                StartCoroutine(nameof(fireRateHandler));
+            }
+        }
+        else if (Input.GetKey(KeyCode.RightArrow))
+        {
+            if (playerSprite.flipX)
+            {
+                playerSprite.flipX = false;
+            }
+            if (gunSprite.flipY)
+            {
+                gunSprite.flipY = false;
+            }
+
+            transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+            if (canFire)
+            {
+                Shoot();
+                StartCoroutine(nameof(fireRateHandler));
+            }
+        }
+        else if (Input.GetKey(KeyCode.DownArrow))
+        {
+            transform.rotation = Quaternion.Euler(new Vector3(0, 0, 270));
             if (canFire)
             {
                 Shoot();
@@ -53,6 +117,7 @@ public class GunScript : MonoBehaviour
 
     void Shoot()
     {
+        audioManagerScript.PlayRandomSFX(audioManagerScript.Shooting);
         if (currentGun.isSingleShot)
         {
             GameObject bulletObj = Instantiate(bullet, bulletSpawner.transform.position, transform.rotation);
@@ -69,6 +134,10 @@ public class GunScript : MonoBehaviour
                 GameObject bulletObj = Instantiate(bullet, bulletSpawner.transform.position, transform.rotation * bulletRot);
                 SetBulletData(bulletObj);
             }
+
+            // Add a singular bullet that flies towards direction
+            GameObject midBullet = Instantiate(bullet, bulletSpawner.transform.position, transform.rotation);
+            SetBulletData(midBullet);
         }
     }
 
