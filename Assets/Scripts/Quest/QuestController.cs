@@ -23,15 +23,17 @@ public class QuestController : MonoBehaviour
 
     public delegate void QuestProgressEvent(string questID);
     public event QuestProgressEvent OnQuestProgressUpdated;
+
+    private void Start()
+    {
+        TrySubscribeToEnemyTracker();
+    }
     private void Awake()
     {
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
         questUI = FindObjectOfType<QuestUI>();
-        if (EnemyDefeatTracker.Instance != null)
-        {
-            EnemyDefeatTracker.Instance.OnEnemyDefeated += OnEnemyDefeated;
-        }
+        TrySubscribeToEnemyTracker();
     }
     public void AcceptQuest(Quest quest)
     {
@@ -210,6 +212,15 @@ private void SpawnRewardPopup(string questID, int amount)
     text.text = $"+${amount}";
 
     popup.AddComponent<RewardPopupAnimator>();
+}
+
+private void TrySubscribeToEnemyTracker()
+{
+    if (EnemyDefeatTracker.Instance != null)
+    {
+        EnemyDefeatTracker.Instance.OnEnemyDefeated += OnEnemyDefeated;
+        return;
+    }
 }
 }
 
