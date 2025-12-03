@@ -1,8 +1,12 @@
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 
 public class AudioManagerScript : MonoBehaviour
 {
+    [Header("   Audio Mixer     ")]
+    public AudioMixer audioMixer;
+
     [Header("   Audio Sources   ")]
     public AudioSource musicSource;
     public AudioSource SFXSource;
@@ -25,6 +29,8 @@ public class AudioManagerScript : MonoBehaviour
     public AudioClip[] WalkingGrass;
     public AudioClip[] WalkingStone;
     public AudioClip[] Shooting;
+
+    [SerializeField] Settings settings;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -42,6 +48,14 @@ public class AudioManagerScript : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         musicSource.clip = MainMenuMusic;
         musicSource.Play();
+        
+    }
+
+    void Update()
+    {
+        // Save changes through the settings scriptable object
+        audioMixer.SetFloat("MusicVolume", Mathf.Log(settings.musicSliderValue) * 20);
+        audioMixer.SetFloat("SFXVolume", Mathf.Log(settings.SFXSliderValue) * 20);
     }
 
     public void PlayOneShotSFX(AudioClip clip)

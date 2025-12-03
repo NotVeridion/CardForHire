@@ -295269,63 +295269,6 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!1001 &1251510937
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 245632578056628946, guid: 9d3681ddb6764f34092284afe88ef036, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 251.09122
-      objectReference: {fileID: 0}
-    - target: {fileID: 245632578056628946, guid: 9d3681ddb6764f34092284afe88ef036, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 20.5162
-      objectReference: {fileID: 0}
-    - target: {fileID: 245632578056628946, guid: 9d3681ddb6764f34092284afe88ef036, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 245632578056628946, guid: 9d3681ddb6764f34092284afe88ef036, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 245632578056628946, guid: 9d3681ddb6764f34092284afe88ef036, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 245632578056628946, guid: 9d3681ddb6764f34092284afe88ef036, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 245632578056628946, guid: 9d3681ddb6764f34092284afe88ef036, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 245632578056628946, guid: 9d3681ddb6764f34092284afe88ef036, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 245632578056628946, guid: 9d3681ddb6764f34092284afe88ef036, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 245632578056628946, guid: 9d3681ddb6764f34092284afe88ef036, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2075392553942132075, guid: 9d3681ddb6764f34092284afe88ef036, type: 3}
-      propertyPath: m_Name
-      value: AudioManager
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9d3681ddb6764f34092284afe88ef036, type: 3}
 --- !u!1 &1251588834
 GameObject:
   m_ObjectHideFlags: 0
@@ -386532,10 +386475,10 @@ MonoBehaviour:
   gameoverPanel: {fileID: 880588736}
   storeUI2: {fileID: 1287478201}
   respawnPosition: {fileID: 225547567}
-  audioMixer: {fileID: 24100000, guid: 40dcd1ed6380b144fafe3090713420ab, type: 2}
   settingsPanel: {fileID: 1098975733}
   musicSlider: {fileID: 330556995}
   SFXSlider: {fileID: 1913708091}
+  settings: {fileID: 11400000, guid: 15cba583228ab2c48aab53ed9e379c08, type: 2}
   standard: {fileID: 11400000, guid: 66e88172a58526945bb8049a3387e93a, type: 2}
   red: {fileID: 11400000, guid: 2744457a078845f40b2ad1682d3c086d, type: 2}
   black: {fileID: 11400000, guid: 75cd48eb712b0a74f97f49dd8ac9698c, type: 2}
@@ -386767,7 +386710,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 245177843}
   - {fileID: 1151327535}
-  - {fileID: 1251510937}
   - {fileID: 1033522520}
   - {fileID: 481862121}
   - {fileID: 6083552744965809745}
