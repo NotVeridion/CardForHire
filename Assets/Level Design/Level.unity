@@ -54525,6 +54525,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Turret (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 8396301288025748020, guid: b4d6c227f094d9c4d8f34985d87d4672, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -55307,6 +55311,10 @@ PrefabInstance:
     - target: {fileID: 8396301288025748020, guid: b4d6c227f094d9c4d8f34985d87d4672, type: 3}
       propertyPath: m_Name
       value: Turret (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8396301288025748020, guid: b4d6c227f094d9c4d8f34985d87d4672, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -270561,6 +270569,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Turret (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 8396301288025748020, guid: b4d6c227f094d9c4d8f34985d87d4672, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -272702,6 +272714,7 @@ MonoBehaviour:
   questUI: {fileID: 0}
   handinQuestIDs: []
   activeQuestGiverID: 
+  rewardPopupPrefab: {fileID: 0}
   totalQuestsCompleted: 0
 --- !u!4 &1036612079
 Transform:
@@ -273576,7 +273589,7 @@ PrefabInstance:
     - target: {fileID: 1146896254072528506, guid: 9927951c9bb33d24784dbc60866b3b38, type: 3}
       propertyPath: 'enemiesPrefab.Array.data[0]'
       value: 
-      objectReference: {fileID: 1503901023825259611, guid: 2f20339c1b604e442b738f77893f497b, type: 3}
+      objectReference: {fileID: 8396301288025748020, guid: b4d6c227f094d9c4d8f34985d87d4672, type: 3}
     - target: {fileID: 1296316211412194916, guid: 9927951c9bb33d24784dbc60866b3b38, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -290276,6 +290289,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Turret (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 8396301288025748020, guid: b4d6c227f094d9c4d8f34985d87d4672, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -295970,7 +295987,7 @@ PrefabInstance:
     - target: {fileID: 1146896254072528506, guid: 9927951c9bb33d24784dbc60866b3b38, type: 3}
       propertyPath: 'enemiesPrefab.Array.data[0]'
       value: 
-      objectReference: {fileID: 6575356993852321160, guid: a6e7429d2d41761439621e727a27f7cd, type: 3}
+      objectReference: {fileID: 3093168112109348268, guid: 20d143510ac6978b69e91b2f94ab0701, type: 3}
     - target: {fileID: 1296316211412194916, guid: 9927951c9bb33d24784dbc60866b3b38, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -302044,6 +302061,10 @@ PrefabInstance:
     - target: {fileID: 8396301288025748020, guid: b4d6c227f094d9c4d8f34985d87d4672, type: 3}
       propertyPath: m_Name
       value: Turret (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8396301288025748020, guid: b4d6c227f094d9c4d8f34985d87d4672, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -308987,6 +309008,10 @@ PrefabInstance:
     - target: {fileID: 8396301288025748020, guid: b4d6c227f094d9c4d8f34985d87d4672, type: 3}
       propertyPath: m_Name
       value: Turret
+      objectReference: {fileID: 0}
+    - target: {fileID: 8396301288025748020, guid: b4d6c227f094d9c4d8f34985d87d4672, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -373591,6 +373616,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Turret (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8396301288025748020, guid: b4d6c227f094d9c4d8f34985d87d4672, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -374947,6 +374976,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Turret (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 8396301288025748020, guid: b4d6c227f094d9c4d8f34985d87d4672, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -375139,6 +375172,10 @@ PrefabInstance:
     - target: {fileID: 8396301288025748020, guid: b4d6c227f094d9c4d8f34985d87d4672, type: 3}
       propertyPath: m_Name
       value: Turret (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8396301288025748020, guid: b4d6c227f094d9c4d8f34985d87d4672, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -375597,6 +375634,10 @@ PrefabInstance:
     - target: {fileID: 8396301288025748020, guid: b4d6c227f094d9c4d8f34985d87d4672, type: 3}
       propertyPath: m_Name
       value: Turret (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8396301288025748020, guid: b4d6c227f094d9c4d8f34985d87d4672, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -384103,6 +384144,10 @@ PrefabInstance:
     - target: {fileID: 8396301288025748020, guid: b4d6c227f094d9c4d8f34985d87d4672, type: 3}
       propertyPath: m_Name
       value: Turret (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8396301288025748020, guid: b4d6c227f094d9c4d8f34985d87d4672, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
