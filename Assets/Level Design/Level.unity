@@ -37012,6 +37012,11 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 1.5
+--- !u!4 &525864532 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9188645382356532825, guid: 33ef8252392599943854601ca218433a, type: 3}
+  m_PrefabInstance: {fileID: 671840365}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &527791339
 GameObject:
   m_ObjectHideFlags: 0
@@ -48438,6 +48443,79 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 665794523}
   m_CullTransparentMesh: 1
+--- !u!1001 &671840365
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 848917053}
+    m_Modifications:
+    - target: {fileID: 399867616227174617, guid: 33ef8252392599943854601ca218433a, type: 3}
+      propertyPath: dialogueData
+      value: 
+      objectReference: {fileID: 11400000, guid: 7322a9e4d4135f74c8b82b4740d3fa57, type: 2}
+    - target: {fileID: 2877162596257106097, guid: 33ef8252392599943854601ca218433a, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2877162596257106097, guid: 33ef8252392599943854601ca218433a, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.375
+      objectReference: {fileID: 0}
+    - target: {fileID: 8177206312324683071, guid: 33ef8252392599943854601ca218433a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1968404063032184850, guid: f3bf8aed56e439343a50cf3e11acf6e3, type: 3}
+    - target: {fileID: 8283727936113510408, guid: 33ef8252392599943854601ca218433a, type: 3}
+      propertyPath: m_Name
+      value: GirlNPC
+      objectReference: {fileID: 0}
+    - target: {fileID: 9188645382356532825, guid: 33ef8252392599943854601ca218433a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -15.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 9188645382356532825, guid: 33ef8252392599943854601ca218433a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -52.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 9188645382356532825, guid: 33ef8252392599943854601ca218433a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9188645382356532825, guid: 33ef8252392599943854601ca218433a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9188645382356532825, guid: 33ef8252392599943854601ca218433a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9188645382356532825, guid: 33ef8252392599943854601ca218433a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9188645382356532825, guid: 33ef8252392599943854601ca218433a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9188645382356532825, guid: 33ef8252392599943854601ca218433a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9188645382356532825, guid: 33ef8252392599943854601ca218433a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9188645382356532825, guid: 33ef8252392599943854601ca218433a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 33ef8252392599943854601ca218433a, type: 3}
 --- !u!1 &687167948
 GameObject:
   m_ObjectHideFlags: 0
@@ -54447,6 +54525,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Turret (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 8396301288025748020, guid: b4d6c227f094d9c4d8f34985d87d4672, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -55230,6 +55312,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Turret (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 8396301288025748020, guid: b4d6c227f094d9c4d8f34985d87d4672, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -55641,6 +55727,7 @@ Transform:
   - {fileID: 1966667702}
   - {fileID: 1241122698}
   - {fileID: 925142809}
+  - {fileID: 525864532}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &854500907
@@ -270482,6 +270569,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Turret (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 8396301288025748020, guid: b4d6c227f094d9c4d8f34985d87d4672, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -272623,6 +272714,7 @@ MonoBehaviour:
   questUI: {fileID: 0}
   handinQuestIDs: []
   activeQuestGiverID: 
+  rewardPopupPrefab: {fileID: 0}
   totalQuestsCompleted: 0
 --- !u!4 &1036612079
 Transform:
@@ -273497,7 +273589,7 @@ PrefabInstance:
     - target: {fileID: 1146896254072528506, guid: 9927951c9bb33d24784dbc60866b3b38, type: 3}
       propertyPath: 'enemiesPrefab.Array.data[0]'
       value: 
-      objectReference: {fileID: 1503901023825259611, guid: 2f20339c1b604e442b738f77893f497b, type: 3}
+      objectReference: {fileID: 8396301288025748020, guid: b4d6c227f094d9c4d8f34985d87d4672, type: 3}
     - target: {fileID: 1296316211412194916, guid: 9927951c9bb33d24784dbc60866b3b38, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -290095,6 +290187,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Turret (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 8396301288025748020, guid: b4d6c227f094d9c4d8f34985d87d4672, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -295727,12 +295823,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1146896254072528506, guid: 9927951c9bb33d24784dbc60866b3b38, type: 3}
       propertyPath: enemiesPrefab.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1146896254072528506, guid: 9927951c9bb33d24784dbc60866b3b38, type: 3}
       propertyPath: 'enemiesPrefab.Array.data[0]'
       value: 
-      objectReference: {fileID: 6575356993852321160, guid: a6e7429d2d41761439621e727a27f7cd, type: 3}
+      objectReference: {fileID: 5557592356483054015, guid: d2ea1e2a53a6ab747b9669c2162471a5, type: 3}
+    - target: {fileID: 1146896254072528506, guid: 9927951c9bb33d24784dbc60866b3b38, type: 3}
+      propertyPath: 'enemiesPrefab.Array.data[1]'
+      value: 
+      objectReference: {fileID: 4397947177959782209, guid: 83fe847243a8b25459cdd1d498751975, type: 3}
     - target: {fileID: 1296316211412194916, guid: 9927951c9bb33d24784dbc60866b3b38, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -301806,6 +301906,10 @@ PrefabInstance:
     - target: {fileID: 8396301288025748020, guid: b4d6c227f094d9c4d8f34985d87d4672, type: 3}
       propertyPath: m_Name
       value: Turret (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8396301288025748020, guid: b4d6c227f094d9c4d8f34985d87d4672, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -308749,6 +308853,10 @@ PrefabInstance:
     - target: {fileID: 8396301288025748020, guid: b4d6c227f094d9c4d8f34985d87d4672, type: 3}
       propertyPath: m_Name
       value: Turret
+      objectReference: {fileID: 0}
+    - target: {fileID: 8396301288025748020, guid: b4d6c227f094d9c4d8f34985d87d4672, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -373353,6 +373461,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Turret (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8396301288025748020, guid: b4d6c227f094d9c4d8f34985d87d4672, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -374709,6 +374821,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Turret (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 8396301288025748020, guid: b4d6c227f094d9c4d8f34985d87d4672, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -374901,6 +375017,10 @@ PrefabInstance:
     - target: {fileID: 8396301288025748020, guid: b4d6c227f094d9c4d8f34985d87d4672, type: 3}
       propertyPath: m_Name
       value: Turret (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8396301288025748020, guid: b4d6c227f094d9c4d8f34985d87d4672, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -375359,6 +375479,10 @@ PrefabInstance:
     - target: {fileID: 8396301288025748020, guid: b4d6c227f094d9c4d8f34985d87d4672, type: 3}
       propertyPath: m_Name
       value: Turret (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8396301288025748020, guid: b4d6c227f094d9c4d8f34985d87d4672, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -377470,7 +377594,7 @@ GameObject:
   - component: {fileID: 1966667704}
   - component: {fileID: 1966667703}
   m_Layer: 0
-  m_Name: MonsterQuestGiver
+  m_Name: BanditQuestGiver
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -383865,6 +383989,10 @@ PrefabInstance:
     - target: {fileID: 8396301288025748020, guid: b4d6c227f094d9c4d8f34985d87d4672, type: 3}
       propertyPath: m_Name
       value: Turret (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8396301288025748020, guid: b4d6c227f094d9c4d8f34985d87d4672, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

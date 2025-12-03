@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.XR;
@@ -13,6 +14,7 @@ public class QuestController : MonoBehaviour
 
     public List<string> handinQuestIDs = new();
     public string activeQuestGiverID = "";
+    public GameObject rewardPopupPrefab;
 
     [Header("Global Quest Stats")]
     public int totalQuestsCompleted = 0;
@@ -26,7 +28,10 @@ public class QuestController : MonoBehaviour
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
         questUI = FindObjectOfType<QuestUI>();
-        EnemyDefeatTracker.Instance.OnEnemyDefeated += OnEnemyDefeated;
+        if (EnemyDefeatTracker.Instance != null)
+        {
+            EnemyDefeatTracker.Instance.OnEnemyDefeated += OnEnemyDefeated;
+        }
     }
     public void AcceptQuest(Quest quest)
     {
@@ -84,6 +89,8 @@ public class QuestController : MonoBehaviour
         }
     }
     totalQuestsCompleted++;
+    Debug.Log($"[QUEST] Total quests completed so far: {totalQuestsCompleted}");
+    SpawnRewardPopup(questID, rewardAmount);
     handinQuestIDs.Add(questID);
     activateQuests.Remove(quest);
     questUI.UpdateQuestUI();
@@ -115,8 +122,6 @@ public class QuestController : MonoBehaviour
 
                 if (objective.currentAmount > objective.requiredAmount)
                     objective.currentAmount = objective.requiredAmount;
-
-                Debug.Log($"Quest Progress Updated: {objectiveID} → {objective.currentAmount}/{objective.requiredAmount}");
 
                 // Update UI after change
                 questUI.UpdateQuestUI();
@@ -169,6 +174,42 @@ public class QuestController : MonoBehaviour
             }
         }
     }
+}
+
+private void SpawnRewardPopup(string questID, int amount)
+{
+    if (rewardPopupPrefab == null)
+    {
+        return;
+    }
+
+    NPCScript[] allNPCs = FindObjectsOfType<NPCScript>();
+
+    NPCScript giver = null;
+    foreach (var npc in allNPCs)
+    {
+        if (npc.dialogueData != null &&
+            npc.dialogueData.quest != null &&
+            npc.dialogueData.quest.questID == questID)
+        {
+            giver = npc;
+            break;
+        }
+    }
+
+    if (giver == null)
+    {
+        return;
+    }
+
+    Vector3 popupPos = giver.transform.position + new Vector3(0, 1.5f, 0);
+
+    GameObject popup = Instantiate(rewardPopupPrefab, popupPos, Quaternion.identity);
+
+    TMP_Text text = popup.GetComponentInChildren<TMP_Text>();
+    text.text = $"+${amount}";
+
+    popup.AddComponent<RewardPopupAnimator>();
 }
 }
 
