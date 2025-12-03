@@ -29,6 +29,8 @@ public class TeleportScript : MonoBehaviour
         }
 
         audioManagerScript = GameObject.FindWithTag("AudioManager").GetComponent<AudioManagerScript>();
+        teleportInfo.SetActive(false);
+
     }
 
     private void Update()
@@ -41,12 +43,19 @@ public class TeleportScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        teleportInfo.SetActive(true);
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            teleportInfo.SetActive(true);
+
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        teleportInfo.SetActive(false);
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            teleportInfo.SetActive(false);
+        }
     }
 
     void Teleport()
