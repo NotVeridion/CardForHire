@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8768da70380e2ae4ea55b0de80a596b3, type: 3}
+  m_Name: MissingGuyDialog
+  m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
+  npcName: Blonde Man
+  dialogueLines:
+  - Hey! I'm busy here. Don't bother me?
+  - What? My friend is looking for me? Tell her I'm not getting outta here until
+    I've gotten all the chips!
+  - I'm doing all right here. Don't bother me.
+  endDialogueLines: 010101
+  typingSpeed: 0.05
+  voiceSound: {fileID: 0}
+  voicePitch: 1
+  choices: []
+  questInProgressIndex: 1
+  questStartDialogueIndex: 0
+  questCompletedIndex: 2
+  questPostCompletedIndex: 2
+  quest: {fileID: 11400000, guid: a898e26e62fb2354abea29a2cdb05ae8, type: 2}
