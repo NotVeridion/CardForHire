@@ -9,7 +9,7 @@ public class EnemyScript : MonoBehaviour
     public float detectPlayerRange;
     public float attackPlayerRange;
     public float bulletDuration;
-    public float idleStopWalingTime = 5f;
+    public float idleStopWalkingTime = 5f;
     
     
     public EnemyGunScript gun;
@@ -99,7 +99,7 @@ public class EnemyScript : MonoBehaviour
             if (doesRoamAround)
             {
                 idleStopWalkingTimer += Time.deltaTime;
-                if (idleStopWalkingTimer >= idleStopWalingTime)
+                if (idleStopWalkingTimer >= idleStopWalkingTime)
                 {
                     if (!isCurrentlyRoaming)
                     {
