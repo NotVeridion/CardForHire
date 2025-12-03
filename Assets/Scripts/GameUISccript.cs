@@ -267,7 +267,6 @@ public class GameUISccript : MonoBehaviour
 
     public void GameOver()
     {
-        playerScript.gameObject.SetActive(false);
         gameoverPanel.SetActive(true);
     }
 
@@ -288,8 +287,8 @@ public class GameUISccript : MonoBehaviour
 
         playerScript.location = "Sheriff";
         playerScript.Heal(1000);
-        playerScript.gameObject.SetActive(true);
-        
+        playerScript.isMovementLocked = false;
+
         gameoverPanel.SetActive(false);
         GameObject.FindWithTag("Gun").GetComponent<GunScript>().RestoreFire();
     }
