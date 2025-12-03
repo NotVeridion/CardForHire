@@ -2292,7 +2292,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 691.5, y: -300}
-  m_SizeDelta: {x: 1000, y: 600}
+  m_SizeDelta: {x: 1000, y: 800}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &861256815
 MonoBehaviour:
@@ -2315,7 +2315,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Controls \r\n\r\nWASD for movement\r\n\r\nShift for DASH\r\n\r\nF key
-    to interact with objects\r\n\r\nleft click to shoot\r\n\r\nesc to pause game"
+    to interact with objects\r\n\r\nleft mouse button to shoot or arrow keys to shoot\r\n\r\nE
+    to interact with npc\n\nq to toggle quests\n\nesc to pause game"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 705025115aa78f94a936d4baf2ba275a, type: 2}
   m_sharedMaterial: {fileID: 3124064862101432850, guid: 705025115aa78f94a936d4baf2ba275a, type: 2}
