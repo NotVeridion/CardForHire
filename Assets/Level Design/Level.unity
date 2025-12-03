@@ -309558,7 +309558,7 @@ GameObject:
   - component: {fileID: 1550823061}
   - component: {fileID: 1550823063}
   - component: {fileID: 1550823064}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Walls Tilemap
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -345560,7 +345560,7 @@ GameObject:
   - component: {fileID: 1570113429}
   - component: {fileID: 1570113431}
   - component: {fileID: 1570113430}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Unwalkable Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}

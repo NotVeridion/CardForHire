@@ -7,11 +7,11 @@ public class EnemyGunScript : MonoBehaviour
     public Gun currentGun;
     public GameObject bulletSpawner;
     public GameObject bullet;
-    public GameObject player;
     public bool isPointingAtPlayer;
     public bool isShooting;
     private Card currentCard;
     private DeckManagerScript deckManagerScript;
+    private GameObject player;
     private Vector3 directionToPlayer;
     private float angleToPlayer;
     private bool canFire;
@@ -22,6 +22,7 @@ public class EnemyGunScript : MonoBehaviour
         canFire = true;
         GetComponent<SpriteRenderer>().sprite = currentGun.gunSprite;
         deckManagerScript = GameObject.FindWithTag("DeckManager").GetComponent<DeckManagerScript>();
+        player = GameObject.FindWithTag("Player");
         isPointingAtPlayer = false;
         isShooting = false;
     }
@@ -86,7 +87,6 @@ public class EnemyGunScript : MonoBehaviour
         }
         else if (currentGun.isSpreadShot)
         {
-            Debug.Log("SHOOT!");
             Quaternion[] equallySpreadRotations = new Quaternion[currentGun.numBulletsInSpread];
 
             for (int i = 0; i < currentGun.numBulletsInSpread; i++)
