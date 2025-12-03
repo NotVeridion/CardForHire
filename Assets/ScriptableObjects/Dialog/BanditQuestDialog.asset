@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
   npcName: Old Guy
   dialogueLines:
-  - Hey there. I need some help defeating the bandits in this dungeon. Wanna help
+  - Hello young man. I need some help defeating the bandits in this cave. Wanna help
     out?
-  - Great! Defeat 10 of them and you'll earn a reward
+  - Great! Defeat 10 of them for a reward!
   - Come back when you're done with your quest. I'll be waiting.
   - Nice work! Here's your reward.
   - Wanna get stronger? Check out the gun store to get some upgrades.

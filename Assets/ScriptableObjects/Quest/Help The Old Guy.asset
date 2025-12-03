@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ed729716c04c8de4185a80104701fdbd, type: 3}
-  m_Name: Defeat The Bandits
+  m_Name: Help The Old Guy
   m_EditorClassIdentifier: Assembly-CSharp::Quest
   questID: 4
   questName: 
