@@ -20,7 +20,7 @@ MonoBehaviour:
   rewardSFX: {fileID: 0}
   objectives:
   - objectiveID: 5
-    description: Search inside the cave for
+    description: Search inside the cave for the chips
     type: 0
-    requiredAmount: 2
+    requiredAmount: 8
     currentAmount: 0

@@ -34,4 +34,4 @@ MonoBehaviour:
   questStartDialogueIndex: 0
   questCompletedIndex: 3
   questPostCompletedIndex: 4
-  quest: {fileID: 0}
+  quest: {fileID: 11400000, guid: cc98dc0af94ddc94abb2b33ac4c7674c, type: 2}
