@@ -10,16 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8768da70380e2ae4ea55b0de80a596b3, type: 3}
-  m_Name: GuyQuestDialog
+  m_Name: SaveMissingGuyDialog
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
-  npcName: Young Man
+  npcName: Young Woman
   dialogueLines:
-  - Heya, I need some help! The bandits robbed me of my chips and I need to get them
-    back!
-  - Thank you! The cave is to the right of my house.
-  - Have you found all of my chips yet?
-  - Thank you! Have a reward for your trouble!
-  - Check out the gunstore nearby if you haven't already!
+  - My friend went into the cave earlier and still hasn't come out... He probably
+    got held up by the bandits inside! Help me save him!
+  - Thank you. Please help me bring him back safely!
+  - Have you found him yet?
+  - 'Oh, he''s not coming out of there? That''s fine, I suppose... Have a reward
+    for your troubles. '
+  - Check out the gun store if you haven't. There's a lot of upgrades you can get
+    for your upcoming fights!
   endDialogueLines: 0001010101
   typingSpeed: 0.05
   voiceSound: {fileID: 0}
@@ -34,4 +36,4 @@ MonoBehaviour:
   questStartDialogueIndex: 0
   questCompletedIndex: 3
   questPostCompletedIndex: 4
-  quest: {fileID: 11400000, guid: cc98dc0af94ddc94abb2b33ac4c7674c, type: 2}
+  quest: {fileID: 11400000, guid: a898e26e62fb2354abea29a2cdb05ae8, type: 2}

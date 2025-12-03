@@ -45,8 +45,10 @@ public class QuestItem : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
+        if(collision.gameObject.CompareTag("Player"))
+        {
         QuestController.Instance.AddProgressToObjective(objectiveID, amountToAdd);
          if (pickupSFX != null)
     {
@@ -54,5 +56,6 @@ public class QuestItem : MonoBehaviour
         AudioSource.PlayClipAtPoint(pickupSFX, transform.position);
     }
         Destroy(gameObject);
+        }
     }
 }

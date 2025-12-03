@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ed729716c04c8de4185a80104701fdbd, type: 3}
-  m_Name: Retrieve The Chips
+  m_Name: Help The Old Guy
   m_EditorClassIdentifier: Assembly-CSharp::Quest
-  questID: 5
+  questID: 4
   questName: 
   description: 
-  questGiverID: 5
-  cashReward: 300
+  questGiverID: 4
+  cashReward: 500
   rewardSFX: {fileID: 0}
   objectives:
-  - objectiveID: 5
-    description: Search inside the cave for the chips
-    type: 0
-    requiredAmount: 8
+  - objectiveID: Enemy
+    description: Defeat the enemies
+    type: 1
+    requiredAmount: 10
     currentAmount: 0

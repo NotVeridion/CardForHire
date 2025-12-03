@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6861011694561498905}
   m_Layer: 7
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -114,10 +114,8 @@ MonoBehaviour:
   detectPlayerRange: 7
   attackPlayerRange: 5
   bulletDuration: 5
-  idleStopWalingTime: 5
-  player: {fileID: 0}
+  idleStopWalkingTime: 5
   gun: {fileID: 0}
-  enemySpawner: {fileID: 0}
   isStunned: 0
   doesRoamAround: 1
 --- !u!95 &8503482066232468030
