@@ -10,22 +10,20 @@ public class BossFinalState : BossState
     {
         Vector2 direction = (boss.positionCenter.transform.position - boss.transform.position).normalized;
         boss.rb.linearVelocity = direction * boss.bossMoveSpeed * 2;
-        boss.gun.currentGun = boss.gun.bossShotgun;
+        boss.gun.currentGun = boss.gun.bossFinalGun;
         bossGun = GameObject.FindWithTag("BossGun");
         boss.gun.canFire = true;
-        boss.gun.currentGun.fireRate += 2;
     }
 
     public override void Exit()
     {
         boss.gun.canFire = false;
-        boss.gun.currentGun.fireRate -= 2;
     }
 
     public override void Tick()
     {
         // Don't shoot until centered
-        if (Vector3.Distance(boss.positionCenter.transform.position, boss.transform.position) < 1)
+        if (Vector3.Distance(boss.positionCenter.transform.position, boss.transform.position) < 2)
         {
             boss.rb.linearVelocity = Vector3.zero;
             centered = true;
@@ -33,7 +31,8 @@ public class BossFinalState : BossState
 
         if (centered)
         {   
-            bossGun.transform.eulerAngles = new Vector3(0f, 0f, bossGun.transform.eulerAngles.z+2f);
+            // Spin
+            bossGun.transform.eulerAngles = new Vector3(0f, 0f, bossGun.transform.eulerAngles.z+boss.finalSpinSpeed);
             boss.gun.Shoot();
         }
     }

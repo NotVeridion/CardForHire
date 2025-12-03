@@ -6,6 +6,8 @@ public class BossGunScript : MonoBehaviour
     public BossScript boss;
     public Gun bossShotgun;
     public Gun bossPistol;
+    public Gun bossFinalGun;
+
     [SerializeField] GameObject regularBullet;
     [SerializeField] GameObject specialBullet;
     [SerializeField] GameObject bulletSpawner;
@@ -67,6 +69,13 @@ public class BossGunScript : MonoBehaviour
             
             GameObject midBullet = Instantiate(regularBullet, bulletSpawner.transform.position, transform.rotation * Quaternion.Euler(Vector3.forward *  Random.Range(0, 50)));
             SetBulletData(midBullet);
+
+            StartCoroutine(fireRateHandler());
+        }
+        else if (currentGun == bossFinalGun)
+        {
+            GameObject bullet = Instantiate(regularBullet, bulletSpawner.transform.position, transform.rotation * Quaternion.Euler(Vector3.forward *  Random.Range(0, 50)));
+            SetBulletData(bullet);
 
             StartCoroutine(fireRateHandler());
         }

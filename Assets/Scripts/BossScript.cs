@@ -27,6 +27,7 @@ public class BossScript : MonoBehaviour
     public BossAttackState AttackState { get; private set; }
     public BossSpecialAttackState SpecialAttackState { get; private set; }
     public BossFinalState FinalState { get; private set; }
+    public float finalSpinSpeed;
 
     // Positions
     public GameObject[] positionObjects;

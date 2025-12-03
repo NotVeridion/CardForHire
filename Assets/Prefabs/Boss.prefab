@@ -178,6 +178,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   detectionRange: 14
   sliderObj: {fileID: 0}
+  finalSpinSpeed: 3
   positionObjects:
   - {fileID: 0}
   - {fileID: 0}
@@ -323,6 +324,7 @@ MonoBehaviour:
   boss: {fileID: 0}
   bossShotgun: {fileID: 11400000, guid: 08f31243e05d7364a87254b6aca60c7c, type: 2}
   bossPistol: {fileID: 11400000, guid: f0ae3cd6dae8fc04c8d707d825b1f698, type: 2}
+  bossFinalGun: {fileID: 11400000, guid: 0c4a19a3c866e0d4c9eac54a9a06e2bd, type: 2}
   regularBullet: {fileID: 2934266706424601839, guid: d6d660a5f028eef48aa22562ca9a74e6, type: 3}
   specialBullet: {fileID: 3261818217900987207, guid: 06edccfe32b6bb049ad767cdebc75e79, type: 3}
   bulletSpawner: {fileID: 2263084719916058551}
