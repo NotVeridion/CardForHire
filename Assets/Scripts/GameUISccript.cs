@@ -8,6 +8,7 @@ public class GameUISccript : MonoBehaviour
 {
     [SerializeField] PlayerScript playerScript;
     [SerializeField] AudioManagerScript audioManagerScript;
+    [SerializeField] BossScript bossScript;
 
     [SerializeField] Slider health;
     [SerializeField] Slider dashCoolDown;
@@ -54,8 +55,6 @@ public class GameUISccript : MonoBehaviour
     [SerializeField] Deck red;
     [SerializeField] Deck black;
 
-
-
     float currentDamage;
     float startDamage;
     float currentAS;
@@ -71,6 +70,7 @@ public class GameUISccript : MonoBehaviour
         deckManager = FindAnyObjectByType<DeckManagerScript>();
         playerScript = FindAnyObjectByType<PlayerScript>();
         audioManagerScript = FindAnyObjectByType<AudioManagerScript>();
+        bossScript = FindAnyObjectByType<BossScript>();
 
         playerScript.gameObject.SetActive(false);
 
@@ -279,13 +279,17 @@ public class GameUISccript : MonoBehaviour
 
     public void RespawnPlayer()
     {
-        audioManagerScript.PlayOneShotSFX(audioManagerScript.Button);
         playerScript.gameObject.transform.position = respawnPosition.transform.position;
-        audioManagerScript.ChangeMusic(audioManagerScript.TownMusic);
-        playerScript.location = "Sheriff";
 
+        audioManagerScript.PlayOneShotSFX(audioManagerScript.Button);
+        audioManagerScript.ChangeMusic(audioManagerScript.TownMusic);
+        bossScript.StateMachine.ChangeState(bossScript.IdleState);
+        Camera.main.GetComponent<CameraScript>().inFinalBoss = false;
+
+        playerScript.location = "Sheriff";
         playerScript.Heal(1000);
         playerScript.gameObject.SetActive(true);
+        
         gameoverPanel.SetActive(false);
         GameObject.FindWithTag("Gun").GetComponent<GunScript>().RestoreFire();
     }

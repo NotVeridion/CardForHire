@@ -12,7 +12,6 @@ public class BossGunScript : MonoBehaviour
 
     public bool canFire;
 
-    
     public Gun currentGun;
     public GameObject indicatorPrefab;
     public float indicatorDuration;
@@ -33,7 +32,7 @@ public class BossGunScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!isIndicating && (boss.StateMachine.CurrentState != boss.FinalState || boss.StateMachine.CurrentState != boss.IdleState))
+        if (!isIndicating && (boss.StateMachine.CurrentState == boss.AttackState || boss.StateMachine.CurrentState == boss.SpecialAttackState))
         {
             Vector2 dirToPlayer = (player.transform.position - transform.position).normalized;
             float angleToPlayer = Mathf.Atan2(dirToPlayer.y, dirToPlayer.x) * Mathf.Rad2Deg;
@@ -57,7 +56,7 @@ public class BossGunScript : MonoBehaviour
         {
             for (int i = 0; i < currentGun.numBulletsInSpread; i++)
             {
-                int randomOffset = Random.Range(0, 25);
+                int randomOffset = Random.Range(0, 50);
                 float angle = -currentGun.spreadRange + currentGun.spreadRange*2 * i / currentGun.numBulletsInSpread;
                 Quaternion bulletRot = Quaternion.Euler(Vector3.forward * (angle + randomOffset));
                 GameObject bulletObj = Instantiate(regularBullet, bulletSpawner.transform.position, transform.rotation * bulletRot);
@@ -66,7 +65,7 @@ public class BossGunScript : MonoBehaviour
 
             // Add a singular bullet that flies towards direction
             
-            GameObject midBullet = Instantiate(regularBullet, bulletSpawner.transform.position, transform.rotation * Quaternion.Euler(Vector3.forward *  Random.Range(0, 3)));
+            GameObject midBullet = Instantiate(regularBullet, bulletSpawner.transform.position, transform.rotation * Quaternion.Euler(Vector3.forward *  Random.Range(0, 50)));
             SetBulletData(midBullet);
 
             StartCoroutine(fireRateHandler());

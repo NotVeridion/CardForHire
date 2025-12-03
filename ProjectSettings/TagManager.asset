@@ -26,6 +26,7 @@ TagManager:
   - NPCHouseLocation
   - BossGun
   - NPCInteraction
+  - Boss
   layers:
   - Default
   - TransparentFX
