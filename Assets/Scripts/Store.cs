@@ -89,6 +89,7 @@ public class Store : MonoBehaviour
     {
         if (notification.activeSelf)
         {
+            cards = deckManager.FillWorkingDeck();
             store.SetActive(true);
             player.SetActive(false);
         }
@@ -104,6 +105,7 @@ public class Store : MonoBehaviour
 
     public void Spin()
     {
+        playerInfo.playerCash -= cost;
         audioManagerScript.PlayOneShotSFX(audioManagerScript.Button);
 
         List<Sprite> newAbilitySprites = new List<Sprite>(abilitySprites);

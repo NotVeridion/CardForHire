@@ -43,7 +43,7 @@ public class BossBlock : MonoBehaviour
             block.SetActive(true);
         }
 
-        questCount.text = "Quest: " + questController.totalQuestsCompleted.ToString() + " /6";
+        questCount.text = "Quest: " + questController.totalQuestsCompleted.ToString() + "/6";
     }
 
     IEnumerator NotifyPlayer()

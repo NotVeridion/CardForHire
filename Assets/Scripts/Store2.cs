@@ -84,12 +84,14 @@ public class Store2 : MonoBehaviour
     {
         audioManagerScript.PlayOneShotSFX(audioManagerScript.Button);
         gun.currentGun.damage += damageIncrease;
+        playerInfo.playerCash -= damageCost;
     }
 
     public void BuyFireRate()
     {
         audioManagerScript.PlayOneShotSFX(audioManagerScript.Button);
         gun.currentGun.fireRate += fireRateIncrease;
+        playerInfo.playerCash -= fireRateCost;
     }
 
     public void BuyBulletCount()
@@ -104,6 +106,8 @@ public class Store2 : MonoBehaviour
 
         gun.currentGun.numBulletsInSpread += 1;
         gun.currentGun.spreadRange += rangeIncrease;
+
+        playerInfo.playerCash -= bulletCountCost;
     }
 
 
