@@ -6,12 +6,19 @@ public class DoorLockedScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        info.SetActive(true);
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            info.SetActive(true);
+
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        info.SetActive(false);
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            info.SetActive(false);
+        }
     }
 
 }
