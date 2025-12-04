@@ -139,7 +139,7 @@ public class TeleportScript : MonoBehaviour
         }
         foreach(GameObject point in spawnPositions)
         {
-            currentEnemies.Add(Instantiate(enemiesPrefab[Random.Range(0, enemiesPrefab.Count)], point.transform));
+            currentEnemies.Add(Instantiate(enemiesPrefab[Random.Range(0, enemiesPrefab.Count)], point.transform.position, rotation:point.transform.rotation));
         }
     }
 
