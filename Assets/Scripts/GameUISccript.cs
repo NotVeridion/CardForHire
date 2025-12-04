@@ -120,11 +120,11 @@ public class GameUISccript : MonoBehaviour
             stunObject.SetActive(false);
         }
 
-        health.value = playerScript.playerHealth / 100f;
+        health.value = playerScript.playerHealth / playerScript.playerMaxHealth;
         dashCoolDown.value =1 - playerScript.currentDashCooldown / playerScript.dashCooldown;
         if(dashCoolDown.value >= 1)
         {
-            dashSliderImage.color = Color.green;
+            dashSliderImage.color = Color.green; 
         }
         else
         {  
@@ -286,7 +286,7 @@ public class GameUISccript : MonoBehaviour
         Camera.main.GetComponent<CameraScript>().inFinalBoss = false;
 
         playerScript.location = "Sheriff";
-        playerScript.Heal(1000);
+        playerScript.Heal(playerScript.playerMaxHealth);
         playerScript.isMovementLocked = false;
 
         gameoverPanel.SetActive(false);

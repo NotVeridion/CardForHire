@@ -16,7 +16,7 @@ MonoBehaviour:
   gunSprite: {fileID: 6333556082979839380, guid: a54be22222cbad44baf46f2cf3f216ec, type: 3}
   fireRate: 1
   damage: 10
-  bulletMoveSpeed: 15
+  bulletMoveSpeed: 8
   bulletDuration: 1
   isSingleShot: 0
   isSpreadShot: 1

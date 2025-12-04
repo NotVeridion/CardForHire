@@ -27,6 +27,7 @@ TagManager:
   - BossGun
   - NPCInteraction
   - Boss
+  - BossTurret
   layers:
   - Default
   - TransparentFX

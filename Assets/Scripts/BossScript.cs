@@ -1,8 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Timeline;
 using UnityEngine.UI;
-
 public class BossScript : MonoBehaviour
 {
     public float maxHealth;
@@ -89,11 +87,22 @@ public class BossScript : MonoBehaviour
 
             StateMachine.ChangeState(FinalState);
             gun.GetComponent<SpriteRenderer>().sprite = null;
+
+            GameObject[] turrets = GameObject.FindGameObjectsWithTag("BossTurret");
+            foreach (GameObject turret in turrets){
+                Destroy(turret);
+            }
         }
         else if (currentHealth <= (maxHealth - maxHealth/3) && StateMachine.CurrentState == AttackState)
         {
             StateMachine.ChangeState(SpecialAttackState);
             gun.GetComponent<SpriteRenderer>().sprite = gun.currentGun.gunSprite;
+        }
+
+        float distanceToCenter = Vector3.Distance(transform.position, positionCenter.transform.position);
+        if (distanceToCenter > 100)
+        {
+            transform.position = positionCenter.transform.position;
         }
     }
 

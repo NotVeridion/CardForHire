@@ -21,6 +21,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 93604099071429693, guid: 20d143510ac6978b69e91b2f94ab0701, type: 3}
+      propertyPath: enemyBulletSpeed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 93604099071429693, guid: 20d143510ac6978b69e91b2f94ab0701, type: 3}
       propertyPath: idleStopWalingTime
       value: 1.5
       objectReference: {fileID: 0}
