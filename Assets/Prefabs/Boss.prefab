@@ -169,8 +169,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bb4ad671f7c0a049812af489a7f316c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  maxHealth: 1500
-  currentHealth: 1500
+  maxHealth: 15000
+  currentHealth: 15000
   bossMoveSpeed: 4
   gun: {fileID: 0}
   player: {fileID: 0}
