@@ -46,7 +46,7 @@ public class EnemyScript : MonoBehaviour
                 Destroy(gameObject);
                 PlayerScript player = GameObject.FindWithTag("Player").GetComponent<PlayerScript>();
                 if (player != null)
-                    player.playerCash += 10;
+                    player.playerCash += 25;
                 EnemyDefeatTracker.Instance.NotifyEnemyDefeated("Enemy");
             }
         }
