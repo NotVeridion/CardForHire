@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
   npcName: Blonde Man
   dialogueLines:
-  - Hey! I'm busy here. Don't bother me?
+  - Hey! Don't bother me. I'm busy.
   - What? My friend is looking for me? Tell her I'm not getting outta here until
     I've gotten all the chips!
   - I'm doing all right here. Don't bother me.
