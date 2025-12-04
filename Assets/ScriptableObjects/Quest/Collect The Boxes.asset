@@ -17,7 +17,7 @@ MonoBehaviour:
   description: Collect Object
   questGiverID: 3
   cashReward: 50
-  rewardSFX: {fileID: 0}
+  rewardSFX: {fileID: 8300000, guid: 2d7d7b070ebe0b347afd6966453aed47, type: 3}
   objectives:
   - objectiveID: 1
     description: Pick up all the supply boxes scattered around the area

@@ -21,8 +21,8 @@ MonoBehaviour:
   - Go the shopkeeper nearby and get some upgrades!!
   endDialogueLines: 0001010101
   typingSpeed: 0.05
-  voiceSound: {fileID: 0}
-  voicePitch: 1
+  voiceSound: {fileID: 8300000, guid: 9968f15864cbf494da9f13307abb9b34, type: 3}
+  voicePitch: 2
   choices:
   - dialogueIndex: 0
     choices:
