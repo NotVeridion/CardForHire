@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8768da70380e2ae4ea55b0de80a596b3, type: 3}
   m_Name: MomTalkQuest
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
-  npcName: Girl
+  npcName: Mother
   dialogueLines:
-  - Hi, my brother is missing, again. Can you help me go look for him?
+  - Hi, my kid is missing, again. Can you help me go look for him?
   - Thanks!
   - Have you found him yet?
   - Thanks! Here's your reward.
