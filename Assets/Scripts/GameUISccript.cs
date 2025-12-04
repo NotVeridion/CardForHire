@@ -64,6 +64,9 @@ public class GameUISccript : MonoBehaviour
     float currentDash;
     float startDash;
 
+    //Heal Canvas
+    [SerializeField] GameObject healCanvas;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -291,6 +294,8 @@ public class GameUISccript : MonoBehaviour
 
         gameoverPanel.SetActive(false);
         GameObject.FindWithTag("Gun").GetComponent<GunScript>().RestoreFire();
+
+        healCanvas.SetActive(false);
     }
     
     public void AttackSpeedDuration(float duration)

@@ -388417,6 +388417,7 @@ MonoBehaviour:
   standard: {fileID: 11400000, guid: 66e88172a58526945bb8049a3387e93a, type: 2}
   red: {fileID: 11400000, guid: 2744457a078845f40b2ad1682d3c086d, type: 2}
   black: {fileID: 11400000, guid: 75cd48eb712b0a74f97f49dd8ac9698c, type: 2}
+  healCanvas: {fileID: 535839474}
 --- !u!222 &8279561252774806223
 CanvasRenderer:
   m_ObjectHideFlags: 0
