@@ -41,8 +41,11 @@ public class EnemyScript : MonoBehaviour
         enemyHP -= damage;
         if (enemyHP <= 0)
         {
-            Destroy(gameObject);
-            EnemyDefeatTracker.Instance.NotifyEnemyDefeated("Enemy");
+            if (gameObject != null)
+            {
+                Destroy(gameObject);
+                EnemyDefeatTracker.Instance.NotifyEnemyDefeated("Enemy");
+            }
         }
         if (currentState == EnemyState.Idle)
         {
