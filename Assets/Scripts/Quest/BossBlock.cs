@@ -15,6 +15,8 @@ public class BossBlock : MonoBehaviour
     [SerializeField] Image panel;
     [SerializeField] TextMeshProUGUI text;
 
+    [SerializeField] TextMeshProUGUI questCount;
+
     bool informed = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -40,6 +42,8 @@ public class BossBlock : MonoBehaviour
         {
             block.SetActive(true);
         }
+
+        questCount.text = "Quest: " + questController.totalQuestsCompleted.ToString() + " /6";
     }
 
     IEnumerator NotifyPlayer()
