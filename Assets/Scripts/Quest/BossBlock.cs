@@ -43,7 +43,7 @@ public class BossBlock : MonoBehaviour
     {
         info.SetActive(true);
         float start = 1f;
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(3f);
         panel.color = new Color(panel.color.r, panel.color.g, panel.color.b, start);
         text.color = new Color(text.color.r, text.color.g, text.color.b, start);
         start = start - .1f;
