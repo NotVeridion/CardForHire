@@ -76,7 +76,7 @@ public class BossGunScript : MonoBehaviour
         {
             GameObject bullet = Instantiate(regularBullet, bulletSpawner.transform.position, transform.rotation * Quaternion.Euler(Vector3.forward *  Random.Range(0, 50)));
             SetBulletData(bullet);
-
+            
             StartCoroutine(fireRateHandler());
         }
     }
