@@ -32,7 +32,7 @@ public class BossFinalState : BossState
         if (centered)
         {   
             // Spin
-            bossGun.transform.eulerAngles = new Vector3(0f, 0f, bossGun.transform.eulerAngles.z+boss.finalSpinSpeed);
+            bossGun.transform.eulerAngles = new Vector3(0f, 0f, bossGun.transform.eulerAngles.z + (boss.finalSpinSpeed * Time.deltaTime));
             boss.gun.Shoot();
         }
     }
