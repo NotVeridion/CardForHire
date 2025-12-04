@@ -37728,7 +37728,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f965dda99403a674293ae8fdd556488c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BossBlock
-  maxQuest: 1
+  maxQuest: 3
   block: {fileID: 1851607563}
   info: {fileID: 2140152282}
   panel: {fileID: 2140152284}
@@ -274117,7 +274117,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: The big boss is in hiding. Come back when you are stronger
+  m_text: The big boss is in hiding. Come back when you are stronger and completed
+    more quest.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -274817,7 +274818,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0.99999994, y: 1}
+  m_SizeDelta: {x: 1.5000001, y: 1.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1088575793
 MonoBehaviour:
