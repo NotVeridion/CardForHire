@@ -1,4 +1,7 @@
+using System.Collections;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BossBlock : MonoBehaviour
 {
@@ -7,6 +10,11 @@ public class BossBlock : MonoBehaviour
     [SerializeField] GameObject block;
     QuestController questController;
     CameraScript cameraScript;
+
+    [SerializeField] GameObject info;
+    [SerializeField] Image panel;
+    [SerializeField] TextMeshProUGUI text;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -20,10 +28,47 @@ public class BossBlock : MonoBehaviour
         if(questController.totalQuestsCompleted >= maxQuest && !cameraScript.inFinalBoss)
         {
             block.SetActive(false);
+            if(panel.color.a >= 1)
+            {
+                StartCoroutine(NotifyPlayer());
+            }
         }
         else
         {
             block.SetActive(true);
         }
     }
+
+    IEnumerator NotifyPlayer()
+    {
+        info.SetActive(true);
+        float start = 1f;
+        yield return new WaitForSeconds(1f);
+        panel.color = new Color(panel.color.r, panel.color.g, panel.color.b, start);
+        text.color = new Color(text.color.r, text.color.g, text.color.b, start);
+        start = start - .1f;
+
+        yield return new WaitForSeconds(1f);
+        panel.color = new Color(panel.color.r, panel.color.g, panel.color.b, start);
+        text.color = new Color(text.color.r, text.color.g, text.color.b, start);
+        start = start - .1f;
+
+        yield return new WaitForSeconds(1f);
+        panel.color = new Color(panel.color.r, panel.color.g, panel.color.b, start);
+        text.color = new Color(text.color.r, text.color.g, text.color.b, start);
+        start = start - .1f;
+
+        yield return new WaitForSeconds(1f);
+        panel.color = new Color(panel.color.r, panel.color.g, panel.color.b, start);
+        text.color = new Color(text.color.r, text.color.g, text.color.b, start);
+        start = start - .1f;
+
+        yield return new WaitForSeconds(1f);
+        panel.color = new Color(panel.color.r, panel.color.g, panel.color.b, start);
+        text.color = new Color(text.color.r, text.color.g, text.color.b, start);
+        start = start - .1f;
+
+        info.SetActive(false);
+    }
+
 }
