@@ -37748,7 +37748,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f965dda99403a674293ae8fdd556488c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BossBlock
-  maxQuest: 3
+  maxQuest: 6
   block: {fileID: 1851607563}
   info: {fileID: 2140152282}
   panel: {fileID: 2140152284}
