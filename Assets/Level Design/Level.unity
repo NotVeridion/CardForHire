@@ -56778,6 +56778,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Turret (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8396301288025748020, guid: b4d6c227f094d9c4d8f34985d87d4672, type: 3}
+      propertyPath: m_TagString
+      value: BossTurret
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -271512,6 +271516,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Turret
       objectReference: {fileID: 0}
+    - target: {fileID: 8396301288025748020, guid: b4d6c227f094d9c4d8f34985d87d4672, type: 3}
+      propertyPath: m_TagString
+      value: BossTurret
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -364125,6 +364133,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Turret (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8396301288025748020, guid: b4d6c227f094d9c4d8f34985d87d4672, type: 3}
+      propertyPath: m_TagString
+      value: BossTurret
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -389298,6 +389310,7 @@ MonoBehaviour:
   standard: {fileID: 11400000, guid: 66e88172a58526945bb8049a3387e93a, type: 2}
   red: {fileID: 11400000, guid: 2744457a078845f40b2ad1682d3c086d, type: 2}
   black: {fileID: 11400000, guid: 75cd48eb712b0a74f97f49dd8ac9698c, type: 2}
+  healCanvas: {fileID: 535839474}
 --- !u!222 &8279561252774806223
 CanvasRenderer:
   m_ObjectHideFlags: 0

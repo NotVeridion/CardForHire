@@ -136,6 +136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerScript
   playerMoveSpeed: 10
+  playerMaxHealth: 100
   playerHealth: 100
   playerCash: 0
   dashPower: 20

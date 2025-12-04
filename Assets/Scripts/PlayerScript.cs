@@ -4,6 +4,7 @@ using System.Collections;
 public class PlayerScript : MonoBehaviour
 {
     public float playerMoveSpeed;
+    public float playerMaxHealth;
     public float playerHealth;
     public int playerCash;
     public float dashPower;
@@ -221,9 +222,9 @@ public class PlayerScript : MonoBehaviour
     public void Heal(float amt)
     {
         playerHealth += amt;
-        if (playerHealth > 100)
+        if (playerHealth > playerMaxHealth)
         {
-            playerHealth = 100;
+            playerHealth = playerMaxHealth;
         }
     }
 

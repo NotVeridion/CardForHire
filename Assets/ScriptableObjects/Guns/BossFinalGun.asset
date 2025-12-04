@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Gun
   gunName: BossPistol
   gunSprite: {fileID: 3923245708578141576, guid: 4e3379a9174f6ed4287f189d9dcd88ae, type: 3}
-  fireRate: 1
-  damage: 50
-  bulletMoveSpeed: 30
-  bulletDuration: 2
+  fireRate: 50
+  damage: 25
+  bulletMoveSpeed: 5
+  bulletDuration: 5
   isSingleShot: 1
   isSpreadShot: 0
   spreadRange: 0

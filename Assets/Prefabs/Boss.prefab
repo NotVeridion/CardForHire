@@ -178,7 +178,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   detectionRange: 14
   sliderObj: {fileID: 0}
-  finalSpinSpeed: 3
+  finalSpinSpeed: 2
   positionObjects:
   - {fileID: 0}
   - {fileID: 0}

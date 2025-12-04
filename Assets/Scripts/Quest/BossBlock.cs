@@ -15,6 +15,8 @@ public class BossBlock : MonoBehaviour
     [SerializeField] Image panel;
     [SerializeField] TextMeshProUGUI text;
 
+    bool informed = false;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -28,8 +30,9 @@ public class BossBlock : MonoBehaviour
         if(questController.totalQuestsCompleted >= maxQuest && !cameraScript.inFinalBoss)
         {
             block.SetActive(false);
-            if(panel.color.a >= 1)
+            if(!informed)
             {
+                informed = true;
                 StartCoroutine(NotifyPlayer());
             }
         }

@@ -25,12 +25,15 @@ public class BossSpecialAttackState : BossState
     public override void Tick()
     {
         // Just arriving on position
-        if (isOnPosition() && boss.gun.canFire)
+        if (isOnPosition())
         {
             boss.rb.linearVelocity = Vector3.zero;
-            boss.gun.Shoot();
-            chosenPos = GetRandomSpecialPosition();
-            fired = true;
+            if (boss.gun.canFire)
+            {
+                boss.gun.Shoot();
+                chosenPos = GetRandomSpecialPosition();
+                fired = true;
+            }
         }
         // Wait at position while canFire is false
         else if (fired && !boss.gun.canFire)
