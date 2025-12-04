@@ -17,10 +17,10 @@ MonoBehaviour:
   description: 
   questGiverID: 4
   cashReward: 500
-  rewardSFX: {fileID: 0}
+  rewardSFX: {fileID: 8300000, guid: 2d7d7b070ebe0b347afd6966453aed47, type: 3}
   objectives:
   - objectiveID: Enemy
-    description: Defeat the enemies
+    description: Defeat the bandits
     type: 1
     requiredAmount: 10
     currentAmount: 0

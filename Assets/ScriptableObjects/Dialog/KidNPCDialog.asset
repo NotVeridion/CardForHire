@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8768da70380e2ae4ea55b0de80a596b3, type: 3}
   m_Name: KidNPCDialog
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
-  npcName: Guy
+  npcName: Kid
   dialogueLines:
   - Howdy!
-  - Hey there, tell my sister I will be right back!
+  - Hey there, tell my mom I will be right back!
   - Check out the gunstore if you haven't!
   endDialogueLines: 0101
   typingSpeed: 0.05

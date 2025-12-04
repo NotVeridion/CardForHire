@@ -8168,7 +8168,7 @@ PrefabInstance:
     - target: {fileID: 8177206312324683071, guid: 33ef8252392599943854601ca218433a, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -9219439414626086258, guid: f3bf8aed56e439343a50cf3e11acf6e3, type: 3}
+      objectReference: {fileID: 4656552402391897263, guid: f3bf8aed56e439343a50cf3e11acf6e3, type: 3}
     - target: {fileID: 8283727936113510408, guid: 33ef8252392599943854601ca218433a, type: 3}
       propertyPath: m_Name
       value: CasinoGuy
@@ -293092,7 +293092,7 @@ GameObject:
   - component: {fileID: 1241122695}
   - component: {fileID: 1241122696}
   m_Layer: 0
-  m_Name: NPCTalk
+  m_Name: KidNPC
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

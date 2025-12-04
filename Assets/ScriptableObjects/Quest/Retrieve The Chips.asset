@@ -17,7 +17,7 @@ MonoBehaviour:
   description: 
   questGiverID: 5
   cashReward: 300
-  rewardSFX: {fileID: 0}
+  rewardSFX: {fileID: 8300000, guid: 2d7d7b070ebe0b347afd6966453aed47, type: 3}
   objectives:
   - objectiveID: 5
     description: Search inside the cave for the chips

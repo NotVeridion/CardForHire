@@ -95,6 +95,7 @@ public class QuestController : MonoBehaviour
     }
     totalQuestsCompleted++;
     Debug.Log($"[QUEST] Total quests completed so far: {totalQuestsCompleted}");
+    player.Heal(1000);
     handinQuestIDs.Add(questID);
     activateQuests.Remove(quest);
     questUI.UpdateQuestUI();
