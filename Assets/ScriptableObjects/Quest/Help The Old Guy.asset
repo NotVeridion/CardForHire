@@ -20,7 +20,7 @@ MonoBehaviour:
   rewardSFX: {fileID: 0}
   objectives:
   - objectiveID: Enemy
-    description: Defeat the enemies
+    description: Defeat the bandits
     type: 1
     requiredAmount: 10
     currentAmount: 0
